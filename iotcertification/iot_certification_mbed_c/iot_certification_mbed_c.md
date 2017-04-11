@@ -63,7 +63,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step-1-Configure) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step-1-Configure) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
 

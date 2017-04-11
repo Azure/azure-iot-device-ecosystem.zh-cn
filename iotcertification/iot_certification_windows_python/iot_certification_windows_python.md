@@ -139,7 +139,7 @@
 
 8. 检查确认消息中是否显示“正常”。 如果没有，则可能表示未正确复制设备中心连接信息。
   
-  **如果使用 HTTP 协议：** 
+  **如果使用 HTTP 协议：**    
   
   ![DeviceExplorer\_Notification\_Send](images/terminal_message_send_from_device_http.png)
   
@@ -153,7 +153,7 @@
   
 9. DeviceExplorer 的数据选项卡中应会显示收到的事件。
 
-    **如果使用 HTTP 协议：**   
+    **如果使用 HTTP 协议：**    
 
      ![DeviceExplorer\_Notification\_Send](images/device_message_send_from_device_http.png)
 
@@ -173,7 +173,7 @@
 
 3.  在“消息”字段中添加一些文本，然后单击“发送”。
 
-    ![DeviceExplorer\_Notification\_Send](images/device_message_receive_from_device_http.png)
+       ![DeviceExplorer\_Notification\_Send](images/device_message_receive_from_device_http.png)
 
 4. 设备控制台窗口中应会显示收到的消息。
     
@@ -205,9 +205,9 @@
 
 4. 向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。
 
-> 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-windows-python.md>)提供的模板创建特定于设备的说明。
+> 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-python.md>)提供的模板创建特定于设备的说明。
     
-> 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+> 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2_Share"></a>
 ## <a name="42-share-package-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享包

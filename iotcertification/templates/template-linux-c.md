@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: c
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: b11738272595dd964a25f0c5ecabef1a57c1be9b
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 9f6d3ca994ac5f514dbd267450a16d1eb7229071
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===
 ---
@@ -142,4 +137,3 @@ ms.lasthandoff: 01/19/2017
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

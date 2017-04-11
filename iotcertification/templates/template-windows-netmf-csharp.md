@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: csharp
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
 ms.openlocfilehash: 05800a8af566bb0b874699a1e8b59fc34ce98508
-ms.lasthandoff: 01/19/2017
-
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C# 示例
 ===
 ---
@@ -106,4 +101,3 @@ ms.lasthandoff: 01/19/2017
 
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: csharp
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: abc766ad1dfa9d9254379cc8192663916524553d
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 2f241279b13ce3b1c2e03f269ebafcbb82d01a5b
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C# 示例
 ===
 ---
@@ -83,7 +78,7 @@ ms.lasthandoff: 01/19/2017
 
         public const string DeviceConnectionString = "<replace>";
 
--   将上述占位符替换为在[步骤 1](#Step-1:-Prerequisites) 中获取的设备连接字符串，然后保存更改。
+-   将上述占位符替换为在[步骤 1](#Prerequisites) 中获取的设备连接字符串，然后保存更改。
 
 -   选择适当的体系结构（x86 或 ARM，具体取决于设备），将调试方法设置为“远程计算机”：
     
@@ -108,4 +103,3 @@ ms.lasthandoff: 01/19/2017
 
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

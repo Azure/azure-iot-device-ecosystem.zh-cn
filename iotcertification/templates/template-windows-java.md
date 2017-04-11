@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: java
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: 7ce1b46ddbc173bdfe51250a1ede982edc9ac111
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 33fd4b5464b0822dd577695b5f5c520f35bb8b53
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-java-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JAVA 示例
 ===
 ---
@@ -140,7 +135,7 @@ ms.lasthandoff: 01/19/2017
     -   `{connection string}`：设备连接字符串
     -   `{number of requests to send}`：要发送到 IoT 中心的消息数
 
--   在 Windows 上，请参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“监视设备到云的事件”，确定设备是否正在发送数据。
+-   在 Windows 上，请参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“监视设备到云的事件”，确定设备是否正在发送数据。
 
 <a name="Step_3_2_2"/>
 ### <a name="322-receive-messages-from-iot-hub"></a>3.2.2 从 IoT 中心接收消息
@@ -169,9 +164,8 @@ ms.lasthandoff: 01/19/2017
     -   `{connection string}`：设备连接字符串
     -   `{number of requests to send}`：要发送到 IoT 中心的消息数
 
--   在 Windows 上，请参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“发送云到设备的消息”，获取有关向设备发送消息的说明。
+-   在 Windows 上，请参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“发送云到设备的消息”，获取有关向设备发送消息的说明。
 
-[setup-devbox-windows]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/java-devbox-setup.md
+[setup-devbox-windows]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/java-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: python
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: cd48a22d2e7ba09dca2f633d22868190bc3145f5
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 496055ec6e5ca0c54fc59e4dec5cdd6cfc511f76
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-python-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 PYTHON 示例
 ===
 ---
@@ -142,4 +137,3 @@ ms.lasthandoff: 01/19/2017
 [setup-devbox-python]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/python-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

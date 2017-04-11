@@ -62,7 +62,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step_1_Sign_Up) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step_1_Sign_Up) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
 
@@ -128,7 +128,7 @@
 
 5.  找到 IoT 连接字符串的以下占位符：
 
-        static const char* connectionString = "[device connection string]";
+          static const char* connectionString = "[device connection string]";
     
 6.  将上述占位符替换为设备连接字符串。 可根据[步骤 2](#Step_2_Register) 中所述，从 DeviceExplorer 获取这个已复制到记事本的连接字符串。
 
@@ -169,7 +169,7 @@
 
 5. DeviceExplorer 应显示 IoT 中心已成功接收示例测试发送的数据。
 
-    **如果使用 HTTP 协议：**   
+    **如果使用 HTTP 协议：**    
 
     ![DeviceExplorer\_Notification\_Send](images/device_message_send_from_device_http.png)
 
@@ -189,7 +189,7 @@
 
 3.  在“消息”字段中添加一些文本，然后单击“发送”。
 
-    ![DeviceExplorer\_Notification\_Send](images/explorer_send_message_to_device.png)
+       ![DeviceExplorer\_Notification\_Send](images/explorer_send_message_to_device.png)
 
 4. 设备控制台窗口中应会显示收到的消息。
     
@@ -216,9 +216,9 @@
 1.  第 3.2 部分中所述的生成日志。
 2. 前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
 3.  前面“**从 IoT 中心接收消息**”部分中显示的所有屏幕截图。
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-windows-c.md>)提供的模板创建特定于设备的说明。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-c.md>)提供的模板创建特定于设备的说明。
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2_Share"></a>
 ## <a name="42-share-package-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享包

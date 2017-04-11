@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: javascript
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: 50014f5213d5ba251007c369aa2a86e7438d48cf
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 1b7713eee766dcba59b3027a33f5933d056137a9
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-javascript-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JavaScript 示例
 ===
 ---
@@ -108,7 +103,7 @@ ms.lasthandoff: 01/19/2017
     
     **对于 MQTT 协议：**
 
-        npm install azure-iot-device-mqtt   
+        npm install azure-iot-device-mqtt    
 
 -   更新示例以设置协议。
 
@@ -153,4 +148,3 @@ ms.lasthandoff: 01/19/2017
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/node-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-

@@ -1,16 +1,11 @@
 ---
-platform:
-  enter the OS name running on device: 
-device:
-  enter your device name here: 
+platform: 
+device: 
 language: python
-translationtype: Human Translation
-ms.sourcegitcommit: 342b2e268ae6ff4885f2d7b015f1c5dd4c3ae0ad
-ms.openlocfilehash: 7d1e20786e56b8376f1078f5c2b7b7ad37790d06
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 45225a762ae5c5e3d7a81672b998fa34ce511812
+ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
+translationtype: HT
 ---
-
 <a name="run-a-simple-python-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 python 示例
 ===
 ---
@@ -89,22 +84,22 @@ ms.lasthandoff: 01/19/2017
 
     {{**如果使用 AMQP 协议：**}}
 
-        python iothub_client_sample_amqp.py
+          python iothub_client_sample_amqp.py
 
     {{**如果使用 HTTPS 协议：**}}
 
-        python iothub_client_sample_http.py
+           python iothub_client_sample_http.py
 
     {{**如果使用 MQTT 协议：**}}
 
-        python iothub_client_sample_mqtt.py
+           python iothub_client_sample_mqtt.py
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
 ## <a name="33-receive-messages-from-iot-hub"></a>3.3 从 IoT 中心接收消息
 
--   请参阅[管理 IoT 中心](https://github.com/Azure/azure-iot-sdks/blob/develop/doc/manage_iot_hub.md)，了解如何将云到设备的消息发送到应用程序。
+-   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
 
-[setup-devbox-python]: <https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/python-devbox-setup.md>
+[setup-devbox-python]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/python-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
