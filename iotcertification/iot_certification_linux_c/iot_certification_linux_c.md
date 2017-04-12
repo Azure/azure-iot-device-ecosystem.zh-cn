@@ -35,7 +35,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 公共存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
 -   用于认证的所需硬件。
 
@@ -63,7 +63,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step-1-Configure) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step-1-Configure) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
 
@@ -77,7 +77,7 @@
 
     a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。
 
-    b. 注册的设备将显示在列表中。 如果你的设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
+    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果你的设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
 
     c. 单击“创建”按钮创建设备 ID 和密钥。
 
@@ -87,7 +87,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step-3-Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-c-client-libraries"></a>步骤 3：使用 C 客户端库生成并验证示例
@@ -133,7 +133,7 @@
 
         git clone --recursive https://github.com/Azure/azure-iot-sdk-c.git
 
--   检查 ~/azure-iot-sdks 目录中现在是否生成了源代码的副本。
+-   验证 ~/azure-iot-sdk-c 目录中现在是否生成了源代码的副本。
 
 <a name="Step-3-2-Build"></a>
 ## <a name="32-build-the-samples"></a>3.2 生成示例
@@ -151,6 +151,14 @@
     **对于 MQTT 协议：**
 
         nano azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt.c
+
+    **对于将 WebSocket 与 AMQP 协议配合使用：**
+
+        nano azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_amqp_websockets/iothub_client_sample_amqp_websockets.c
+
+    **对于将 WebSocket 与 MQTT 协议配合使用：**
+
+        nano azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_mqtt_websockets/iothub_client_sample_mqtt_ws.c
 
 -   此时会启动基于控制台的文本编辑器。 向下滚动到连接信息。
 
@@ -193,11 +201,15 @@
 
 -   使用以下命令生成 SDK。 如果在生成期间遇到任何问题，请遵循故障排除[步骤 5](#Step-5-Troubleshooting)。
 
-        sudo ./azure-iot-sdks/c/build_all/linux/build.sh --run-e2e-tests | tee LogFile.txt
+        sudo ./azure-iot-sdk-c/build_all/linux/build.sh --run-e2e-tests | tee LogFile.txt
 
+    对于 WebSocket 协议，请使用以下命令生成 SDK***
+    
+        sudo ./azure-iot-sdk-c/build_all/linux/build.sh --use-websockets
+    
     ***注意：****应将上述命令中的 LogFile.txt 替换为要将生成输出写入到的文件名。*
     
-    *build.sh 在“~/azure-iot-sdks/c/”下创建名为“cmake”的文件夹。“cmake”中保存了整个软件的所有编译结果。*
+    *build.sh 在“~/azure-iot-sdk-c/”下创建名为“cmake”的文件夹。“cmake”中保存了整个软件的所有编译结果。*
 
 
 <a name="Step-3-3-Run"></a>
@@ -230,7 +242,14 @@
     **如果使用 MQTT 协议：**运行示例 *iothub\_client\_sample\_mqtt*
 
         ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
+    
+    **如果将 WebSocket 与 AMQP 协议配合使用：**运行示例 *iothub\_client\_sample\_amqp_websocket*
 
+                ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_amqp_websockets/iothub_client_sample_amqp_websockets
+
+    **如果将 WebSocket 与 MQTT 协议配合使用：**运行示例 *iothub\_client\_sample\_amqp_websocket*
+
+        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt_websockets/iothub_client_sample_mqtt_websockets
 
 4.  检查确认消息中是否显示“正常”。 如果没有，则可能表示未正确复制设备中心连接信息。
 
@@ -242,6 +261,12 @@
 
     **如果使用 MQTT 协议：**
     ![SampleMQTT\_result\_terminal](images/3_3_1_09.png)
+
+    **如果将 WebSocket 与 AMQP 协议配合使用：**
+    ![SampleAMQPWS\_result\_terminal](images/terminal_amqps_ws_send_event.png)
+    
+    **如果将 WebSocket 与 MQTT 协议配合使用：**
+    ![SampleMQTTWS\_result\_terminal](images/terminal_mqtt_ws_send_event.png)
 
 5.  DeviceExplorer 应显示 IoT 中心已成功接收示例测试发送的数据。
 
@@ -256,6 +281,14 @@
     **如果使用 MQTT 协议：**
     
     ![SampleMQTT\_result\_DeviceExplorer](images/3_3_1_10.png)
+
+    **如果将 WebSocket 与 AMQP 协议配合使用：**
+
+    ![SampleAMQPWS\_result\_DeviceExplorer](images/device_explorer_amqp_ws_message_received.png)
+    
+    **如果将 WebSocket 与 MQTT 协议配合使用：**
+
+    ![SampleMQTTWS\_result\_DeviceExplorer](images/device_explorer_mqtt_ws_message_received.png)
 
 ### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
 
@@ -278,6 +311,12 @@
     **如果使用 MQTT 协议：**
     ![MessageSend\_terminal](images/3_3_1_11.png)
 
+    **如果将 WebSocket 与 AMQP 协议配合使用：**
+    ![MessageSend\_terminal](images/terminal_amqp_ws_message_received.png)
+    
+    **如果将 WebSocket 与 MQTT 协议配合使用：**
+    ![MessageSend\_terminal](images/terminal_mqtt_ws_message_received.png)
+
 <a name="Step-4-Package_Share"></a>
 # <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 
@@ -292,9 +331,9 @@
 
 3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-c.md>)提供的模板创建特定于设备的说明。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-c.md>)提供的模板创建特定于设备的说明。
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step-4-2-Share"></a>
 ## <a name="42-share-package-with-microsoft-azure-iot-team"></a>4.2 与 Microsoft Azure IoT 团队共享包

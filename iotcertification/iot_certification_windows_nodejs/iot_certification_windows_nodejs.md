@@ -71,7 +71,7 @@
 -   监视设备的事件。
 -   向设备发送消息。
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Configure) 中所述使用配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Configure) 中所述使用配置字符串：
 
 -   IoT 中心连接字符串
 
@@ -148,7 +148,15 @@
     
     **对于 MQTT 协议：**
 
-        npm install azure-iot-device-mqtt   
+        npm install azure-iot-device-mqtt    
+
+    **对于将 Web Socket 与 AMQP 协议配合使用：**
+
+        npm install azure-iot-device-amqp
+
+    **对于将 Web Socket 与 MQTT 协议配合使用：**
+
+        npm install azure-iot-device-mqtt
 
 -   更新示例以设置协议。
 
@@ -230,9 +238,9 @@
 
 3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-windows-nodejs.md>)提供的模板创建特定于设备的说明。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-nodejs.md>)提供的模板创建特定于设备的说明。
 
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Share"></a>
 ## <a name="42-share-package-with-engineering-support"></a>4.2 与工程支持人员共享包

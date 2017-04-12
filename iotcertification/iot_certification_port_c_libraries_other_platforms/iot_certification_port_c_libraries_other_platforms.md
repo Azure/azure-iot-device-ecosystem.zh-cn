@@ -33,7 +33,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 公共存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
 -   用于认证的所需硬件。
 
@@ -61,7 +61,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step_1) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step_1) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
     
@@ -85,7 +85,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step_3"></a>
 # <a name="step-3-build-and-validate-the-sample-using-c-client-libraries"></a>步骤 3：使用 C 客户端库生成并验证示例
@@ -95,7 +95,7 @@
 
 以下文档提供有关如何将 C 物联网 (IoT) 客户端库移植到不现成支持的平台的指南。 该文档包含有关任何特定平台的具体信息。
 
-<https://github.com/Azure/azure-iot-sdks/blob/master/c/doc/porting_guide.md>
+<https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/porting_guide.md>
 
 <a name="Step_3_2"></a>
 ## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
@@ -142,7 +142,7 @@
 
 3.  “**从 IoT 中心接收消息**”部分中所示的所有屏幕截图。
 
-4.  创建一个文档，说明如何在硬件上运行示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+4.  创建一个文档，说明如何在硬件上运行示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/neeraj-khanna/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享

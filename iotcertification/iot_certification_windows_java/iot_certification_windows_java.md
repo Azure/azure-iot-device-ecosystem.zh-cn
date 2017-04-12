@@ -61,7 +61,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step_1) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step_1) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
     
@@ -193,6 +193,10 @@
     **如果使用 MQTT 协议：**
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "mqtt"
+    
+    **如果使用 AMQP-WebSocket 协议：**
+
+        java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps_ws"    
 
     替换上述命令中的以下内容：
     
@@ -211,6 +215,9 @@
     **如果使用 MQTT 协议：**  
     ![Terminal\_MQTT\_send\_event](images/terminal_mqtt_send_event.png)
 
+    **如果使用 AMQP WebSocket 协议：**  
+    ![Terminal\_AMQP_WS\_send\_event](images/terminal_amqps_ws_send_event.png)
+
 6.  DeviceExplorer 应显示 IoT 中心已成功接收示例测试发送的数据。
 
     **如果使用 AMQP 协议：**  
@@ -221,6 +228,9 @@
 
     **如果使用 MQTT 协议：**  
     ![DeviceExplorer\_MQTT\_message\_received](images/device_explorer_mqtt_message_received.png)
+
+    **如果使用 AMQP WebSocket 协议：**  
+    ![DeviceExplorer\_AMQP_WS\_message\_received](images/device_explorer_amqp_ws_message_received.png)
 
 <a name="Step_3_2_2"></a>
 ### <a name="322-receive-messages-from-iot-hub"></a>3.2.2 从 IoT 中心接收消息
@@ -251,6 +261,10 @@
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "mqtt"
 
+    **如果使用 AMQP-WebSocket 协议：**
+   
+        java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "amqps_ws"
+
     替换上述命令中的以下内容：
     
     -   `{version}`：生成的二进制文件的版本
@@ -268,6 +282,9 @@
     **如果使用 MQTT 协议：**  
     ![Terminal\_MQTT\_message\_received](images/terminal_mqtt_message_received.png)
 
+    **如果使用 AMQP WebSocket 协议：**  
+    ![Terminal\_AMQP_WS\_message\_received](images/terminal_amqp_ws_message_received.png)
+
 <a name="Step_4"></a>
 # <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 
@@ -282,9 +299,9 @@
 
 3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-windows-java.md>)提供的模板创建特定于设备的说明。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-java.md>)提供的模板创建特定于设备的说明。
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享

@@ -61,7 +61,7 @@
 -   监视设备的事件
 -   向设备发送消息
 
-若要运行 DeviceExplorer 工具，请根据[步骤&1;](#Step_1) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step_1) 中所述使用以下配置字符串：
 
 -   IoT 中心连接字符串
     
@@ -75,7 +75,7 @@
 
     a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。
 
-    b. 注册的设备将显示在列表中。 如果你的设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
+    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果你的设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
 
     c. 单击“创建”按钮创建设备 ID 和密钥。
 
@@ -258,6 +258,10 @@
     **如果使用 MQTT 协议：**
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "mqtt"
+    
+    **如果将 Web Socket 与 AMQP 协议配合使用：**
+
+        java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps_ws"    
 
     替换上述命令中的以下内容：
     
@@ -275,6 +279,9 @@
 
     **如果使用 MQTT 协议：**  
     ![Terminal\_MQTT\_send\_event](images/terminal_mqtt_send_event.png)
+
+    **如果将 Web Socket 与 AMQP 协议配合使用：**
+    ![Terminal\_AMQP_WS\_send\_event](images/terminal_amqps_ws_send_event.png)
 
 6.  DeviceExplorer 应显示 IoT 中心已成功接收示例测试发送的数据。
 
@@ -316,6 +323,10 @@
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "mqtt"
 
+    **如果将 Web Socket 与 AMQP 协议配合使用：**
+   
+        java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "amqps_ws"
+
     替换上述命令中的以下内容：
     
     -   `{version}`：生成的二进制文件的版本
@@ -347,9 +358,9 @@
 
 3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-java.md>)提供的模板创建特定于设备的说明。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-java.md>)提供的模板创建特定于设备的说明。
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享
