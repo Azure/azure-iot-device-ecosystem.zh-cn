@@ -95,7 +95,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-node-js-client-libraries"></a>步骤 3：使用 Node JS 客户端库生成并验证示例
@@ -121,14 +121,14 @@
     
 -   下载该 SDK 
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-node.git
 
 <a name="BuildSamples"></a>
 ## <a name="32-build-the-samples"></a>3.2 生成示例
 
 -   若要验证源代码，请在设备上的 Node.js 命令提示符下运行以下命令。
 
-        cd azure-iot-sdks\node
+        cd azure-iot-sdk-node
         build\dev-setup.cmd
         build\build.cmd > LogFile.txt
 
@@ -136,7 +136,7 @@
 
 -   安装 npm 包以运行示例。
 
-        cd \azure-iot-sdks\node\device\samples
+        cd \azure-iot-sdk-node\device\samples
 
     **对于 AMQP 协议：**
     
@@ -160,7 +160,7 @@
 
 -   更新示例以设置协议。
 
-        cd azure-iot-sdks\node\device\samples
+        cd azure-iot-sdk-node\device\samples
         notepad simple_sample_device.js
 
 -   这会启动文本编辑器。 向下滚动到协议信息，找到以下代码：
@@ -178,7 +178,7 @@
 
 -   保存更改并关闭记事本。
 
--   退出 **azure-iot-sdks\node\device\samples** 目录之前，在 Node.js 命令提示符下运行以下命令
+-   退出 **azure-iot-sdk-node\device\samples** 目录之前，在 Node.js 命令提示符下运行以下命令
 
         npm link azure-iot-device
 
@@ -199,7 +199,7 @@
 
 3.  在 Node.js 命令提示符下发出以下命令来运行示例
 
-        node azure-iot-sdks\node\device\samples\simple_sample_device.js
+        node azure-iot-sdk-node\device\samples\simple_sample_device.js
     
 4.  检查是否已成功发送数据。 如果没有，则可能表示未正确复制设备连接信息。
 

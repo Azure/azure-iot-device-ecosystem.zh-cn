@@ -2,9 +2,10 @@
 platform: 
 device: 
 language: c
-ms.openlocfilehash: 9f6d3ca994ac5f514dbd267450a16d1eb7229071
-ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
-translationtype: HT
+ms.openlocfilehash: cd392662f2406a037d660f8d0269ab3544a9732e
+ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===
@@ -17,6 +18,7 @@ translationtype: HT
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
 -   [提示](#tips)
+-   [后续步骤](#NextSteps)
 
 # <a name="instructions-for-using-this-template"></a>此模板的用法说明
 
@@ -80,17 +82,17 @@ translationtype: HT
 
 -   在开发板上发出以下命令，将用于 C 的 Microsoft Azure IoT 设备 SDK 下载到开发板：
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-c.git
 
 -   使用所选的任何文本编辑器编辑以下文件：{{***根据协议保留文件并删除剩余内容。***}}
 
     {{**对于 AMQP 协议：**}}
 
-        azure-iot-sdks/c/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp.c
+        azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp.c
 
     {{**对于 HTTPS 协议：**}}
 
-        azure-iot-sdks/c/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http.c
+        azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http.c
 
 -   找到 IoT 连接字符串的以下占位符：
 
@@ -100,7 +102,7 @@ translationtype: HT
 
 -   使用以下命令生成 SDK。
 
-        sudo ./azure-iot-sdks/c/build_all/linux/build.sh
+        sudo ./azure-iot-sdk-c/build_all/linux/build.sh
 
 ## <a name="32-send-device-events-to-iot-hub"></a>3.2 向 IoT 中心发送设备事件：
 
@@ -108,15 +110,15 @@ translationtype: HT
 
     {{**如果使用 AMQP 协议：**}}
 
-        ~/azure-iot-sdks/c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp
+        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp
 
     {{**如果使用 HTTP 协议：**}}
 
-        ~/azure-iot-sdks/c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http
+        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http
 
     {{**如果使用 MQTT 协议：**}}
 
-        ~/azure-iot-sdks/c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
+        ~/azure-iot-sdk-c/c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
@@ -134,6 +136,25 @@ translationtype: HT
   make -f makefile.linux all
   ```
 
+<a name="NextSteps"></a>
+# <a name="next-steps"></a>后续步骤
+
+现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+
+-   [使用 iothub-explorer 管理云设备消息传送]
+-   [将 IoT 中心消息保存到 Azure 数据存储]
+-   [使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]
+-   [使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]
+-   [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]
+-   [使用逻辑应用执行远程监视和发送通知]   
+
+[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
+

@@ -33,7 +33,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-java](https://github.com/Azure/azure-iot-sdk-java) GitHub 公共存储库的计算机。
 -   用于认证的所需硬件。
 
 <a name="Step_1"></a>
@@ -50,7 +50,7 @@
 <a name="Step_2"></a>
 # <a name="step-2-register-device"></a>步骤 2：注册设备
 
--   遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
+-   遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
 
 <a name="Step_3"></a>
 # <a name="step-3-build-and-validate-the-sample-using-java-client-libraries"></a>步骤 3：使用 Java 客户端库生成并验证示例
@@ -74,7 +74,7 @@
 
 1.  启动 Android Studio 的新实例并从该位置打开 Android 项目：
 
-        azure-iot-sdks/java/device/samples/android-sample/
+        azure-iot-sdk-java/device/iot-device-samples/android-sample/        
 
 2.  转到“MainActivity.java”，将 **[device connection string]** 占位符替换为在[步骤 2](#Step_2) 中创建的设备连接字符串，然后保存该文件。
 
@@ -169,7 +169,7 @@
 
 4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享

@@ -36,7 +36,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub 公共存储库的计算机。
 -   安装 Visual Studio 2015 和工具。 可以安装任意版本的 Visual Studio，包括免费的 Community 版。
 
     安装 Visual Studio 后，请转到“工具”菜单，然后单击“扩展和更新”。 搜索“netmf”，安装设备上运行的版本适用的 .NET Micro Framework SDK。
@@ -96,7 +96,7 @@
     
     f.  在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step_3:_Build_and_Validate"></a>
 # <a name="step-3-build-and-validate-the-sample-using-c-client-libraries"></a>步骤 3：使用 C# 客户端库生成并验证示例 
@@ -113,9 +113,9 @@
 <a name="Step_3_2:_Build"></a>
 ## <a name="32--build-the-samples"></a>3.2 生成示例
 
-1. 将 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks.git) 存储库克隆到计算机。
+1. 将 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-csharp.git) 存储库克隆到计算机。
 
-2.  启动 Visual Studio 2015 的新实例。 打开存储库本地副本中的 **iothub_csharp_netmf_client.sln** 解决方案 (/azure-iot-sdks/csharp)。
+2.  启动 Visual Studio 2015 的新实例。 打开存储库本地副本中的 **iothub_csharp_netmf_client.sln** 解决方案 (/azure-iot-sdk-csharp/device)。
 
 3.  在 Visual Studio 的“解决方案资源管理器”中，导航到 **NetMFDeviceClientHttpSample_<.net framework version>** 项目。
 

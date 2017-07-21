@@ -35,7 +35,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 Git 客户端、运行 **Windows 10** 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 Git 客户端、运行 **Windows 10** 并且可以访问 [azure-iot-sdk-node](https://github.com/Azure/azure-iot-sdk-node) GitHub 公共存储库的计算机。
 -   安装 Visual Studio 2015 和工具。 可以安装任意版本的 Visual Studio，包括免费的 Community 版。
 
     请务必选择“通用 Windows 应用开发工具”，这是编写 Windows 10 应用时必须使用的组件：
@@ -62,7 +62,7 @@
 <a name="Step_2:_Register"></a>
 # <a name="step-2-register-device"></a>步骤 2：注册设备
 
--   遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
+-   遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
 
 <a name="Step_3:_Build_and_Validate"></a>
 # <a name="step-3-build-and-validate-the-sample-using-nodejs-client-libraries"></a>步骤 3：使用 Node.js 客户端库生成并验证示例 
@@ -90,9 +90,9 @@
 
       ![VisualStudio\_delete\_oldfiles](images/Delete_old_files.png)
           
-4. 将 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks.git) 存储库克隆到 Windows 10 计算机。 
+4. 将 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-node.git) 存储库克隆到 Windows 10 计算机。 
 
-5. 在文件资源管理器中，复制计算机上存储库 Node.js 示例下面的 **package.json** 和 **simple_sample_device.js** 文件。 例如，如果已将 **azure iot sdk** 存储库克隆到 C:\IOT 目录下，请转到 **(C:\azure-iot-sdks\node\device\samples\)**
+5. 在文件资源管理器中，复制计算机上存储库 Node.js 示例下面的 **package.json** 和 **simple_sample_device.js** 文件。 例如，如果已将 **azure-iot-sdk-node** 存储库克隆到 C:\IOT 目录下，请转到 **(C:\azure-iot-sdk-node\device\samples\)**
 
     ![FileExplorere\_copy\_files](images/copy_files.png)
           

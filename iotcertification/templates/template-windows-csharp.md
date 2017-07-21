@@ -2,9 +2,10 @@
 platform: 
 device: 
 language: csharp
-ms.openlocfilehash: 4c82cb2cf62cf9e753353160f16b2f10c68e371d
-ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
-translationtype: HT
+ms.openlocfilehash: 4d15e85b2fa807fbe152a6eff6427c7f7572352a
+ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C# 示例
 ===
@@ -16,6 +17,7 @@ translationtype: HT
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
+-   [后续步骤](#NextSteps)
 
 # <a name="instructions-for-using-this-template"></a>此模板的用法说明
 
@@ -53,9 +55,9 @@ translationtype: HT
 <a name="Build"></a>
 # <a name="step-3-build-and-run-the-sample"></a>步骤 3：生成并运行示例
 
--   下载 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) 和示例程序，并将其保存到本地存储库。
+-   下载 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-csharp) 和示例程序，并将其保存到本地存储库。
 -   启动 Visual Studio 2015 的新实例。
--   打开存储库本地副本中的 `csharp\device` 文件夹内的 **iothub_csharp_client.sln** 解决方案。
+-   打开存储库本地副本中的 `device` 文件夹内的 **iothub_csharp_client.sln** 解决方案。
 -   在 Visual Studio 的“解决方案资源管理器”中，导航到 **samples** 文件夹。
 -   在 **DeviceClientAmqpSample** 项目中打开 ***Program.cs*** 文件。
 -   在该文件中找到以下代码：
@@ -68,6 +70,25 @@ translationtype: HT
 -   参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“监视设备到云的事件”，确定设备是否正在发送数据。
 -   参阅 [DeviceExplorer 用法文档](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)中的“发送云到设备的消息”，获取有关向设备发送消息的说明。
 
+<a name="NextSteps"></a>
+# <a name="next-steps"></a>后续步骤
+
+现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+
+-   [使用 iothub-explorer 管理云设备消息传送]
+-   [将 IoT 中心消息保存到 Azure 数据存储]
+-   [使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]
+-   [使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]
+-   [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]
+-   [使用逻辑应用执行远程监视和发送通知]   
+
+[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-windows]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
+

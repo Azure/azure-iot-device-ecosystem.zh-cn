@@ -34,7 +34,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 公共存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
 -   所需的硬件：[CC3200 Launchpad](http://www.ti.com/tool/cc3200-launchxl)。
 
@@ -86,7 +86,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step_3"></a>
 # <a name="step-3-build-and-validate-the-sample-using-c-client-libraries"></a>步骤 3：使用 C 客户端库生成并验证示例
@@ -111,7 +111,7 @@
 <a name="Step_3_2"></a>
 ## <a name="32-build-azure-iot-sdk"></a>3.2 生成 Azure IoT SDK
 
-1.  编辑文件 `products.mak` (*azure-iot-sdks\c\build_all\tirtos*)。 
+1.  编辑文件 `products.mak` (*azure-iot-sdk-c\build_all\tirtos*)。 
     更新以下变量的值：
     
     `XDCTOOLS_INSTALLATION_DIR`：Uniflash Tool 的安装位置。
@@ -125,7 +125,7 @@
 3. 在 Windows 命令提示符中运行以下命令（请务必将路径替换为安装路径）。
 
   ```
-  cd <AZURE_INSTALL_DIR>\azure-iot-sdks\c\build_all\tirtos
+  cd <AZURE_INSTALL_DIR>\azure-iot-sdk-c\build_all\tirtos
   C:\ti\xdctools_3_31_01_33_core\gmake.exe clean
   C:\ti\xdctools_3_31_01_33_core\gmake.exe all
   ```
@@ -140,7 +140,7 @@
 <a name="Step_3_2_1"></a>
 ### <a name="331-build-the-sample-simplesamplehttp-application"></a>3.3.1 生成示例 simplesample_http 应用程序
 
-1.  打开 `azure-iot-sdks\c\serializer\samples\simplesample_http` 目录中的 `simplesample_http.c` 文件。
+1.  打开 `azure-iot-sdk-c\serializer\samples\simplesample_http` 目录中的 `simplesample_http.c` 文件。
 
 2.  找到 IoT 连接字符串的以下占位符：
     
@@ -148,7 +148,7 @@
 
 3.  将上述占位符替换为设备连接字符串。 可根据“步骤 2”中所述，从 DeviceExplorer 获取这个已复制到记事本的连接字符串。
 
-4.  打开 `azure-iot-sdks/c/serializer/samples/simplesample_http/tirtos/cc3200` 目录中的 `main.c` 文件。 
+4.  打开 `azure-iot-sdk-c/serializer/samples/simplesample_http/tirtos/cc3200` 目录中的 `main.c` 文件。 
 
 5.  找到以下日期时间注释：
 
@@ -165,7 +165,7 @@
     #define SECOND  0
     ```
 
-7. 打开 `azure-iot-sdks/c/serializer/samples/simplesample_http/tirtos/cc3200` 目录中的 `wificonfig.h` 文件。
+7. 打开 `azure-iot-sdk-c/serializer/samples/simplesample_http/tirtos/cc3200` 目录中的 `wificonfig.h` 文件。
 
 8.  找到以下 USER STEP 注释：
 
@@ -176,12 +176,12 @@
         #define SSID ""
         #define SECURITY_KEY ""
 
-10. 将[适用于 Windows 的 elf2cc32 可执行文件](https://github.com/tisb-vikram/azure-iot-sdks/blob/7da24633b2c4af3bc779998e9950146f061a8a10/c/serializer/samples/simplesample_http/tirtos/cc3200/tools/elf2cc32.exe?raw=true)或[适用于 Linux 的 elf2cc32 可执行文件](https://github.com/tisb-vikram/azure-iot-sdks/blob/7da24633b2c4af3bc779998e9950146f061a8a10/c/serializer/samples/simplesample_http/tirtos/cc3200/tools/elf2cc32?raw=true)下载到文件夹 `azure-iot-sdks\c\serializer\samples\simplesample_http\tirtos\cc3200\tools`。 需要使用此工具将 **simplesample_http.out** 转换为 **simplesample_http.bin** 文件。
+10. 将[适用于 Windows 的 elf2cc32 可执行文件](https://github.com/tisb-vikram/azure-iot-sdks/blob/7da24633b2c4af3bc779998e9950146f061a8a10/c/serializer/samples/simplesample_http/tirtos/cc3200/tools/elf2cc32.exe?raw=true)或[适用于 Linux 的 elf2cc32 可执行文件](https://github.com/tisb-vikram/azure-iot-sdks/blob/7da24633b2c4af3bc779998e9950146f061a8a10/c/serializer/samples/simplesample_http/tirtos/cc3200/tools/elf2cc32?raw=true)下载到文件夹 `azure-iot-sdk-c\serializer\samples\simplesample_http\tirtos\cc3200\tools`。 需要使用此工具将 **simplesample_http.out** 转换为 **simplesample_http.bin** 文件。
 
 11. 执行以下命令生成示例：
 
     ```
-    cd <AZURE_INSTALL_DIR>\azure-iot-sdks\c\serializer\samples\simplesample_http\tirtos\cc3200
+    cd <AZURE_INSTALL_DIR>\azure-iot-sdk-c\serializer\samples\simplesample_http\tirtos\cc3200
     C:\ti\xdctools_3_31_01_33_core\gmake.exe clean
     C:\ti\xdctools_3_31_01_33_core\gmake.exe all
     ```
@@ -195,7 +195,7 @@
 
 可在 [CC3200 UniFlash wiki](http://processors.wiki.ti.com/index.php/CC31xx_%26_CC32xx_UniFlash) 中找到有关刷写工具的详细信息。 [GUI 界面](http://processors.wiki.ti.com/index.php/CC31xx_%26_CC32xx_UniFlash#GUI_Interface)部分逐步讲解了 UniFlash 工具的用法步骤。
 
-将应用程序（.bin 文件）刷写到“系统文件”下面的 `/sys/mcuimg.bin`。 对于证书，请在路径 `/cert/ms.der` 中[添加一个新文件](http://processors.wiki.ti.com/index.php/CC31xx_%26_CC32xx_UniFlash#Adding_a_new_file_to_the_device)，并提供“Baltimore CyberTrust Root”证书（.der 格式）的路径。 ms.der 文件的路径为 <AZURE 安装目录>\azure-iot-sdks\c\certs\ms.der。
+将应用程序（.bin 文件）刷写到“系统文件”下面的 `/sys/mcuimg.bin`。 对于证书，请在路径 `/cert/ms.der` 中[添加一个新文件](http://processors.wiki.ti.com/index.php/CC31xx_%26_CC32xx_UniFlash#Adding_a_new_file_to_the_device)，并提供“Baltimore CyberTrust Root”证书（.der 格式）的路径。 ms.der 文件的路径为 <AZURE 安装目录>\azure-iot-sdk-c\certs\ms.der。
 
 <a name="Step_3_3_3"></a>
 ### <a name="running-the-sample-simplesamplehttp"></a>运行示例 simplesample_http
@@ -238,7 +238,7 @@
 
 2.  “**运行示例 simplesample_http**”部分中所示的所有屏幕截图。
 
-3.  创建一个文档，说明如何在硬件上运行示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) GitHub 存储库中发布的示例。
+3.  创建一个文档，说明如何在硬件上运行示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享

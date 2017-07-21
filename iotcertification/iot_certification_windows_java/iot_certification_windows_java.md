@@ -33,7 +33,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-java](https://github.com/Azure/azure-iot-sdk-java) GitHub 公共存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
 -   用于认证的所需硬件。
 
@@ -85,7 +85,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step_3"></a>
 # <a name="step-3-build-and-validate-the-sample-using-java-client-libraries"></a>步骤 3：使用 Java 客户端库生成并验证示例
@@ -147,18 +147,18 @@
 
 1.  在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
-        git clone https://github.com/Azure/azure-iot-sdks.git
+        git clone https://github.com/Azure/azure-iot-sdk-java.git
 
-2.  检查 **azure-iot-sdks** 目录中现在是否生成了源代码的副本。
+2.  验证 **azure-iot-sdk-java** 目录中现在是否有源代码的副本。
 
 3.  在设备上按顺序运行以下命令，生成 Azure IoT SDK。
 
-        cd azure-iot-sdks/java/device
+        cd azure-iot-sdk-java/device
         mvn install
 
 4.  上述命令将生成包含所有依赖项的已编译 JAR 文件。 可在以下位置找到此捆绑包：
 
-        azure-iot-sdks/java/device/iothub-java-client/target/iothub-java-client-{version}-with-deps.jar
+        azure-iot-sdk-java/device/iothub-java-client/target/iothub-java-client-{version}-with-deps.jar
 
 <a name="Step_3_2"></a>
 ## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
@@ -178,7 +178,7 @@
 
 3.  导航到包含发送事件示例 JAR 可执行文件的文件夹。
 
-        cd /azure-iot-sdks/java/device/samples/send-event/target
+        cd /azure-iot-sdk-java/device/samples/send-event/target
 
 4.  发出以下命令运行该示例。
 
@@ -245,7 +245,7 @@
 
 4.  导航到包含接收消息示例 JAR 可执行文件的文件夹。
 
-        cd /azure-iot-sdks/java/device/samples/handle-messages/target
+        cd /azure-iot-sdk-java/device/samples/handle-messages/target
      
 5.  发出以下命令运行该示例。
 

@@ -37,7 +37,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python) GitHub 公共存储库的计算机。
 -   安装 Visual Studio 2015 和工具。 可以安装任意版本的 Visual Studio，包括免费的 Community 版。
 
 <a name="Step_1_Sign_Up"></a>
@@ -54,7 +54,7 @@
 <a name="Step_2_Register"></a>
 # <a name="step-2-register-device"></a>步骤 2：注册设备
 
-- [预配设备并获取其凭据](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)
+- [预配设备并获取其凭据](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)
 
 <a name="Step_3_Build_and_Validate"></a>
 # <a name="step-3-build-and-validate-the-sample-using-python-client-libraries"></a>步骤 3：使用 Python 客户端库生成并验证示例 
@@ -76,7 +76,7 @@
 1. 使用以下命令下载最新的 SDK：
   
   ```
-  git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+  git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git
   ```
 
 2. 安装最新的 x86 或 x64 Python 2.7 客户端。 生成过程需要在路径中包含有效的 Python.exe。 生成脚本会根据正在使用的 Python 版本（例如 Python 2.7.11 x86 32 位）选择编译器。

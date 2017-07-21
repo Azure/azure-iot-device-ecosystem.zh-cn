@@ -34,7 +34,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 专用存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python) GitHub 专用存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
 -   用于认证的所需硬件。
 
@@ -52,7 +52,7 @@
 <a name="Step-2-Register"></a>
 # <a name="step-2-register-device"></a>步骤 2：注册设备
 
--   遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
+-   遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)所述的说明，了解如何预配设备并获取其凭据。
 
 <a name="Step-3-Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-python-libraries"></a>步骤 3：使用 Python 库生成并验证示例
@@ -100,9 +100,9 @@
 
 -   在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git
 
--   检查 ~/azure-iot-sdks 目录中现在是否生成了源代码的副本。
+-   验证 ~/azure-iot-sdk-python 目录中现在是否有源代码的副本。
 
 <a name="Step-3-2-Build"></a>
 ## <a name="32-build-the-samples"></a>3.2 生成示例
@@ -124,7 +124,7 @@
 
 -   执行以下命令导航到 samples 文件夹：
 
-        cd azure-iot-sdks/python/device/samples/
+        cd azure-iot-sdk-python/device/samples/
 
 -   在设备上运行以下命令：
 
@@ -160,7 +160,7 @@
 
         python iothub_client_sample.py -p mqtt
 
--   请参阅[管理 IoT 中心](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)，了解如何监视 IoT 中心从应用程序接收的消息。
+-   请参阅[管理 IoT 中心](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)，了解如何监视 IoT 中心从应用程序接收的消息。
 
 -   检查确认消息中是否显示“正常”。 如果没有，则可能表示未正确复制设备连接字符串。
 
@@ -192,7 +192,7 @@
 
 ### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
 
--   请参阅[管理 IoT 中心](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)，了解如何将云到设备的消息发送到应用程序。
+-   请参阅[管理 IoT 中心](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)，了解如何将云到设备的消息发送到应用程序。
 
 -   应会在客户端示例的控制台窗口中看到收到的命令。
 

@@ -35,7 +35,7 @@
 
 在执行以下任一步骤之前，请仔细阅读每个过程的每个步骤，确保全盘了解整个过程。 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 专用存储库的计算机
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-node](https://github.com/Azure/azure-iot-sdk-node) GitHub 专用存储库的计算机
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行
 -   用于认证的所需硬件
 
@@ -88,7 +88,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-node-js-client-libraries"></a>步骤 3：使用 Node JS 客户端库生成并验证示例
@@ -150,9 +150,9 @@
 
 -   在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-node.git
 
--   检查 ~/azure-iot-sdks 目录中现在是否生成了源代码的副本。
+-   验证 ~/azure-iot-sdk-node 目录中现在是否有源代码的副本。
 
 <a name="BuildSamples"></a>
 ## <a name="32-build-the-samples"></a>3.2 生成示例
@@ -165,7 +165,7 @@
 
 -   运行以下命令 
 
-        cd ~/azure-iot-sdks/node
+        cd ~/azure-iot-sdk-node
         build/dev-setup.sh
         build/build.sh | tee LogFile.txt
 
@@ -173,7 +173,7 @@
 
 -   安装 npm 包以运行示例。
 
-        cd ~/azure-iot-sdks/node/device/samples
+        cd ~/azure-iot-sdk-node/device/samples
 
     **对于 AMQP 协议：**
     
@@ -197,7 +197,7 @@
 
 -   若要更新示例，请在设备上运行以下命令。
 
-        cd ~/azure-iot-sdks/node/device/samples
+        cd ~/azure-iot-sdk-node/device/samples
         nano simple_sample_device.js
 
 -   此时会启动基于控制台的文本编辑器。 向下滚动到协议信息。
@@ -221,7 +221,7 @@
 
 -   按 Ctrl+X 退出 nano。
 
--   在退出 **~/azure-iot-sdks/node/device/samples** 目录之前运行以下命令
+-   在退出 **~/azure-iot-sdk-node/device/samples** 目录之前运行以下命令
 
         npm link azure-iot-device
 
@@ -242,7 +242,7 @@
 
 3.  发出以下命令运行该示例：
 
-        node ~/azure-iot-sdks/node/device/samples/simple_sample_device.js
+        node ~/azure-iot-sdk-node/device/samples/simple_sample_device.js
 
 4. 检查是否已成功发送和接收数据。 如果出现任何问题，则可能表示未正确复制设备中心连接信息。
 

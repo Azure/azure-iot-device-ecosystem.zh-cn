@@ -35,7 +35,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 专用存储库的计算机
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 专用存储库的计算机
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行
 -   用于认证的所需硬件
 
@@ -86,7 +86,7 @@
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
-***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md>)的说明预配设备并获取其凭据。
+***不是在电脑上运行 Windows？*** - 请遵照[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/manage_iot_hub.md>)的说明预配设备并获取其凭据。
 
 <a name="Step-3-Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-c-client-libraries"></a>步骤 3：使用 C 客户端库生成并验证示例
@@ -107,11 +107,11 @@
 <a name="Step-3-2-Build"></a>
 ## <a name="32--build-the-samples"></a>3.2 生成示例
 
-1. 将 [GitHub  SDK](https://github.com/Azure/azure-iot-sdks.git) 存储库克隆到计算机。
+1. 将 [GitHub  SDK](https://github.com/Azure/azure-iot-sdk-c.git) 存储库克隆到计算机。
 
 2.  浏览到文件夹
 
-        /azure-iot-sdks/c/iothub_client/samples/iothub_client_sample_amqp/mbed
+        /azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_amqp/mbed
 
 3.  运行 **mkmbedzip.bat** 文件。 这会在同一文件夹中生成 **iothub\_client\_sample\_amqp.zip** 文件。
 
@@ -245,7 +245,7 @@
 1.  在 [mbed 开发人员站点](https://developer.mbed.org/)上编译时生成的生成结果屏幕截图。
 2.  前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
 2.  前面“**从 IoT 中心接收消息**”部分中显示的所有屏幕截图。
-3.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-sdks/tree/master/doc/get_started>) github 存储库中发布的示例
+3.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) github 存储库中发布的示例
 
 <a name="Step-4-2-Share"></a>
 ## <a name="42-share-package-with-engineering-support"></a>4.2 与工程支持人员共享包

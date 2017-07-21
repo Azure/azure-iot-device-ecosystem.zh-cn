@@ -2,9 +2,10 @@
 platform: 
 device: 
 language: javascript
-ms.openlocfilehash: 8daeaed47b4856acb36ab0b637640ed88715b548
-ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
-translationtype: HT
+ms.openlocfilehash: e23fb7e36e4d59bb9a1c4623ea03c009efc295b6
+ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 <a name="run-a-simple-javascript-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JavaScript 示例
 ===
@@ -16,6 +17,7 @@ translationtype: HT
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
+-   [后续步骤](#NextSteps)
 
 # <a name="instructions-for-using-this-template"></a>此模板的用法说明
 
@@ -111,9 +113,9 @@ translationtype: HT
 
 -   在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-node.git
 
--   检查 ~/azure-iot-sdks 目录中现在是否生成了源代码的副本。
+-   验证 ~/azure-iot-sdk-node 目录中现在是否有源代码的副本。
 
 <a name="BuildSamples"></a>
 ## <a name="32-build-the-samples"></a>3.2 生成示例
@@ -126,7 +128,7 @@ translationtype: HT
 
 -   运行以下命令 
 
-        cd ~/azure-iot-sdks/node
+        cd ~/azure-iot-sdk-node
         build/dev-setup.sh
         build/build.sh | tee LogFile.txt
 
@@ -134,7 +136,7 @@ translationtype: HT
 
 -   安装 npm 包以运行示例。
 
-        cd ~/azure-iot-sdks/node/device/samples
+        cd ~/azure-iot-sdk-node/device/samples
 
     **对于 AMQP 协议：**
     
@@ -150,7 +152,7 @@ translationtype: HT
 
 -   若要更新示例，请在设备上运行以下命令。
 
-        cd ~/azure-iot-sdks/node/device/samples
+        cd ~/azure-iot-sdk-node/device/samples
         nano simple_sample_device.js
 
 -   此时会启动基于控制台的文本编辑器。 向下滚动到协议信息。
@@ -174,7 +176,7 @@ translationtype: HT
 
 -   按 Ctrl+X 退出 nano。
 
--   在退出 **~/azure-iot-sdks/node/device/samples** 目录之前运行以下命令
+-   在退出 **~/azure-iot-sdk-node/device/samples** 目录之前运行以下命令
 
         npm link azure-iot-device
 
@@ -185,7 +187,7 @@ translationtype: HT
 
 -   发出以下命令运行示例，验证是否已成功发送和接收数据。
 
-        node ~/azure-iot-sdks/node/device/samples/simple_sample_device.js
+        node ~/azure-iot-sdk-node/device/samples/simple_sample_device.js
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
@@ -194,6 +196,25 @@ translationtype: HT
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
 
 
+<a name="NextSteps"></a>
+# <a name="next-steps"></a>后续步骤
+
+现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+
+-   [使用 iothub-explorer 管理云设备消息传送]
+-   [将 IoT 中心消息保存到 Azure 数据存储]
+-   [使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]
+-   [使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]
+-   [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]
+-   [使用逻辑应用执行远程监视和发送通知]   
+
+[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/node-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
+

@@ -35,7 +35,7 @@
 
 在开始过程前，应已准备好以下项目：
 
--   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdks](https://github.com/Azure/azure-iot-sdks) GitHub 公共存储库的计算机。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub 公共存储库的计算机。
 -   安装 Visual Studio 2015 和工具。 可以安装任意版本的 Visual Studio，包括免费的 Community 版。
 
 <a name="Step_1:_Sign_Up"></a>
@@ -108,7 +108,7 @@
 <a name="Step_3_2:_Build"></a>
 ## <a name="32--build-the-samples"></a>3.2 生成示例
 
-1.  启动 Visual Studio 2015 的新实例。 打开本地 SDK **azure-iot-sdks** 目录中 **csharp\device** 文件夹内的 **iothub_csharp_deviceclient.sln** 解决方案。
+1.  启动 Visual Studio 2015 的新实例。 打开本地 SDK **azure-iot-sdk-csharp** 目录中 **csharp\device** 文件夹内的 **iothub_csharp_deviceclient.sln** 解决方案。
 
 2.  在 Visual Studio 的“解决方案资源管理器”中，根据所选的协议导航到相应的项目：
 

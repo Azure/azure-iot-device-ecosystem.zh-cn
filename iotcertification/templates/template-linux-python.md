@@ -2,9 +2,10 @@
 platform: 
 device: 
 language: python
-ms.openlocfilehash: 496055ec6e5ca0c54fc59e4dec5cdd6cfc511f76
-ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
-translationtype: HT
+ms.openlocfilehash: f12f4bfa4f76e9da3908d242ec05b745813d2cf4
+ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 <a name="run-a-simple-python-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 PYTHON 示例
 ===
@@ -16,6 +17,7 @@ translationtype: HT
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
+-   [后续步骤](#NextSteps)
 
 # <a name="instructions-for-using-this-template"></a>此模板的用法说明
 
@@ -79,7 +81,7 @@ translationtype: HT
 
 -   在开发板上发出以下命令，将 Microsoft Azure IoT 设备 SDK 下载到开发板：
 
-        git clone --recursive https://github.com/Azure/azure-iot-sdks.git
+        git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git
 
 -   运行以下命令生成 SDK：
 
@@ -90,7 +92,7 @@ translationtype: HT
 
 - 执行以下命令导航到 samples 文件夹：
 
-        cd azure-iot-sdks/python/device/samples/
+        cd azure-iot-sdk-python/device/samples/
 
 -   使用所选的任何文本编辑器编辑以下文件：{{***根据协议保留文件并删除剩余内容。***}}
 
@@ -134,6 +136,25 @@ translationtype: HT
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
 
+<a name="NextSteps"></a>
+# <a name="next-steps"></a>后续步骤
+
+现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+
+-   [使用 iothub-explorer 管理云设备消息传送]
+-   [将 IoT 中心消息保存到 Azure 数据存储]
+-   [使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]
+-   [使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]
+-   [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]
+-   [使用逻辑应用执行远程监视和发送通知]   
+
+[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-python]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/python-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
+
