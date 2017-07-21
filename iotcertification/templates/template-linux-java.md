@@ -2,252 +2,273 @@
 platform: 
 device: 
 language: java
-ms.openlocfilehash: c498107aeac2b3230668f4e5d13f24237330ebb5
-ms.sourcegitcommit: c6e6e2af724a112c8dc1a00dee046036968ef192
-translationtype: HT
+ms.openlocfilehash: 86978cd10db22b4a576cfcea7f91392f211d0c86
+ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
-<a name="run-a-simple-java-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JAVA 示例
+<a name="run-a-simple-java-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a><span data-ttu-id="95667-101">在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JAVA 示例</span><span class="sxs-lookup"><span data-stu-id="95667-101">Run a simple JAVA sample on {enter your device name here} device running {enter the OS name running on device}</span></span>
 ===
 ---
 
-# <a name="table-of-contents"></a>目录
+# <a name="table-of-contents"></a><span data-ttu-id="95667-102">目录</span><span class="sxs-lookup"><span data-stu-id="95667-102">Table of Contents</span></span>
 
--   [介绍](#Introduction)
--   [步骤 1：先决条件](#Prerequisites)
--   [步骤 2：准备设备](#PrepareDevice)
--   [步骤 3：生成并运行示例](#Build)
+-   [<span data-ttu-id="95667-103">介绍</span><span class="sxs-lookup"><span data-stu-id="95667-103">Introduction</span></span>](#Introduction)
+-   [<span data-ttu-id="95667-104">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="95667-104">Step 1: Prerequisites</span></span>](#Prerequisites)
+-   [<span data-ttu-id="95667-105">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="95667-105">Step 2: Prepare your Device</span></span>](#PrepareDevice)
+-   [<span data-ttu-id="95667-106">步骤 3：生成并运行示例</span><span class="sxs-lookup"><span data-stu-id="95667-106">Step 3: Build and Run the Sample</span></span>](#Build)
+-   [<span data-ttu-id="95667-107">后续步骤</span><span class="sxs-lookup"><span data-stu-id="95667-107">Next Steps</span></span>](#NextSteps)
 
-# <a name="instructions-for-using-this-template"></a>此模板的用法说明
+# <a name="instructions-for-using-this-template"></a><span data-ttu-id="95667-108">此模板的用法说明</span><span class="sxs-lookup"><span data-stu-id="95667-108">Instructions for using this template</span></span>
 
--   将 {placeholders} 中的文本替换为正确的值。
--   阅读说明后，请删除 {{enclosed}} 行中包含的内容。
--   建议尽可能地使用外部链接。
--   请从最终文档中删除本部分。
+-   <span data-ttu-id="95667-109">将 {placeholders} 中的文本替换为正确的值。</span><span class="sxs-lookup"><span data-stu-id="95667-109">Replace the text in {placeholders} with correct values.</span></span>
+-   <span data-ttu-id="95667-110">阅读说明后，请删除 {{enclosed}} 行中包含的内容。</span><span class="sxs-lookup"><span data-stu-id="95667-110">Delete the lines {{enclosed}} after following the instructions enclosed between them.</span></span>
+-   <span data-ttu-id="95667-111">建议尽可能地使用外部链接。</span><span class="sxs-lookup"><span data-stu-id="95667-111">It is advisable to use external links, wherever possible.</span></span>
+-   <span data-ttu-id="95667-112">请从最终文档中删除本部分。</span><span class="sxs-lookup"><span data-stu-id="95667-112">Remove this section from final document.</span></span>
 
 <a name="Introduction"/>
-# <a name="introduction"></a>介绍
+# <a name="introduction"></a><span data-ttu-id="95667-113">介绍</span><span class="sxs-lookup"><span data-stu-id="95667-113">Introduction</span></span>
 
-**关于本文档**
+<span data-ttu-id="95667-114">**关于本文档**</span><span class="sxs-lookup"><span data-stu-id="95667-114">**About this document**</span></span>
 
-本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。 此过程由多个步骤组成，其中包括：
--   配置 Azure IoT 中心
--   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+<span data-ttu-id="95667-115">本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。</span><span class="sxs-lookup"><span data-stu-id="95667-115">This document describes how to connect {enter your device name here} device running {enter the OS name running on device} with Azure IoT SDK.</span></span> <span data-ttu-id="95667-116">此过程由多个步骤组成，其中包括：</span><span class="sxs-lookup"><span data-stu-id="95667-116">This multi-step process includes:</span></span>
+-   <span data-ttu-id="95667-117">配置 Azure IoT 中心</span><span class="sxs-lookup"><span data-stu-id="95667-117">Configuring Azure IoT Hub</span></span>
+-   <span data-ttu-id="95667-118">注册 IoT 设备</span><span class="sxs-lookup"><span data-stu-id="95667-118">Registering your IoT device</span></span>
+-   <span data-ttu-id="95667-119">在设备上生成并部署 Azure IoT SDK</span><span class="sxs-lookup"><span data-stu-id="95667-119">Build and deploy Azure IoT SDK on device</span></span>
 
 <a name="Prerequisites"></a>
-# <a name="step-1-prerequisites"></a>步骤 1：先决条件
+# <a name="step-1-prerequisites"></a><span data-ttu-id="95667-120">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="95667-120">Step 1: Prerequisites</span></span>
 
-在开始过程前，应已准备好以下项目：
+<span data-ttu-id="95667-121">在开始过程前，应已准备好以下项目：</span><span class="sxs-lookup"><span data-stu-id="95667-121">You should have the following items ready before beginning the process:</span></span>
 
--   [准备开发环境][setup-devbox-linux]
--   [设置 IoT 中心][lnk-setup-iot-hub]
--   [预配设备并获取其凭据][lnk-manage-iot-hub]
--   {在此处输入设备名称} 设备。
--   {{请指定是否需要其他任何软件或硬件。}}
+-   <span data-ttu-id="95667-122">[准备开发环境][setup-devbox-linux]</span><span class="sxs-lookup"><span data-stu-id="95667-122">[Prepare your development environment][setup-devbox-linux]</span></span>
+-   <span data-ttu-id="95667-123">[设置 IoT 中心][lnk-setup-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="95667-123">[Setup your IoT hub][lnk-setup-iot-hub]</span></span>
+-   <span data-ttu-id="95667-124">[预配设备并获取其凭据][lnk-manage-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="95667-124">[Provision your device and get its credentials][lnk-manage-iot-hub]</span></span>
+-   <span data-ttu-id="95667-125">{在此处输入设备名称} 设备。</span><span class="sxs-lookup"><span data-stu-id="95667-125">{enter your device name here} device.</span></span>
+-   <span data-ttu-id="95667-126">{{请指定是否需要其他任何软件或硬件。}}</span><span class="sxs-lookup"><span data-stu-id="95667-126">{{Please specify if any other software(s) or hardware(s) are required.}}</span></span>
 
 <a name="PrepareDevice"></a>
-# <a name="step-2-prepare-your-device"></a>步骤 2：准备设备
--   {{记下安装、配置和连接设备时需要遵循的说明。 请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}
+# <a name="step-2-prepare-your-device"></a><span data-ttu-id="95667-127">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="95667-127">Step 2: Prepare your Device</span></span>
+-   <span data-ttu-id="95667-128">{{记下安装、配置和连接设备时需要遵循的说明。</span><span class="sxs-lookup"><span data-stu-id="95667-128">{{Write down the instructions required to setup, configure and connect your device.</span></span> <span data-ttu-id="95667-129">请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}</span><span class="sxs-lookup"><span data-stu-id="95667-129">Please use external links when possible pointing to your own page with device preparation steps.}}</span></span>
 
 <a name="Build"></a>
-# <a name="step-3-build-sdk-and-run-the-sample"></a>步骤 3：生成 SDK 并运行示例
+# <a name="step-3-build-sdk-and-run-the-sample"></a><span data-ttu-id="95667-130">步骤 3：生成 SDK 并运行示例</span><span class="sxs-lookup"><span data-stu-id="95667-130">Step 3: Build SDK and Run the sample</span></span>
 
 <a name="Step_3_1"/>
-## <a name="31-install-azure-iot-device-sdk-and-prerequisites-on-device"></a>3.1 在设备上安装 Azure IoT 设备 SDK 和必备组件
+## <a name="31-install-azure-iot-device-sdk-and-prerequisites-on-device"></a><span data-ttu-id="95667-131">3.1 在设备上安装 Azure IoT 设备 SDK 和必备组件</span><span class="sxs-lookup"><span data-stu-id="95667-131">3.1 Install Azure IoT Device SDK and prerequisites on device</span></span>
 
--   打开 PuTTY 会话并连接到设备。
+-   <span data-ttu-id="95667-132">打开 PuTTY 会话并连接到设备。</span><span class="sxs-lookup"><span data-stu-id="95667-132">Open a PuTTY session and connect to the device.</span></span>
 
--   在设备上的命令行中发出以下命令，安装必备组件包。
+-   <span data-ttu-id="95667-133">在设备上的命令行中发出以下命令，安装必备组件包。</span><span class="sxs-lookup"><span data-stu-id="95667-133">Install the prerequisite packages by issuing the following commands from the command line on the device.</span></span>
 
 <a name="Step_3_1_1"/>
-### <a name="311--install-java-jdk-and-set-up-environment-variables"></a>3.1.1 安装 Java JDK 并设置环境变量
+### <a name="311--install-java-jdk-and-set-up-environment-variables"></a><span data-ttu-id="95667-134">3.1.1 安装 Java JDK 并设置环境变量</span><span class="sxs-lookup"><span data-stu-id="95667-134">3.1.1  Install Java JDK and set up environment variables</span></span>
         
-1.  {{保留根据 OS 设置的命令并删除剩余内容。}}
+1.  <span data-ttu-id="95667-135">{{保留根据 OS 设置的命令并删除剩余内容。}}</span><span class="sxs-lookup"><span data-stu-id="95667-135">{{Keep the command set based on your OS and remove the rest.}}</span></span>
         
-    {{**Debian**}}
+    <span data-ttu-id="95667-136">{{**Debian**}}</span><span class="sxs-lookup"><span data-stu-id="95667-136">{{**Debian**}}</span></span>
 
         sudo apt-get update        
         sudo apt-get install openjdk-8-jdk      
    
-    ***注意：****如果 openjdk-8-jdk 包不可用，请使用以下步骤在 sources.list 中添加源，然后再次重新运行上述命令。*
+    <span data-ttu-id="95667-137">***注意：****如果 openjdk-8-jdk 包不可用，请使用以下步骤在 sources.list 中添加源，然后再次重新运行上述命令。*</span><span class="sxs-lookup"><span data-stu-id="95667-137">***Note:*** *If openjdk-8-jdk package is not available, use following steps to add source in sources.list and rerun above commands again.*</span></span>
     
-    -   编辑 /etc/apt/sources.list
+    -   <span data-ttu-id="95667-138">编辑 /etc/apt/sources.list</span><span class="sxs-lookup"><span data-stu-id="95667-138">Edit /etc/apt/sources.list</span></span>
     
-    -   添加以下代码行并保存更改。
+    -   <span data-ttu-id="95667-139">添加以下代码行并保存更改。</span><span class="sxs-lookup"><span data-stu-id="95667-139">Add below line and save the changes.</span></span>
         
         `deb http://ftp.debian.org/debian testing main`
    
-    {{**Ubuntu**}}
+    <span data-ttu-id="95667-140">{{**Ubuntu**}}</span><span class="sxs-lookup"><span data-stu-id="95667-140">{{**Ubuntu**}}</span></span>
 
         sudo apt-get update        
         sudo apt-get install openjdk-8-jdk 
    
-    {{**Fedora**}}
+    <span data-ttu-id="95667-141">{{**Fedora**}}</span><span class="sxs-lookup"><span data-stu-id="95667-141">{{**Fedora**}}</span></span>
    
         sudo dnf check-update -y
         sudo dnf install java-1.8.0-openjdk-devel
         
-    {{**其他任何 Linux OS**}}
+    <span data-ttu-id="95667-142">{{**其他任何 Linux OS**}}</span><span class="sxs-lookup"><span data-stu-id="95667-142">{{**Any Other Linux OS**}}</span></span>
 
         Use equivalent commands on the target OS
        
-2.  更新 PATH 环境变量，加入包含 Java 的 bin 文件夹的完整路径。 为确保 Java 路径正确，请运行以下命令：     
+2.  <span data-ttu-id="95667-143">更新 PATH 环境变量，加入包含 Java 的 bin 文件夹的完整路径。</span><span class="sxs-lookup"><span data-stu-id="95667-143">Update the PATH environment variable to include the full path to the bin folder containing Java.</span></span> <span data-ttu-id="95667-144">为确保 Java 路径正确，请运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="95667-144">To ensure the correct path of Java run below command:</span></span>     
        
         which java
         
-3.  确保 `which java` 命令显示的目录与 $PATH 变量中显示的某个目录匹配。 可运行以下命令来确认是否存在匹配项：
+3.  <span data-ttu-id="95667-145">确保 `which java` 命令显示的目录与 $PATH 变量中显示的某个目录匹配。</span><span class="sxs-lookup"><span data-stu-id="95667-145">Ensure that the directory shown by the `which java` command matches one of the directories shown in your $PATH variable.</span></span> <span data-ttu-id="95667-146">可运行以下命令来确认是否存在匹配项：</span><span class="sxs-lookup"><span data-stu-id="95667-146">You can confirm this by running following command.</span></span>
 
         echo $PATH
 
-4.  如果 PATH 环境变量中缺少 Java 路径，请运行以下命令设置相同的路径。    
+4.  <span data-ttu-id="95667-147">如果 PATH 环境变量中缺少 Java 路径，请运行以下命令设置相同的路径。</span><span class="sxs-lookup"><span data-stu-id="95667-147">If Java path is missing in PATH environment variable, run following command to set the same.</span></span>    
 
         export PATH=[PathToJava]/bin:$PATH       
 
-    ***注意：****此处的 **[PathToJava]** 是 `which java` 命令的输出。例如，如果 `which java` 输出为 /usr/bin/java，则导出命令为* **export PATH=/usr/bin/java/bin:$PATH**
+    <span data-ttu-id="95667-148">***注意：****此处的 **[PathToJava]** 是 `which java` 命令的输出。例如，如果 `which java` 输出为 /usr/bin/java，则导出命令为* **export PATH=/usr/bin/java/bin:$PATH**</span><span class="sxs-lookup"><span data-stu-id="95667-148">***NOTE:*** *Here **[PathToJava]** is output of `which java` command. For example, if `which java` output is /usr/bin/java, then export command will be* **export PATH=/usr/bin/java/bin:$PATH**</span></span>
 
-5.  确保 JAVA_HOME 环境变量包含 JDK 的完整路径。 使用以下命令获取 JDK 路径。
+5.  <span data-ttu-id="95667-149">确保 JAVA_HOME 环境变量包含 JDK 的完整路径。</span><span class="sxs-lookup"><span data-stu-id="95667-149">Make sure that the JAVA_HOME environment variable includes the full path to the JDK.</span></span> <span data-ttu-id="95667-150">使用以下命令获取 JDK 路径。</span><span class="sxs-lookup"><span data-stu-id="95667-150">Use below command to get the JDK path.</span></span>
 
         update-alternatives --config java
 
-6.  记下 JDK 位置。 `update-alternatives` 的输出类似于 **/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java**。 在此情况下，JDK 目录为 **/usr/lib/jvm/java-8-openjdk-amd64/**。
+6.  <span data-ttu-id="95667-151">记下 JDK 位置。</span><span class="sxs-lookup"><span data-stu-id="95667-151">Take note of the JDK location.</span></span> <span data-ttu-id="95667-152">`update-alternatives` 的输出类似于 **/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java**。</span><span class="sxs-lookup"><span data-stu-id="95667-152">`update-alternatives` output will show something similar to **/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java**.</span></span> <span data-ttu-id="95667-153">在此情况下，JDK 目录为 **/usr/lib/jvm/java-8-openjdk-amd64/**。</span><span class="sxs-lookup"><span data-stu-id="95667-153">The JDK directory would then be **/usr/lib/jvm/java-8-openjdk-amd64/**.</span></span>
 
-7.  运行以下命令设置 **JAVA_HOME** 环境变量。
+7.  <span data-ttu-id="95667-154">运行以下命令设置 **JAVA_HOME** 环境变量。</span><span class="sxs-lookup"><span data-stu-id="95667-154">Run the following command to set **JAVA_HOME** environment variable.</span></span>
 
         export JAVA_HOME=[PathToJDK]
 
-    ***注意***：*此处的 [PathToJDK] 是 JDK 目录。例如，如果 jdk 目录为 /usr/lib/jvm/java-8-openjdk-amd64/，则导出命令为* **export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/**
+    <span data-ttu-id="95667-155">***注意***：*此处的 [PathToJDK] 是 JDK 目录。例如，如果 jdk 目录为 /usr/lib/jvm/java-8-openjdk-amd64/，则导出命令为* **export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/**</span><span class="sxs-lookup"><span data-stu-id="95667-155">***Note***: *Here [PathToJDK] is JDK directory. For example if jdk directory is /usr/lib/jvm/java-8-openjdk-amd64/, export command will be* **export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/**</span></span>
 
 <a name="Step_3_1_2"/>
-### <a name="312--install-maven-and-set-up-environment-variables"></a>3.1.2 安装 Maven 并设置环境变量
+### <a name="312--install-maven-and-set-up-environment-variables"></a><span data-ttu-id="95667-156">3.1.2 安装 Maven 并设置环境变量</span><span class="sxs-lookup"><span data-stu-id="95667-156">3.1.2  Install Maven and set up environment variables</span></span>
 
-1.  {{保留根据 OS 设置的命令并删除剩余内容。}}
+1.  <span data-ttu-id="95667-157">{{保留根据 OS 设置的命令并删除剩余内容。}}</span><span class="sxs-lookup"><span data-stu-id="95667-157">{{Keep the command set based on your OS and remove the rest.}}</span></span>
 
-    {{**Debian 或 Ubuntu**}}
+    <span data-ttu-id="95667-158">{{**Debian 或 Ubuntu**}}</span><span class="sxs-lookup"><span data-stu-id="95667-158">{{**Debian or Ubuntu**}}</span></span>
 
         sudo apt-get install maven
 
-    {{**Fedora**}}
+    <span data-ttu-id="95667-159">{{**Fedora**}}</span><span class="sxs-lookup"><span data-stu-id="95667-159">{{**Fedora**}}</span></span>
 
         sudo dnf install maven
    
-    {{**其他任何 Linux OS**}}
+    <span data-ttu-id="95667-160">{{**其他任何 Linux OS**}}</span><span class="sxs-lookup"><span data-stu-id="95667-160">{{**Any Other Linux OS**}}</span></span>
 
         Use equivalent commands on the target OS
 
-2.  更新 PATH 环境变量，加入包含 Maven 的 bin 文件夹的完整路径。 为确保 Maven 路径正确，请运行以下命令：     
+2.  <span data-ttu-id="95667-161">更新 PATH 环境变量，加入包含 Maven 的 bin 文件夹的完整路径。</span><span class="sxs-lookup"><span data-stu-id="95667-161">Update the PATH environment variable to include the full path to the bin folder containing maven.</span></span> <span data-ttu-id="95667-162">为确保 Maven 路径正确，请运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="95667-162">To ensure the correct path of maven, run below command:</span></span>     
        
         which mvn
          
-3.  确保 `which mvn` 命令显示的目录与 $PATH 变量中显示的某个目录匹配。 可运行以下命令来确认是否存在匹配项：
+3.  <span data-ttu-id="95667-163">确保 `which mvn` 命令显示的目录与 $PATH 变量中显示的某个目录匹配。</span><span class="sxs-lookup"><span data-stu-id="95667-163">Ensure that the directory shown by the `which mvn` command matches one of the directories shown in your $PATH variable.</span></span> <span data-ttu-id="95667-164">可运行以下命令来确认是否存在匹配项：</span><span class="sxs-lookup"><span data-stu-id="95667-164">You can confirm this by running following command.</span></span>
  
         echo $PATH
 
-4.  如果 PATH 环境变量中缺少 Maven 路径，请运行以下命令设置相同的路径。     
+4.  <span data-ttu-id="95667-165">如果 PATH 环境变量中缺少 Maven 路径，请运行以下命令设置相同的路径。</span><span class="sxs-lookup"><span data-stu-id="95667-165">If maven path is missing in PATH environment variable, run following command to set the same.</span></span>     
 
         export PATH=[PathToMvn]/bin:$PATH
 
-    ***注意***：*此处的 [PathToMvn] 是 `which mvn` 的输出。例如，如果 `which mvn` 输出为 /usr/bin/mvn，则导出命令为* **export PATH=/usr/bin/mvn/bin:$PATH**
+    <span data-ttu-id="95667-166">***注意***：*此处的 [PathToMvn] 是 `which mvn` 的输出。例如，如果 `which mvn` 输出为 /usr/bin/mvn，则导出命令为* **export PATH=/usr/bin/mvn/bin:$PATH**</span><span class="sxs-lookup"><span data-stu-id="95667-166">***Note***: *Here [PathToMvn] is output of `which mvn`. For example if `which mvn` output is /usr/bin/mvn, export command will be* **export PATH=/usr/bin/mvn/bin:$PATH**</span></span>
    
-5.  可以运行 `mvn --version` 来验证是否已正确设置用于运行 Maven 3 的环境变量。
+5.  <span data-ttu-id="95667-167">可以运行 `mvn --version` 来验证是否已正确设置用于运行 Maven 3 的环境变量。</span><span class="sxs-lookup"><span data-stu-id="95667-167">You can verify that the environment variables necessary to run Maven 3 have been set correctly by running `mvn --version`.</span></span>
 
 <a name="Step_3_1_3"/>
-### <a name="313--install-git"></a>3.1.3 安装 GIT
+### <a name="313--install-git"></a><span data-ttu-id="95667-168">3.1.3 安装 GIT</span><span class="sxs-lookup"><span data-stu-id="95667-168">3.1.3  Install GIT</span></span>
 
-1.  {{保留根据 OS 设置的命令并删除剩余内容。}}
+1.  <span data-ttu-id="95667-169">{{保留根据 OS 设置的命令并删除剩余内容。}}</span><span class="sxs-lookup"><span data-stu-id="95667-169">{{Keep the command set based on your OS and remove the rest.}}</span></span>
 
-    {{**Debian 或 Ubuntu**}}
+    <span data-ttu-id="95667-170">{{**Debian 或 Ubuntu**}}</span><span class="sxs-lookup"><span data-stu-id="95667-170">{{**Debian or Ubuntu**}}</span></span>
 
         sudo apt-get install git
 
-    {{**Fedora**}}
+    <span data-ttu-id="95667-171">{{**Fedora**}}</span><span class="sxs-lookup"><span data-stu-id="95667-171">{{**Fedora**}}</span></span>
 
         sudo dnf install git   
 
-    {{**其他任何 Linux OS**}}
+    <span data-ttu-id="95667-172">{{**其他任何 Linux OS**}}</span><span class="sxs-lookup"><span data-stu-id="95667-172">{{**Any Other Linux OS**}}</span></span>
 
         Use equivalent commands on the target OS
 
 <a name="Step_3_1_4"/>
-### <a name="314-build-the-azure-iot-device-sdk-for-java"></a>3.1.4 生成适用于 Java 的 Azure IoT 设备 SDK
+### <a name="314-build-the-azure-iot-device-sdk-for-java"></a><span data-ttu-id="95667-173">3.1.4 生成适用于 Java 的 Azure IoT 设备 SDK</span><span class="sxs-lookup"><span data-stu-id="95667-173">3.1.4 Build the Azure IoT Device SDK for Java</span></span>
 
-1.  在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
+1.  <span data-ttu-id="95667-174">在 PuTTY 中发出以下命令，将 SDK 下载到开发板：</span><span class="sxs-lookup"><span data-stu-id="95667-174">Download the SDK to the board by issuing the following command in PuTTY:</span></span>
 
-        git clone https://github.com/Azure/azure-iot-sdks.git
+        git clone https://github.com/Azure/azure-iot-sdk-java.git
 
-2.  检查 **azure-iot-sdks** 目录中现在是否生成了源代码的副本。
+2.  <span data-ttu-id="95667-175">验证 **azure-iot-sdk-java** 目录中现在是否有源代码的副本。</span><span class="sxs-lookup"><span data-stu-id="95667-175">Verify that you now have a copy of the source code under the directory **azure-iot-sdk-java**.</span></span>
 
-3.  在设备上按顺序运行以下命令，生成 Azure IoT SDK。
+3.  <span data-ttu-id="95667-176">在设备上按顺序运行以下命令，生成 Azure IoT SDK。</span><span class="sxs-lookup"><span data-stu-id="95667-176">Run the following commands on device in sequence to build Azure IoT SDK.</span></span>
 
-        cd azure-iot-sdks/java/device
+        cd azure-iot-sdk-java/device
         mvn install | tee JavaSDK_Build_Logs.txt
 
-4.  上述命令将生成包含所有依赖项的已编译 JAR 文件。 可在以下位置找到此捆绑包：
+4.  <span data-ttu-id="95667-177">上述命令将生成包含所有依赖项的已编译 JAR 文件。</span><span class="sxs-lookup"><span data-stu-id="95667-177">Above command will generate the compiled JAR files with all dependencies.</span></span> <span data-ttu-id="95667-178">可在以下位置找到此捆绑包：</span><span class="sxs-lookup"><span data-stu-id="95667-178">This bundle can be found at:</span></span>
 
-        azure-iot-sdks/java/device/iothub-java-client/target/iothub-java-client-{version}-with-deps.jar
+        azure-iot-sdk-java/device/iothub-java-client/target/iothub-java-client-{version}-with-deps.jar
 
 <a name="Step_3_2"/>
-## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
+## <a name="32-run-and-validate-the-samples"></a><span data-ttu-id="95667-179">3.2 运行并验证示例</span><span class="sxs-lookup"><span data-stu-id="95667-179">3.2 Run and Validate the Samples</span></span>
 
 <a name="Step_3_2_1"/>
-### <a name="321-send-device-events-to-iot-hub"></a>3.2.1 向 IoT 中心发送设备事件：
+### <a name="321-send-device-events-to-iot-hub"></a><span data-ttu-id="95667-180">3.2.1 向 IoT 中心发送设备事件：</span><span class="sxs-lookup"><span data-stu-id="95667-180">3.2.1 Send Device Events to IoT Hub:</span></span>
 
--   导航到包含发送事件示例 JAR 可执行文件的文件夹。
+-   <span data-ttu-id="95667-181">导航到包含发送事件示例 JAR 可执行文件的文件夹。</span><span class="sxs-lookup"><span data-stu-id="95667-181">Navigate to the folder containing the executable JAR file for send event sample.</span></span>
 
-        cd azure-iot-sdks/java/device/samples/send-event/target
+        cd azure-iot-sdk-java/device/samples/send-event/target
 
--   发出以下命令运行该示例。
-{{保留根据协议设置的命令并删除剩余内容。}}
+-   <span data-ttu-id="95667-182">发出以下命令运行该示例。</span><span class="sxs-lookup"><span data-stu-id="95667-182">Run the sample by issuing following command.</span></span>
+<span data-ttu-id="95667-183">{{保留根据协议设置的命令并删除剩余内容。}}</span><span class="sxs-lookup"><span data-stu-id="95667-183">{{Keep the command set based on your protocol(s) and remove the rest.}}</span></span>
 
-    {{**如果使用 AMQPS 协议：**}}
+    <span data-ttu-id="95667-184">{{**如果使用 AMQPS 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-184">{{**If using AMQPS protocol:**}}</span></span>
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    <span data-ttu-id="95667-185">{{**如果使用 HTTPS 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-185">{{**If using HTTPS protocol:**}}</span></span>
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "https"
 
-    {{**如果使用 MQTT 协议：**}}
+    <span data-ttu-id="95667-186">{{**如果使用 MQTT 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-186">{{**If using MQTT protocol:**}}</span></span>
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "mqtt"
           
-    替换上述命令中的以下内容：
+    <span data-ttu-id="95667-187">替换上述命令中的以下内容：</span><span class="sxs-lookup"><span data-stu-id="95667-187">Replace the following in above command:</span></span>
     
-    -   `{version}`：生成的二进制文件的版本
-    -   `{connection string}`：设备连接字符串
-    -   `{number of requests to send}`：要发送到 IoT 中心的消息数
+    -   <span data-ttu-id="95667-188">`{version}`：生成的二进制文件的版本</span><span class="sxs-lookup"><span data-stu-id="95667-188">`{version}`: Version of binaries you have build</span></span>
+    -   <span data-ttu-id="95667-189">`{connection string}`：设备连接字符串</span><span class="sxs-lookup"><span data-stu-id="95667-189">`{connection string}`: Your device connection string</span></span>
+    -   <span data-ttu-id="95667-190">`{number of requests to send}`：要发送到 IoT 中心的消息数</span><span class="sxs-lookup"><span data-stu-id="95667-190">`{number of requests to send}`: Number of messages you want to send to IoT Hub</span></span>
 
--   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
+-   <span data-ttu-id="95667-191">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。</span><span class="sxs-lookup"><span data-stu-id="95667-191">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to observe the messages IoT Hub receives from the application.</span></span>
 
 <a name="Step_3_2_2"/>
-### <a name="322-receive-messages-from-iot-hub"></a>3.2.2 从 IoT 中心接收消息
+### <a name="322-receive-messages-from-iot-hub"></a><span data-ttu-id="95667-192">3.2.2 从 IoT 中心接收消息</span><span class="sxs-lookup"><span data-stu-id="95667-192">3.2.2 Receive messages from IoT Hub</span></span>
 
--   导航到包含接收消息示例 JAR 可执行文件的文件夹。
+-   <span data-ttu-id="95667-193">导航到包含接收消息示例 JAR 可执行文件的文件夹。</span><span class="sxs-lookup"><span data-stu-id="95667-193">Navigate to the folder containing the executable JAR file for the receive message sample.</span></span>
 
-        cd azure-iot-sdks/java/device/samples/handle-messages/target
+        cd azure-iot-sdk-java/device/samples/handle-messages/target
      
--   发出以下命令运行该示例。
+-   <span data-ttu-id="95667-194">发出以下命令运行该示例。</span><span class="sxs-lookup"><span data-stu-id="95667-194">Run the sample by issuing following command.</span></span>
 
-    {{**如果使用 AMQPS 协议：**}}
+    <span data-ttu-id="95667-195">{{**如果使用 AMQPS 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-195">{{**If using AMQPS protocol:**}}</span></span>
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    <span data-ttu-id="95667-196">{{**如果使用 HTTPS 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-196">{{**If using HTTPS protocol:**}}</span></span>
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "https"
 
-    {{**如果使用 MQTT 协议：**}}
+    <span data-ttu-id="95667-197">{{**如果使用 MQTT 协议：**}}</span><span class="sxs-lookup"><span data-stu-id="95667-197">{{**If using MQTT protocol:**}}</span></span>
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "mqtt"
         
-    替换上述命令中的以下内容：
+    <span data-ttu-id="95667-198">替换上述命令中的以下内容：</span><span class="sxs-lookup"><span data-stu-id="95667-198">Replace the following in above command:</span></span>
     
-    -   `{version}`：生成的二进制文件的版本
-    -   `{connection string}`：设备连接字符串
-    -   `{number of requests to send}`：要发送到 IoT 中心的消息数
+    -   <span data-ttu-id="95667-199">`{version}`：生成的二进制文件的版本</span><span class="sxs-lookup"><span data-stu-id="95667-199">`{version}`: Version of binaries you have build</span></span>
+    -   <span data-ttu-id="95667-200">`{connection string}`：设备连接字符串</span><span class="sxs-lookup"><span data-stu-id="95667-200">`{connection string}`: Your device connection string</span></span>
+    -   <span data-ttu-id="95667-201">`{number of requests to send}`：要发送到 IoT 中心的消息数</span><span class="sxs-lookup"><span data-stu-id="95667-201">`{number of requests to send}`: Number of messages you want to send to IoT Hub</span></span>
 
--   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
+-   <span data-ttu-id="95667-202">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。</span><span class="sxs-lookup"><span data-stu-id="95667-202">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to send cloud-to-device messages to the application.</span></span>
 
 
+<a name="NextSteps"></a>
+# <a name="next-steps"></a><span data-ttu-id="95667-203">后续步骤</span><span class="sxs-lookup"><span data-stu-id="95667-203">Next Steps</span></span>
+
+<span data-ttu-id="95667-204">现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。</span><span class="sxs-lookup"><span data-stu-id="95667-204">You have now learned how to run a sample application that collects sensor data and sends it to your IoT hub.</span></span> <span data-ttu-id="95667-205">若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：</span><span class="sxs-lookup"><span data-stu-id="95667-205">To explore how to store, analyze and visualize the data from this application in Azure using a variety of different services, please click on the following lessons:</span></span>
+
+-   <span data-ttu-id="95667-206">[使用 iothub-explorer 管理云设备消息传送]</span><span class="sxs-lookup"><span data-stu-id="95667-206">[Manage cloud device messaging with iothub-explorer]</span></span>
+-   <span data-ttu-id="95667-207">[将 IoT 中心消息保存到 Azure 数据存储]</span><span class="sxs-lookup"><span data-stu-id="95667-207">[Save IoT Hub messages to Azure data storage]</span></span>
+-   <span data-ttu-id="95667-208">[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="95667-208">[Use Power BI to visualize real-time sensor data from Azure IoT Hub]</span></span>
+-   <span data-ttu-id="95667-209">[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="95667-209">[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]</span></span>
+-   <span data-ttu-id="95667-210">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]</span><span class="sxs-lookup"><span data-stu-id="95667-210">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]</span></span>
+-   <span data-ttu-id="95667-211">[使用逻辑应用执行远程监视和发送通知]</span><span class="sxs-lookup"><span data-stu-id="95667-211">[Remote monitoring and notifications with Logic Apps]</span></span>   
+
+<span data-ttu-id="95667-212">[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging</span><span class="sxs-lookup"><span data-stu-id="95667-212">[Manage cloud device messaging with iothub-explorer]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging</span></span>
+<span data-ttu-id="95667-213">[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage</span><span class="sxs-lookup"><span data-stu-id="95667-213">[Save IoT Hub messages to Azure data storage]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage</span></span>
+<span data-ttu-id="95667-214">[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi</span><span class="sxs-lookup"><span data-stu-id="95667-214">[Use Power BI to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi</span></span>
+<span data-ttu-id="95667-215">[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps</span><span class="sxs-lookup"><span data-stu-id="95667-215">[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps</span></span>
+<span data-ttu-id="95667-216">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning</span><span class="sxs-lookup"><span data-stu-id="95667-216">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning</span></span>
+<span data-ttu-id="95667-217">[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps</span><span class="sxs-lookup"><span data-stu-id="95667-217">[Remote monitoring and notifications with Logic Apps]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps</span></span>
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/java-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
+
