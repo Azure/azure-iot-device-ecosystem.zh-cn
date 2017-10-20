@@ -2,10 +2,11 @@
 platform: 
 device: 
 language: c
-ms.openlocfilehash: cd392662f2406a037d660f8d0269ab3544a9732e
-ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.openlocfilehash: f0966a86b8722c600d711a0e60ec169c0dec1ac6
+ms.sourcegitcommit: d8705ede46a36046e956984395b59489a5dd3e77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.lasthandoff: 10/09/2017
 ---
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===
@@ -118,7 +119,7 @@ ms.contentlocale: zh-CN
 
     {{**如果使用 MQTT 协议：**}}
 
-        ~/azure-iot-sdk-c/c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
+        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
