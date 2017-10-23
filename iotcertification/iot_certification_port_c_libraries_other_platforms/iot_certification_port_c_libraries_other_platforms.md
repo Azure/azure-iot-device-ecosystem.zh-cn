@@ -95,7 +95,7 @@
 
 以下文档提供有关如何将 C 物联网 (IoT) 客户端库移植到不现成支持的平台的指南。 该文档包含有关任何特定平台的具体信息。
 
-<https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/porting_guide.md>
+<https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md>
 
 <a name="Step_3_2"></a>
 ## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
@@ -107,7 +107,7 @@
 <a name="Step_3_2_1"></a>
 ### <a name="321-send-device-events-to-iot-hub"></a>3.2.1 向 IoT 中心发送设备事件
 
-1.  如[步骤 2](#Step_2) 中所述启动 DeviceExplorer，然后导航到“数据”选项卡。 从设备 ID 下拉列表中选择创建的设备名称，然后单击“监视”按钮。
+1.  如[步骤 2](#Step_2) 中所述启动 DeviceExplorer，然后导航到“数据”选项卡。从设备 ID 下拉列表中选择创建的设备名称，然后单击“监视”按钮。
 
     ![DeviceExplorer\_Monitor](images/3_2_1_01.png)
 

@@ -16,7 +16,6 @@
     -   [4.2 与工程支持人员共享包](#Step-4-2-Share)
     -   [4.3 后续步骤](#Step-4-3-Next)
 -   [步骤 5：故障排除](#Step-5-Troubleshooting)
-    -   [5.1 E2E 测试案例](#Step-5-1-E2E)
 
 <a name="Introduction"></a>
 # <a name="introduction"></a>介绍
@@ -24,6 +23,7 @@
 **关于本文档**
 
 本文档向 IoT 硬件发布人员提供有关如何使用 Azure IoT SDK 认证已启用 IoT 的硬件的分步指南。 此过程由多个步骤组成，其中包括：
+
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
 -   在设备上生成并部署 Azure IoT SDK
@@ -172,38 +172,11 @@
 
 -   按 Ctrl+X 退出 nano。
 
--   设置环境变量。
-
--   打开 **IOT_DEVICE_PARAMS.TXT** 进行编辑。
-
-        nano azure-iot-sdk-c/tools/iot_hub_e2e_tests_params/iot_device_params.txt
-
--   按如下所述设置该文件中列出的所有变量的值。
-
-    -   **IOTHUB_CONNECTION_STRING：**在[步骤 1](#Step-1-Configure) 中收到的 IoT 中心连接字符串
-
-    -   **IOTHUB_EVENTHUB_CONNECTION_STRING：**事件中心的连接字符串。 该连接字符串的格式应为：
-    
-            Endpoint=[Event Hub-compatible endpoint];SharedAccessKeyName=[IOTHUB_POLICY_NAME];SharedAccessKey=[IOTHUB_POLICY_KEY]
-        
-    -   **IOTHUB_EVENTHUB_CONSUMER_GROUP：**将值设置为 **$Default**
-    -   **IOTHUB_PARTITION_COUNT：**Azure 门户中的分区计数，如下图所示。
-
-        ![](images/azure-portal-partition-count.png)
-
--   在设备上运行以下命令设置环境变量：
-
-        cd ./azure-iot-sdk-c/tools/iot_hub_e2e_tests_params/
-        chmod +x setiotdeviceparametersfore2etests.sh
-        sudo ./setiotdeviceparametersfore2etests.sh
-
--   重新启动 Linux 计算机。
-
 -   使用以下命令生成 SDK。 如果在生成期间遇到任何问题，请遵循故障排除[步骤 5](#Step-5-Troubleshooting)。
 
-        sudo ./azure-iot-sdk-c/build_all/linux/build.sh --run-e2e-tests | tee LogFile.txt
+        sudo ./azure-iot-sdk-c/build_all/linux/build.sh | tee LogFile.txt
 
-    对于 WebSocket 协议，请使用以下命令生成 SDK***
+    对于 WebSocket 协议，请使用以下命令生成 SDK
     
         sudo ./azure-iot-sdk-c/build_all/linux/build.sh --use-websockets
     
@@ -221,7 +194,7 @@
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件：
 
-1.  如[步骤 2](#Step-2-Register) 中所述启动 DeviceExplorer，然后导航到“数据”选项卡。 从设备 ID 下拉列表中选择创建的设备名称，然后单击“监视”按钮。
+1.  如[步骤 2](#Step-2-Register) 中所述启动 DeviceExplorer，然后导航到“数据”选项卡。从设备 ID 下拉列表中选择创建的设备名称，然后单击“监视”按钮。
 
     ![DeviceExplorer\_Monitor](images/3_3_1_01.png)
 
@@ -325,7 +298,7 @@
 
 从设备打包以下项目：
 
-1.  生成运行过程中在日志文件记录的生成日志和 E2E 测试结果。
+1.  在生成运行过程中记录到日志文件中的生成日志。
 
 2.  前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
 
@@ -361,32 +334,5 @@
 
 <a name="Step-5-Troubleshooting"></a>
 # <a name="step-5-troubleshooting"></a>步骤 5：故障排除
-
-<a name="Step-5-1-E2E"></a>
-## <a name="51-e2e-test-cases"></a>5.1 E2E 测试案例
-
-确保已执行以下任务：
-
--   **iot_device_params.txt** 应包含正确的值。 请仔细检查以下各项：
-
-    -   **IOTHUB_EVENTHUB_CONNECTION_STRING** 应采用以下格式
-    
-            Endpoint=[Event Hub-compatible endpoint];SharedAccessKeyName=[IOTHUB_POLICY_NAME];SharedAccessKey=[IOTHUB_POLICY_KEY]
-
-    -   **IOTHUB_PARTITION_COUNT** 应按 Azure 门户中所示包含匹配值。
-    
--   已使用脚本文件 **setiotdeviceparametersfore2etests.sh** 设置环境变量。
-
--   执行上述脚本后已重新启动计算机/设备。
-
--   若要确认是否正确设置了环境变量，请执行以下命令并检查值。
-
-        set | grep IOT
-
-如果在运行 E2E 测试案例时仍旧遇到问题，请与我们共享以下项目：
-
--   iot_device_params.txt
--   `set | grep IOT` 命令的结果
--   生成日志
 
 如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持部门。
