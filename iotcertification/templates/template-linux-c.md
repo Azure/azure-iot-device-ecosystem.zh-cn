@@ -1,12 +1,14 @@
 ---
-platform: 
-device: 
+platform:
+  enter the OS name running on device: 
+device:
+  enter your device name here: 
 language: c
-ms.openlocfilehash: f0966a86b8722c600d711a0e60ec169c0dec1ac6
-ms.sourcegitcommit: d8705ede46a36046e956984395b59489a5dd3e77
+ms.openlocfilehash: ca3899acfb442ecf82a50517884a1ccf9d67e481
+ms.sourcegitcommit: f08ccd5fd86c6ccb5d66495a76144a2f4e2e11ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 03/08/2018
 ---
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===
@@ -56,86 +58,121 @@ ms.lasthandoff: 10/09/2017
 <a name="Build"></a>
 # <a name="step-3-build-and-run-the-sample"></a>步骤 3：生成并运行示例
 
-<a name="Load"></a>
-## <a name="31-build-sdk-and-sample"></a>3.1 生成 SDK 和示例
+## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1 在设备上加载 Azure IoT 代码和必备组件
 
 -   打开 PuTTY 会话并连接到设备。
 
--   在开发上的命令行中发出以下命令，安装用于 C 的 Microsoft Azure IoT 设备 SDK 的必备组件包：{{***保留根据 OS 设置的命令并删除剩余内容。***}}
+-   在设备上的命令行中发出以下命令，安装必备组件包。 根据设备上运行的 OS 选择命令。
 
-    {{**Debian 或 Ubuntu**}}
+    **Debian 或 Ubuntu**
 
         sudo apt-get update
 
-        sudo apt-get install -y curl libcurl4-openssl-dev uuid-dev uuid g++ make cmake git unzip openjdk-7-jre
+        sudo apt-get install -y curl uuid-dev libcurl4-openssl-dev build-essential cmake git
 
-    {{**Fedora**}}
+    **Fedora**
 
         sudo dnf check-update -y
 
-        sudo dnf install libcurl-devel openssl-devel libuuid-devel uuid-devel gcc-c++ make cmake git unzip java-1.7.0-openjdk
+        sudo dnf install uuid-devel libcurl-devel openssl-devel gcc-c++ make cmake git
 
-    {{**其他任何 Linux OS**}}
+    **其他任何 Linux OS**
 
-        Write equivalent commands on the target OS
+        Use equivalent commands on the target OS
 
-    {{***如果需要其他任何软件，请在此处指定用于安装这些软件的命令。***}}
+    ***注意：****此安装过程需要 cmake 2.8.12 或更高版本。* 
+    
+    *可以使用以下命令确认环境中当前安装的版本：*
 
--   在开发板上发出以下命令，将用于 C 的 Microsoft Azure IoT 设备 SDK 下载到开发板：
+        cmake --version
+
+    *此库还需要 gcc 4.9 或更高版本。可以使用以下命令确认环境中当前安装的版本：*
+    
+        gcc --version 
+
+    有关如何升级 Ubuntu 14.04 上的 gcc 版本的信息，请参阅 <http://askubuntu.com/questions/466651/how-do-i-use-the-latest-gcc-4-9-on-ubuntu-14-04>。
+    
+-   在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
         git clone --recursive https://github.com/Azure/azure-iot-sdk-c.git
 
--   使用所选的任何文本编辑器编辑以下文件：{{***根据协议保留文件并删除剩余内容。***}}
+-   验证 ~/azure-iot-sdk-c 目录中现在是否生成了源代码的副本。
 
-    {{**对于 AMQP 协议：**}}
+<a name="Step-3-2-Build"></a>
+## <a name="32-build-the-samples"></a>3.2 生成示例
 
-        azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp.c
+有两个示例：一个用于向 IoT 中心发送消息，另一个用于从 IoT 中心接收消息。 这两个示例支持不同的协议。 在生成示例之前，可以使用所选的协议对示例示例进行修改。 默认情况下，将会针对 AMQP 协议生成示例。  在生成之前，遵照以下说明编辑示例： 
+    
+### <a name="321-send-telemetry-to-iot-hub-sample"></a>3.2.1：向 IoT 中心示例发送遥测数据：
 
-    {{**对于 HTTPS 协议：**}}
+1.  在文本编辑器中打开遥测示例文件
 
-        azure-iot-sdk-c/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http.c
+        nano azure-iot-sdk-c/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample.c     
 
--   找到 IoT 连接字符串的以下占位符：
+2. 找到 IoT 连接字符串的以下占位符：
 
         static const char* connectionString = "[device connection string]";
 
--   将上述占位符替换为在[步骤 1](#Prerequisites) 中获取的设备连接字符串，然后保存更改。
+3. 将上述占位符替换为设备连接字符串。
+    
+4. 找到以下占位符以编辑协议：
 
--   使用以下命令生成 SDK。
+          // Select the Protocol to use with the connection
+        #ifdef USE_AMQP
+            //protocol = AMQP_Protocol_over_WebSocketsTls;
+            protocol = AMQP_Protocol;
+        #endif
+        #ifdef USE_MQTT
+            //protocol = MQTT_Protocol;
+            //protocol = MQTT_WebSocket_Protocol;
+        #endif
+        #ifdef USE_HTTP
+            //protocol = HTTP_Protocol;
+        #endif
+    
+5. 取消注释要测试的协议，并注释其他协议。 若要测试多个协议，请对每个协议重复上述步骤。 
 
-        sudo ./azure-iot-sdk-c/build_all/linux/build.sh
+6. 按 Ctrl+O 保存更改，当 nano 提示是否保存到同一文件时，按 ENTER 即可。
 
-## <a name="32-send-device-events-to-iot-hub"></a>3.2 向 IoT 中心发送设备事件：
+7. 按 Ctrl+X 退出 nano。
 
--   发出以下命令运行示例：{{***保留根据协议设置的命令并删除剩余内容。***}}
+### <a name="321-send-message-from-iot-hub-to-device-sample"></a>3.2.1：将消息从 IoT 中心发送到设备示例：
 
-    {{**如果使用 AMQP 协议：**}}
+1. 在文本编辑器中打开遥测示例文件
 
-        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp
+        nano azure-iot-sdk-c/iothub_client/samples/iothub_ll_c2d_sample/iothub_ll_c2d_sample.c
 
-    {{**如果使用 HTTP 协议：**}}
+2. 遵循上述步骤 1-7 编辑此示例。
 
-        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http
+### <a name="321-build-the-samples"></a>3.2.1：生成示例：
 
-    {{**如果使用 MQTT 协议：**}}
+-   使用以下命令生成 SDK。 如果生成期间遇到任何问题。
 
-        ~/azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt
+        sudo ./azure-iot-sdk-c/build_all/linux/build.sh | tee LogFile.txt
+    
+    ***注意：****应将上述命令中的 LogFile.txt 替换为要将生成输出写入到的文件名。*
+    
+    *build.sh 在“~/azure-iot-sdk-c/”下创建名为“cmake”的文件夹。“cmake”中保存了整个软件的所有编译结果。*
 
--   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
-## <a name="33-receive-messages-from-iot-hub"></a>3.3 从 IoT 中心接收消息
+<a name="Step-3-3-Run"></a>
+## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
 
--   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，还要监视从 Azure IoT 中心发送到客户端的所有消息。
 
-<a name="tips"></a>
-# <a name="tips"></a>提示
+### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件：
 
-- 如果只想要生成序列化程序示例，请运行以下命令：
+-   发出以下命令运行该示例。    
 
-  ```
-  cd ./c/serializer/build/linux
-  make -f makefile.linux all
-  ```
+        azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample
+
+
+### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
+
+-   发出以下命令运行该示例。
+
+        azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_ll_c2d_sample/iothub_ll_c2d_sample
+        
 
 <a name="NextSteps"></a>
 # <a name="next-steps"></a>后续步骤
@@ -158,4 +195,3 @@ ms.lasthandoff: 10/09/2017
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md
-
