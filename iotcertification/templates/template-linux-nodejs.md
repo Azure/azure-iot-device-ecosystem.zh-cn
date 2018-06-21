@@ -1,11 +1,14 @@
 ---
-platform: 
-device: 
+platform:
+  enter the OS name running on device: 
+device:
+  enter your device name here: 
 language: javascript
 ms.openlocfilehash: e23fb7e36e4d59bb9a1c4623ea03c009efc295b6
 ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.locfileid: "19786089"
 ---
 <a name="run-a-simple-javascript-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a><span data-ttu-id="ee349-101">在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JavaScript 示例</span><span class="sxs-lookup"><span data-stu-id="ee349-101">Run a simple JavaScript sample on {enter your device name here} device running {enter the OS name running on device}</span></span>
 ===
@@ -107,7 +110,7 @@ ms.contentlocale: zh-CN
 
      <span data-ttu-id="ee349-146">{{***如果需要其他任何软件，请在此处指定用于安装这些软件的命令。***}}</span><span class="sxs-lookup"><span data-stu-id="ee349-146">{{***If any other software is required, please specify here the command(s) for installing same.***}}</span></span>
      
-    <span data-ttu-id="ee349-147">**注意：**若要测试 Node JS 是否成功安装，请尝试运行以下命令获取其版本信息：</span><span class="sxs-lookup"><span data-stu-id="ee349-147">**Note:** To test successful installation of Node JS, try to fetch its version information by running following command:</span></span>
+    <span data-ttu-id="ee349-147">**注意：** 若要测试 Node JS 是否成功安装，请尝试运行以下命令获取其版本信息：</span><span class="sxs-lookup"><span data-stu-id="ee349-147">**Note:** To test successful installation of Node JS, try to fetch its version information by running following command:</span></span>
 
         node --version
 
@@ -208,12 +211,18 @@ ms.contentlocale: zh-CN
 -   <span data-ttu-id="ee349-186">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]</span><span class="sxs-lookup"><span data-stu-id="ee349-186">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]</span></span>
 -   <span data-ttu-id="ee349-187">[使用逻辑应用执行远程监视和发送通知]</span><span class="sxs-lookup"><span data-stu-id="ee349-187">[Remote monitoring and notifications with Logic Apps]</span></span>   
 
-<span data-ttu-id="ee349-188">[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging</span><span class="sxs-lookup"><span data-stu-id="ee349-188">[Manage cloud device messaging with iothub-explorer]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging</span></span>
-<span data-ttu-id="ee349-189">[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage</span><span class="sxs-lookup"><span data-stu-id="ee349-189">[Save IoT Hub messages to Azure data storage]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage</span></span>
-<span data-ttu-id="ee349-190">[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi</span><span class="sxs-lookup"><span data-stu-id="ee349-190">[Use Power BI to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi</span></span>
-<span data-ttu-id="ee349-191">[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps</span><span class="sxs-lookup"><span data-stu-id="ee349-191">[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps</span></span>
-<span data-ttu-id="ee349-192">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning</span><span class="sxs-lookup"><span data-stu-id="ee349-192">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning</span></span>
-<span data-ttu-id="ee349-193">[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps</span><span class="sxs-lookup"><span data-stu-id="ee349-193">[Remote monitoring and notifications with Logic Apps]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps</span></span>
+[使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[Manage cloud device messaging with iothub-explorer]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
+[将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[Save IoT Hub messages to Azure data storage]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[Use Power BI to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
+[使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
+[Remote monitoring and notifications with Logic Apps]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-device-ecosystem/blob/master/get_started/node-devbox-setup.md
 [lnk-setup-iot-hub]: ../../setup_iothub.md
 [lnk-manage-iot-hub]: ../../manage_iot_hub.md

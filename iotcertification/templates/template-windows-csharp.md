@@ -9,6 +9,7 @@ ms.sourcegitcommit: dab4a191b1927a60143b2b0449b533d716b309e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31437972"
 ---
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a><span data-ttu-id="2d922-101">在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 Csharp 示例</span><span class="sxs-lookup"><span data-stu-id="2d922-101">Run a simple Csharp sample on {enter your device name here} device running {enter the OS name running on device}</span></span>
 ===
