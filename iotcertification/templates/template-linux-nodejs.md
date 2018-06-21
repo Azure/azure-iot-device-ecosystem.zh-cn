@@ -1,11 +1,14 @@
 ---
-platform: 
-device: 
+platform:
+  enter the OS name running on device: 
+device:
+  enter your device name here: 
 language: javascript
 ms.openlocfilehash: e23fb7e36e4d59bb9a1c4623ea03c009efc295b6
 ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.locfileid: "19786089"
 ---
 <a name="run-a-simple-javascript-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JavaScript 示例
 ===
@@ -107,7 +110,7 @@ ms.contentlocale: zh-CN
 
      {{***如果需要其他任何软件，请在此处指定用于安装这些软件的命令。***}}
      
-    **注意：**若要测试 Node JS 是否成功安装，请尝试运行以下命令获取其版本信息：
+    **注意：** 若要测试 Node JS 是否成功安装，请尝试运行以下命令获取其版本信息：
 
         node --version
 

@@ -9,6 +9,7 @@ ms.sourcegitcommit: f08ccd5fd86c6ccb5d66495a76144a2f4e2e11ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/08/2018
+ms.locfileid: "29770478"
 ---
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===

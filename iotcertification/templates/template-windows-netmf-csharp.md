@@ -1,11 +1,14 @@
 ---
-platform: 
-device: 
+platform:
+  enter the OS name running on device: 
+device:
+  enter your device name here: 
 language: csharp
 ms.openlocfilehash: 23fe5475da9cd3eb012a1243f23ed7c1f6a699bd
 ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.locfileid: "19786091"
 ---
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C# 示例
 ===

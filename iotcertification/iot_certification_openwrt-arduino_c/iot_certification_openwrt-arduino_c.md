@@ -41,7 +41,7 @@
 -   用于访问命令行的 SSH 客户端，例如 [PuTTY](http://www.putty.org/)。
 -   需要认证的硬件。
 
-***注意：***如果尚未联系 Microsoft 来申请成为“Azure IoT 认证”合作伙伴，请先提交此[表单](<https://catalog.azureiotsuite.com/>)请求此身份，然后遵照本文中的说明操作。
+***注意：*** 如果尚未联系 Microsoft 来申请成为“Azure IoT 认证”合作伙伴，请先提交此[表单](<https://catalog.azureiotsuite.com/>)请求此身份，然后遵照本文中的说明操作。
 
 
 <a name="Step-1-Prerequisites"></a>
@@ -130,7 +130,7 @@ apt-get install curl libcurl4-openssl-dev uuid-dev uuid g++ make cmake git unzip
 - （可选）输入“Y”生成 Azure IoT SDK。
 
 
-    ***注意：***此安装过程需要 cmake 2.8.12 或更高版本。 
+    ***注意：*** 此安装过程需要 cmake 2.8.12 或更高版本。 
     
     可使用以下命令来验证环境中当前安装的版本：
 
@@ -183,7 +183,7 @@ opkg install ca-certificates_20160104_all.ipk
 ## <a name="35-run-the-sample"></a>3.5：运行示例
 在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
-**注意：**请对本部分中执行的所有操作截图。 在[步骤 4](#Step-4-2-Share) 中需要使用这些屏幕截图。
+**注意：** 请对本部分中执行的所有操作截图。 在[步骤 4](#Step-4-2-Share) 中需要使用这些屏幕截图。
 
 - 运行示例 **/tmp/simplesample_http**
 - 请参阅[管理 IoT 中心][lnk-manage-iothub]，了解用于监视设备向 IoT 中心发送的消息以及向设备发送命令的工具的信息。
@@ -222,7 +222,7 @@ opkg install ca-certificates_20160104_all.ipk
 
 4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：***提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
+    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
  
 
 <a name="Step-4-3-Next"></a>
