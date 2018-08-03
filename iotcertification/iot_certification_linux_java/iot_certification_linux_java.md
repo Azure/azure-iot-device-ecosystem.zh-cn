@@ -221,6 +221,11 @@
         cd azure-iot-sdk-java/device
         mvn install | tee JavaSDK_Build_Logs.txt
 
+    **注意：** 我们发现，如果使用最新版本的 JDK 8（编写本文档时，最新版本为 1.8.0_65），在运行上述 mvn 安装时，某些单元测试可能会失败。 但是，在较低的版本中可以正常运行。 如果发生这种情况，请使用以下命令跳过运行单元测试：
+
+        cd  azure-iot-sdk-java/device/iot-device-samples
+        mvn install -DskipTests
+
 <a name="Step_3_2"></a>
 ## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
 
@@ -361,7 +366,7 @@
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享
 
-1.  转到“合作伙伴仪表板”。[](<https://catalog.azureiotsuite.com/devices>)
+1.  转到[合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
 2.  单击设备右上角的“上传”图标。
 
     ![Share\_Results\_upload\_icon](images/4_2_01.png)
