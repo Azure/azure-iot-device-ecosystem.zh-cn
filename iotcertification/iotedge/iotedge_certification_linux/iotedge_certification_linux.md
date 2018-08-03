@@ -97,7 +97,11 @@
 ## <a name="31-edge-runtimeenabled-mandatory"></a>3.1：Edge RuntimeEnabled（必需）
 级别总数：1
 
-**说明：** 包含 Azure IoT Edge 运行时和依赖项的设备。从[此链接](https://aka.ms/iotedgeruntime)下载 Azure IoT Edge 运行时
+**说明：** 一个包含 Azure IoT Edge 运行时和依赖项的设备。请从以下途径下载 Azure IoT Edge 运行时：
+
+对于 Linux (ARM32V7/armhf)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-linux-arm.md)安装运行时。
+
+对于 Linux x64 (Intel/AMD)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-linux.md)安装运行时。
 
 **要求详细信息：**
 

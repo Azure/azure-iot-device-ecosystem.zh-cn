@@ -96,10 +96,15 @@
 
 级别总数：1
 
-**说明：** 包含 Azure IoT Edge 运行时和依赖项的设备。从[此链接]( https://aka.ms/iotedgeruntime)下载 Azure IoT Edge 运行时。
+**说明：** 一个包含 Azure IoT Edge 运行时和依赖项的设备。请从以下途径下载 Azure IoT Edge 运行时：
+
+对于 Windows IoT Core，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-core.md)安装运行时。
+
+对于要用于 Linux 容器的 Windows x64 (AMD/Intel)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-windows-with-linux.md)安装运行时。
+
+对于要用于 Windows 容器的 Windows x64 (AMD/Intel)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-windows-with-windows.md)安装运行时。
 
 **要求详细信息：**
-
 
 预装以下组件，或者由分销点在设备上为客户安装这些组件：
 
