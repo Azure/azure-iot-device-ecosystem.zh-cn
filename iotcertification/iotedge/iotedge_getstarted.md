@@ -43,6 +43,8 @@ IoT Edge 认证计划实行基于功能的认证概念。 每个功能具有自�
 
 请在 [Securing the intelligent edge](https://azure.microsoft.com/en-us/blog/securing-the-intelligent-edge/)（保护智能边缘）博客文章中了解 Microsoft 通过哪种方式为 Azure IoT Edge 设备提供安全平台。 Microsoft 正在致力于定义安全要求方面的验证过程，包括审查第三方验证实验室的使用。
 
+请单击[此处](https://github.com/Azure/azure-iotedge/blob/master/LICENSE)以查看 IoT Edge 运行时的 MICROSOFT 软件许可条款
+
 # <a name="next-steps"></a>后续步骤
 
 现在，你已了解正在扩展为支持 Azure IoT Edge 设备的 Azure IoT 认证计划的概述。
