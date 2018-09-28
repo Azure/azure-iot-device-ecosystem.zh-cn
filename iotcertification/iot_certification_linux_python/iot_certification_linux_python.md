@@ -9,12 +9,12 @@
 -   [步骤 2：注册设备](#Step-2-Register)
 -   [步骤 3：使用 Python 客户端库生成并验证示例](#Step-3-Build)
     -   [3.1 在设备上加载 Azure IoT 代码和必备组件](#Step-3-1-Load)
-    -   [3.2 生成示例](#Step-3-2-Build)
-    -   [3.3 运行并验证示例](#Step-3-3-Run)
--   [步骤 4：打包并共享](#Step-4-Package_Share)
-    -   [4.1 打包生成日志和示例测试结果](#Step-4-1-Package)
-    -   [4.2 与工程支持人员共享包](#Step-4-2-Share)
-    -   [4.3 后续步骤](#Step-4-3-Next)
+    -   [3.2：生成示例](#Step-3-2-Build)
+    -   [3.3：运行并验证示例](#Step-3-3-Run)
+-   [步骤 4：打包和共享](#Step-4-Package_Share)
+    -   [4.1：打包生成日志和示例测试结果](#Step-4-1-Package)
+    -   [4.2：与工程支持人员共享包](#Step-4-2-Share)
+    -   [4.3：后续步骤](#Step-4-3-Next)
 -   [步骤 5：故障排除](#Step-5-Troubleshooting)
 
 <a name="Introduction"></a>
@@ -22,10 +22,10 @@
 
 **关于本文档**
 
-本文档向 IoT 硬件发布人员提供有关如何使用 Azure IoT SDK 认证已启用 IoT 的硬件的分步指南。 此过程由多个步骤组成，其中包括：
+本文档向 IoT 硬件发行商逐步说明如何使用 Azure IoT SDK 来认证支持 IoT 的硬件。 此过程由多个步骤构成，具体包括：
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 -   打包并共享日志
 
 **准备**
@@ -36,16 +36,16 @@
 
 -   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python) GitHub 专用存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
--   用于认证的所需硬件。
+-   需要认证的硬件。
 
-***注意：****如果你尚未咨询 Microsoft 如何成为 Azure 认证的 IoT 合作伙伴，请先提交此[表单](<https://iotcert.cloudapp.net/>)来提出请求，然后遵照本文中的说明。*
+***注意：*** 如果尚未联系 Microsoft 来申请成为“Azure IoT 认证”合作伙伴，请先提交此[表单](<https://iotcert.cloudapp.net/>)请求此身份，然后遵照本文中的说明操作。
 
 <a name="Step-1-Configure"></a>
 # <a name="step-1-sign-up-to-azure-iot-hub"></a>步骤 1：注册 Azure IoT 中心
 
-遵照[此处](https://account.windowsazure.com/signup?offer=ms-azr-0044p)所述的说明了解如何注册 Azure IoT 中心服务。 在注册过程中，你将收到连接字符串。
+遵照[此处](https://account.windowsazure.com/signup?offer=ms-azr-0044p)的说明了解如何注册 Azure IoT 中心服务。 在注册过程中，将会收到连接字符串。
 
--   **IoT 中心连接字符串**：IoT 中心的连接字符串示例如下：
+-   **IoT 中心连接字符串**：下面显示了 IoT 中心连接字符串的示例：
 
          HostName=[YourIoTHubName];SharedAccessKeyName=[YourAccessKeyName];SharedAccessKey=[YourAccessKey]
 
@@ -57,14 +57,14 @@
 <a name="Step-3-Build"></a>
 # <a name="step-3-build-and-validate-the-sample-using-python-libraries"></a>步骤 3：使用 Python 库生成并验证示例
 
-本部分逐步讲解如何在运行 Linux 操作系统的设备上生成、部署和验证 IoT 客户端 SDK。 我们将在设备上安装必备组件。 完成后，将生成并部署 IoT 客户端 SDK，然后验证使用 Azure IoT SDK 进行 IoT 认证所需的示例测试。
+本部分逐步讲解如何在运行 Linux 操作系统的设备上生成、部署和验证 IoT 客户端 SDK。 我们将在设备上安装所需的必备组件。 完成后，将会生成并部署 IoT 客户端 SDK，并使用 Azure IoT SDK 来验证 IoT 认证所需的示例测试。
 
 <a name="Step-3-1-Load"></a>
-## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1 在设备上加载 Azure IoT 代码和必备组件
+## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1：在设备上加载 Azure IoT 代码和必备组件
 
 -   打开 PuTTY 会话并连接到设备。
 
--   在设备上的命令行中发出以下命令，安装必备组件包。 根据设备上运行的 OS 选择命令。
+-   通过设备上的命令行发出以下命令，安装必备的包。 根据设备上运行的 OS 选择命令。
 
     **Debian 或 Ubuntu**
 
@@ -82,17 +82,17 @@
 
         Use equivalent commands on the target OS
 
-    ***注意：****此安装过程需要 cmake 2.8.12 或更高版本。* 
+    ***注意：*** 此安装过程需要 cmake 2.8.12 或更高版本。 
     
-    *可以使用以下命令确认环境中当前安装的版本：*
+    可使用以下命令来验证环境中当前安装的版本：
 
         cmake --version
 
-    *此库还需要 gcc 4.9 或更高版本。可以使用以下命令确认环境中当前安装的版本：*
+    此库还需要 gcc 4.9 或更高版本。可使用以下命令来验证环境中当前安装的版本：
     
         gcc --version 
 
-    *有关如何在 Ubuntu 14.04 上升级 gcc 版本的信息，请参阅 <http://askubuntu.com/questions/466651/how-do-i-use-the-latest-gcc-4-9-on-ubuntu-14-04>。*
+    有关如何升级 Ubuntu 14.04 上的 gcc 版本的信息，请参阅 <http://askubuntu.com/questions/466651/how-do-i-use-the-latest-gcc-4-9-on-ubuntu-14-04>。
 
     *此库还需要 Python 版本 2.7.x。可以使用以下命令确认环境中当前安装的版本：*
     
@@ -120,7 +120,7 @@
 <a name="Step-3-3-Run"></a>
 ## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
 
-在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，还要监视从 Azure IoT 中心发送到客户端的所有消息。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，还要监视从 Azure IoT 中心发送到客户端的所有消息。
 
 -   执行以下命令导航到 samples 文件夹：
 
@@ -142,7 +142,7 @@
 
 -   按 Ctrl+X 退出 nano。
 
-**注意：** 请为本部分中执行的所有操作创建屏幕截图。 [步骤 4](#Step-4-2-Share) 中需要用到这些屏幕截图
+**注意：** 请为本部分中执行的所有操作创建屏幕截图。 在[步骤 4](#Step-4-2-Share) 中需要使用这些屏幕截图。
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件：
 
@@ -208,49 +208,77 @@
     
     ![MessageSend\_terminal](images/python_mqtt_receive_message_device.png)
 
+### <a name="333-verify-device-configuration"></a>3.3.3 验证设备配置
+
+-   在运行 `platform_data.py` 之前，请安装以下模块
+
+    **Debian 或 Ubuntu** 
+
+        sudo apt-get install python-requests
+        sudo apt-get install python-netifaces
+
+    **Fedora**
+
+        sudo dnf install python-requests
+        sudo dnf install python-netifaces
+
+-   通过执行以下命令导航到 tools 文件夹：
+
+        cd azure-iot-sdk-python/Tools
+
+-   在设备上运行以下命令
+        
+        python platform_data.py
+
+    ![deviceinfo\_screenshot](images/python_modified_output.PNG)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Step-4-1-Package) 所述上传该屏幕截图。
+
 <a name="Step-4-Package_Share"></a>
-# <a name="step-4-package-and-share"></a>步骤 4：打包并共享
+# <a name="step-4-package-and-share"></a>步骤 4：打包和共享
 
 <a name="Step-4-1-Package"></a>
-## <a name="41-package-build-logs-and-sample-test-results"></a>4.1 打包生成日志和示例测试结果
+## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
 
-从设备打包以下项目：
+打包设备中的以下项目：
 
-1.  在生成运行过程中记录到日志文件中的生成日志。
+1.  在生成运行期间记录在日志文件中的生成日志。
 
-2.  前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
+2.  前面“向 IoT 中心发送设备事件”部分中显示的所有屏幕截图。
 
-3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
+3.  前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-python.md>)提供的模板创建特定于设备的说明。
+4.  前面“设备配置”部分中的所有屏幕截图。
+
+5.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-python.md>)提供的模板创建设备特定的说明。
     
-    有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
+    有关说明的大致形式的指导，请参阅[此](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step-4-2-Share"></a>
-## <a name="42-share-package-with-microsoft-azure-iot-team"></a>4.2 与 Microsoft Azure IoT 团队共享包
+## <a name="42-share-package-with-microsoft-azure-iot-team"></a>4.2：与 Microsoft Azure IoT 团队成员共享包
 
-1.  转到“合作伙伴仪表板”。[](<https://catalog.azureiotsuite.com/devices>)
-2.  单击设备右上角的“上载”图标。
+1.  转到[合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
+2.  单击设备右上角的“上传”图标。
 
     ![Share\_Results\_upload\_icon](images/4_2_01.png)
 
-3.  此时将打开上载对话框。 单击“上载”按钮浏览文件。
+3.  此时会打开上传对话框。 单击“上传”按钮浏览文件。
 
     ![Share\_Results\_upload\_dialog](images/4_2_02.png)
 
-    可以上载同一个设备的多个文件。
+    可以上传同一设备的多个文件。
 
-4.  上载所有文件后，单击“提交审查”按钮。
+4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：****提交文件供审查后，若要更改/删除文件，请与 iotcert 团队联系。*
+    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
  
 
 <a name="Step-4-3-Next"></a>
-## <a name="43-next-steps"></a>4.3 后续步骤
+## <a name="43-next-steps"></a>4.3：后续步骤
 
-与我们共享文档后，我们将在 48 到 72 个小时（营业时间）内与你取得联系，到时会告知后续步骤。
+与我们共享文档后，我们将在接下来的 48 到 72 个工作小时内与你取得联系，以提供后续步骤。
 
 <a name="Step-5-Troubleshooting"></a>
 # <a name="step-5-troubleshooting"></a>步骤 5：故障排除
 
-如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持部门。
+如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持人员。

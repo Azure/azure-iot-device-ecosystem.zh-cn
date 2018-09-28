@@ -27,15 +27,15 @@
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
 -   在设备上生成和部署 Azure IoT SDK
--   打包和共享日志
+-   打包并共享日志
 
 **准备**
 
-在执行以下任何步骤之前，请先仔细阅读每个过程的每个步骤，确保对整个过程有全面的了解。
+在执行以下任一步骤之前，请仔细阅读每个过程的每个步骤，确保全盘了解整个过程。
 
 在开始过程前，应已准备好以下项目：
 
--   一台装有 GitHub 的计算机，并且能够访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 公共存储库。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-c](https://github.com/Azure/azure-iot-sdk-c) GitHub 公共存储库的计算机。
 -   用于访问命令行的 SSH 客户端，例如 [PuTTY](http://www.putty.org/)。
 -   需要认证的硬件。
 
@@ -73,17 +73,17 @@
 
 2.  在“配置”选项卡下添加连接信息，并单击“更新”按钮。
 
-3.  使用以下说明创建设备并将其注册到 IoT 中心。
+3.  根据以下说明创建设备并将其注册到 IoT 中心。
 
-    a. 单击“管理”选项卡。
+    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。
 
-    b. 列表中会显示已注册的设备。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次执行此操作，则不应检索任何信息。
+    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
 
     c. 单击“创建”按钮创建设备 ID 和密钥。
 
-    d. 成功创建后，设备会列在 DeviceExplorer 中。
+    d.单击“下一步”。 成功创建设备后，该设备将列在 DeviceExplorer 中。
 
-    e. 右键单击该设备，并从上下文菜单中选择“复制所选设备的连接字符串”。
+    e.在“新建 MySQL 数据库”边栏选项卡中，接受法律条款，然后单击“确定”。 右键单击该设备，然后从上下文菜单中选择“复制所选设备的连接字符串”。
 
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
@@ -232,6 +232,50 @@
 
     ![MessageSend\_terminal](images/3_3_1_07.png)
     
+### <a name="333-verify-device-configuration"></a>3.3.3 验证设备配置
+
+-   请通过执行以下命令安装 python。
+
+    **Debian 或 Ubuntu**
+
+        sudo apt-get install python
+
+    **Fedora**
+
+        sudo dnf install python
+
+-    *此库还需要 Python 版本 2.7.x。* 可使用以下命令来验证环境中当前安装的版本：
+    
+          python --version
+
+-   在运行 `platform_data.py` 之前，请安装以下模块
+
+    **Debian 或 Ubuntu** 
+
+        sudo apt-get install python-requests
+        sudo apt-get install python-netifaces
+
+    **Fedora**
+
+        sudo dnf install python-requests
+        sudo dnf install python-netifaces
+
+-   发出以下命令下载 SDK：
+
+        git clone https://github.com/Azure/azure-iot-sdk-python.git
+
+-   通过执行以下命令导航到 tools 文件夹：
+
+        cd azure-iot-sdk-python/Tools
+
+-   在设备上运行以下命令
+        
+        python platform_data.py
+
+    ![deviceinfo\_screenshot](images/python_modified_output.PNG)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Step-4-1-Package) 所述上传该屏幕截图。
+
 <a name="Step-4-Package_Share"></a>
 # <a name="step-4-package-and-share"></a>步骤 4：打包和共享
 
@@ -246,7 +290,9 @@
 
 3.  前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
 
-4.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-c.md>)提供的模板创建设备特定的说明。
+4.  前面“设备配置”部分中的所有屏幕截图。
+
+5.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-c.md>)提供的模板创建设备特定的说明。
     
     有关说明的大致形式的指导，请参阅[此](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 

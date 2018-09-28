@@ -345,8 +345,52 @@
     **如果使用 MQTT 协议：**  
     ![Terminal\_MQTT\_message\_received](images/terminal_mqtt_message_received.png)
 
+### <a name="323-verify-device-configuration"></a>3.2.3 验证设备配置
+
+-   请通过执行以下命令安装 python。
+
+    **Debian 或 Ubuntu**
+
+        sudo apt-get install python
+
+    **Fedora**
+
+        sudo dnf install python
+
+-    *此库还需要 Python 版本 2.7.x。* 可使用以下命令来验证环境中当前安装的版本：
+    
+          python --version
+
+-   在运行 `platform_data.py` 之前，请安装以下模块
+
+    **Debian 或 Ubuntu** 
+
+        sudo apt-get install python-requests
+        sudo apt-get install python-netifaces
+
+    **Fedora**
+
+        sudo dnf install python-requests
+        sudo dnf install python-netifaces
+
+-   发出以下命令下载 SDK：
+
+        git clone https://github.com/Azure/azure-iot-sdk-python.git
+
+-   通过执行以下命令导航到 tools 文件夹：
+
+        cd azure-iot-sdk-python/Tools
+
+-   在设备上运行以下命令
+        
+        python platform_data.py
+
+    ![deviceinfo\_screenshot](images/python_modified_output.PNG)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Step_4_1) 所述上传该屏幕截图。
+
 <a name="Step_4"></a>
-# <a name="step-4-package-and-share"></a>步骤 4：打包并共享
+# <a name="step-4-package-and-share"></a>步骤 4：打包和共享
 
 <a name="Step_4_1"></a>
 ## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
@@ -359,7 +403,9 @@
 
 3.  前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
 
-4.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-java.md>)提供的模板创建设备特定的说明。
+4.  前面“设备配置”部分中的所有屏幕截图。
+
+5.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-linux-java.md>)提供的模板创建设备特定的说明。
     
     有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
