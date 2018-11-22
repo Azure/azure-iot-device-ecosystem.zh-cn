@@ -118,6 +118,7 @@
 **测试步骤：**
 
 -   公司必须将 Edge 设备寄送到 Microsoft 进行额外的验证。 当公司提交设备进行 Azure IoT Edge 认证时，我们会发送详细说明和我们所需的信息。
+    -   注意：无需将 Windows Server 2019 认证设备发送到 Microsoft 进行额外验证。 如果 Windows Server 2019 设备不符合 Azure IoT Edge 认证计划要求，Microsoft 保留从 Azure IoT 设备目录中删除设备的权利。 请参阅详细的[计划协议](https://catalogstorageprod.blob.core.windows.net/devicecatalogimageserver/Program%20Agreement.pdf)。
 -   公司需确保 Edge 设备上同时预装了 Azure IoT Edge 安全守护程序和 Moby 容器管理系统
     -   Microsoft 会检查 Edge 设备上是否附带 Azure IoT Edge 安全守护程序
     -   Microsoft 会检查 Edge 设备上是否附带 Moby 容器管理系统

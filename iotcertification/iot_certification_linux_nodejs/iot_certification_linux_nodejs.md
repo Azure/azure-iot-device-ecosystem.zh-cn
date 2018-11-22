@@ -163,14 +163,6 @@
 
     将 `<iothub_connection_string>` 占位符替换为在[步骤 1](#Configure) 中获取的 IoT 中心连接字符串。    
 
--   运行以下命令 
-
-        cd ~/azure-iot-sdk-node
-        build/dev-setup.sh
-        build/build.sh | tee LogFile.txt
-
-    ***注意：****应将上述命令中的 LogFile.txt 替换为要将生成输出写入到的文件名。*
-
 -   安装 npm 包以运行示例。
 
         cd ~/azure-iot-sdk-node/device/samples
