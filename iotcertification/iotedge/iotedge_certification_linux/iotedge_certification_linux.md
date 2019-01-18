@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fbbf749ac394d16666bc764cfaa6628c37d57ace
+ms.sourcegitcommit: cc21e59f9c0061e34c6c86628317ebecb001cae0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52295203"
+---
 <a name="how-to-certify-iot-edge-devices-running-linux"></a>如何认证运行 Linux 的 IoT Edge 设备
 ===
 ---
@@ -11,7 +19,7 @@
     -   [3.1：IoT Edge 运行时](#Step-3-1-IoTEdgeRunTime)
     -   [3.2：设备管理](#Step-3-2-DeviceManagement)
     -   [3.3：安全性](#Step-3-3-Security)
--   [步骤 4：打包和共享](#Step-4-Package_Share)
+-   [步骤 4：打包并共享](#Step-4-Package_Share)
     -   [4.1：在原始包装中打包生成日志和设备](#Step-4-1-Package-build)
     -   [4.2：与 Microsoft Azure IoT 团队成员共享包](#Step-4-2-Share-Package)
     -   [4.3：后续步骤](#Step-4-3-Next-Step)
@@ -74,9 +82,9 @@
 
 3.  根据以下说明创建设备并将其注册到 IoT 中心。
 
-    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。
+    a. 单击“管理”选项卡。
 
-    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
+    b. 注册的设备将显示在列表中。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
 
     c. 单击“创建”按钮创建设备 ID 和密钥。
 
@@ -95,7 +103,7 @@
 
 <a name="Step-3-1-IoTEdgeRunTime"></a>
 ## <a name="31-edge-runtimeenabled-mandatory"></a>3.1：Edge RuntimeEnabled（必需）
-级别总数：1
+*级别总数：1*
 
 **说明：** 一个包含 Azure IoT Edge 运行时和依赖项的设备。请从以下途径下载 Azure IoT Edge 运行时：
 
@@ -128,7 +136,7 @@
 
 <a name="Step-3-2-DeviceManagement"></a>
 ## <a name="32-device-management-mandatory"></a>3.2：设备管理（必需）
-级别总数：1 
+*级别总数：1* 
 
 **先决条件：** 设备连接。
 
@@ -145,30 +153,30 @@
 
 **手动测试 1：** 
 
-1.  如果该组件是在设备分销点安装的，请将有关安装组件的分步说明放入 readme.md 文件，并将其随附在提交内容中
+1.  如果该组件是在设备分销点安装的，请将有关安装组件的分步说明放入 readme.md 文件，并将其随附在提交内容中。 如果使用的是 Microsoft SDK 示例，请使用此[链接](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update#run-the-sample)
 2.  将设备连接到 Azure IoT 中心
 3.  使用 Windows 10 问题步骤记录器（或类似的程序）捕获以下步骤
 
-    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 使用 Azure 门户设置设备孪生所需属性，以便启动设备来安装新的更新。
+    a. 使用 Azure 门户设置设备孪生所需属性，以便启动设备来安装新的更新。
 
-    **注意：** 可以编程方式执行此步骤，而不使用门户（如果有此偏好）。
+    **注意：** 如果你喜欢，也可以采用编程方式执行此步骤，而不使用门户。
 
-    b.保留“数据库类型”设置，即设置为“共享”。 允许设备更新并通过设备孪生报告属性来报告状态。
+    b. 允许设备更新并通过设备孪生报告属性来报告状态。
 
     c. 捕获有关每项状态更改的整个设备孪生 JSON 内容。
 4.  在提交内容中包含通过问题步骤记录器保存的 .zip 文件。
 
 **手动测试 2：**
 
-1.  如果该组件是在设备分销点安装的，请将有关安装组件的分步说明放入 readme.md 文件，并将其随附在提交内容中
+1.  如果该组件是在设备分销点安装的，请将有关安装组件的分步说明放入 readme.md 文件，并将其随附在提交内容中。 如果使用的是 Microsoft SDK 示例，请使用此[链接](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-device-management-get-started)
 2.  将设备连接到 Azure IoT 中心
 3.  使用 Windows 10 问题步骤记录器（或类似的程序）捕获以下步骤
 
-    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 使用 Azure 门户向设备发送一个直接方法。 在 .txt 文件中捕获直接方法名称、有效负载和结果。
+    a. 使用 Azure 门户向设备发送一个直接方法。 在 .txt 文件中捕获直接方法名称、有效负载和结果。
 
-    **注意：** 可以编程方式执行此步骤，而不使用门户（如果有此偏好）。
+    **注意：** 如果你喜欢，也可以采用编程方式执行此步骤，而不使用门户。
 
-    b.保留“数据库类型”设置，即设置为“共享”。  捕获整个设备孪生 JSON 内容。 它应该包括一个显示上次重新启动时间的报告属性。
+    b.  捕获整个设备孪生 JSON 内容。 它应该包括一个显示上次重新启动时间的报告属性。
 4.  在提交内容中包含通过问题步骤记录器保存的 .zip 文件。
 
 <a name="Step-3-3-Security"></a>
@@ -216,7 +224,7 @@
 -   通用准则 EAL 4+ 
     
 <a name="Step-4-Package_Share"></a>
-# <a name="step-4-package-and-share"></a>步骤 4：打包和共享
+# <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 <a name="Step-4-1-Package-build"></a>
 ## <a name="41-package-build-logs-and-device-in-original-box"></a>4.1：在原始包装中打包生成日志和设备 
 打包设备中的以下项目：
@@ -241,7 +249,7 @@
 
 4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
+    ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
 
 <a name="Step-4-3-Next-Step"></a>
 ## <a name="43-next-steps"></a>4.3：后续步骤
