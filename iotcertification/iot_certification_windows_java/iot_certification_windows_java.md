@@ -10,10 +10,11 @@
 -   [步骤 3：使用 Java 客户端库生成并验证示例](#Step_3)
     -   [3.1 在设备上安装 Azure IoT 设备 SDK 和必备组件](#Step_3_1)
     -   [3.2 运行并验证示例](#Step_3_2)
+    -   [3.3 验证设备配置](#Step3_3)
 -   [步骤 4：打包并共享](#Step_4)
-    -   [4.1 打包生成日志和示例测试结果](#Step_4_1)
+    -   [4.1：打包生成日志和示例测试结果](#Step_4_1)
     -   [4.2 与 Azure IoT 认证团队共享](#Step_4_2)
-    -   [4.3 后续步骤](#Step_4_3)
+    -   [4.3：后续步骤](#Step_4_3)
 -   [步骤 5：故障排除](#Step_5)
 
 <a name="Introduction"></a>
@@ -24,7 +25,7 @@
 本文档向 IoT 硬件发布人员提供有关如何使用 Azure IoT Java SDK 认证已启用 IoT 的硬件的分步指南。 此过程由多个步骤组成，其中包括： 
 -   配置 Azure IoT 中心 
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 -   打包并共享日志
 
 **准备**
@@ -35,33 +36,33 @@
 
 -   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-java](https://github.com/Azure/azure-iot-sdk-java) GitHub 公共存储库的计算机。
 -   配置 SSH 客户端（如 [PuTTY](http://www.putty.org/)），以便能够访问命令行。
--   用于认证的所需硬件。
+-   需要认证的硬件。
 
 <a name="Step_1"></a>
 # <a name="step-1-sign-up-to-azure-iot-hub"></a>步骤 1：注册 Azure IoT 中心
 
-遵照[此处](https://account.windowsazure.com/signup?offer=ms-azr-0044p)所述的说明了解如何注册 Azure IoT 中心服务。
+遵照[此处](https://account.windowsazure.com/signup?offer=ms-azr-0044p)的说明了解如何注册 Azure IoT 中心服务。
 
-在注册过程中，你将收到连接字符串。 
+在注册过程中，将会收到连接字符串。 
 
--   **IoT 中心连接字符串**：IoT 中心的连接字符串示例如下：
+-   **IoT 中心连接字符串**：下面显示了 IoT 中心连接字符串的示例：
 
          HostName=[YourIoTHubName];SharedAccessKeyName=[YourAccessKeyName];SharedAccessKey=[YourAccessKey]
 
 <a name="Step_2"></a>
 # <a name="step-2-register-device"></a>步骤 2：注册设备
 
-在本部分，将要使用 DeviceExplorer 注册设备。 DeviceExplorer 是与 Azure IoT 中心对接的 Windows 应用程序，可执行以下操作：
+在本部分，我们将使用 DeviceExplorer 注册设备。 DeviceExplorer 是与 Azure IoT 中心对接的 Windows 应用程序，可执行以下操作：
 
 -   设备管理
     -   创建新设备
-    -   列出现有设备，公开设备中心内存储的设备属性
-    -   可更新设备密钥
-    -   可删除设备
+    -   列出现有设备并公开设备中心存储的设备属性
+    -   提供更新设备密钥的功能
+    -   提供删除设备的功能
 -   监视设备的事件
--   向设备发送消息
+-   将消息发送到设备
 
-若要运行 DeviceExplorer 工具，请根据[步骤 1](#Step_1) 中所述使用以下配置字符串：
+若要运行 DeviceExplorer 工具，请使用[步骤 1](#Step_1) 中所述的以下配置字符串：
 
 -   IoT 中心连接字符串
     
@@ -69,13 +70,13 @@
 **步骤：**
 1.  单击[此处](<https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md>)下载并安装 DeviceExplorer。
 
-2.  添加“配置”选项卡下面的连接信息，然后单击“更新”按钮。
+2.  在“配置”选项卡下添加连接信息，并单击“更新”按钮。
 
 3.  根据以下说明创建设备并将其注册到 IoT 中心。
 
     a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。
 
-    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果你的设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
+    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
 
     c. 单击“创建”按钮创建设备 ID 和密钥。
 
@@ -102,11 +103,11 @@
 <a name="Step_3_1_1"></a>
 ### <a name="311--install-java-jdk-18-and-set-up-environment-variables"></a>3.1.1 安装 Java JDK 1.8 并设置环境变量
         
-1.  有关下载和安装说明，请访问：<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+1.  有关下载项和安装说明，请访问此处：<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
        
 2.  请确保 `PATH` 环境变量包含 jdk1.8.x\bin 目录的完整路径。 （示例：c:\Program Files\Java\jdk1.8.0_65）
         
-3.  请确保 `JAVA_HOME` 环境变量包含 jdk1.8.x 目录的完整路径。 （示例：JAVA_HOME=c:\Program Files\Java\jdk1.8.0_65）
+3.  请确保 `JAVA_HOME` 环境变量包含 jdk1.8.x 目录的完整路径。 （示例：JAVA_HOME=c:\Program Files\Java\jdk1.8.0_65)
 
 4.  可以通过重新启动控制台并运行 `java -version`，来测试是否已正确设置 PATH 变量。
 
@@ -114,16 +115,16 @@
 ### <a name="312--install-maven-and-set-up-environment-variables"></a>3.1.2 安装 Maven 并设置环境变量
 建议使用 Maven 3 安装用于 Java 的 Azure IoT 设备 SDK。
 
-1.  有关 Maven 3 的下载和安装说明，请访问：<https://maven.apache.org/download.cgi>
+1.  有关 Maven 3 的下载项和安装说明，请访问此处：<https://maven.apache.org/download.cgi>
 
-2.  请确保 PATH 环境变量包含 apache-maven-3.x.x\bin 目录的完整路径。 （示例：F:\Setups\apache-maven-3.3.3\bin）。 Apache maven 3.x.x 目录是 Maven 3 的安装位置。
+2.  请确保 PATH 环境变量包含 apache-maven-3.x.x\bin 目录的完整路径。 （示例：F:\Setups\apache-maven-3.3.3\bin)。 Apache maven 3.x.x 目录是 Maven 3 的安装位置。
 
 2.  可以通过重新启动控制台并运行 `mvn --version.`，来验证是否已正确设置用于运行 Maven 3 的环境变量
   
 <a name="Step_3_1_3"></a>
 ### <a name="313--install-git"></a>3.1.3 安装 GIT
 
--   有关下载和安装说明，请访问：<http://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
+-   有关下载项和安装说明，请访问此处：<http://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
 
 <a name="Step_3_1_4"></a>
 ### <a name="314--build-qpid-jms"></a>3.1.4 生成 Qpid JMS
@@ -138,7 +139,7 @@
         mvn install
         cd ..
 
-    ***注意：****我们发现，如果使用最新版本的 JDK 8（编写本文档时，最新版本为 1.8.0_65），在运行上述 `mvn install` 时，某些单元测试可能会失败。但是，在较低的版本中可以正常运行。如果发生这种情况，请使用以下命令跳过运行单元测试：*
+    ***注意：****我们发现，如果使用最新版本的 JDK 8（编写本文档时，最新版本为 1.8.0_65）如上所示运行 `mvn install` 时，某些单元测试可能会失败。但是，在较低的版本中可以正常运行。如果发生这种情况，请使用以下命令跳过运行单元测试：*
     
         mvn install -DskipTests
 
@@ -163,16 +164,16 @@
 <a name="Step_3_2"></a>
 ## <a name="32-run-and-validate-the-samples"></a>3.2 运行并验证示例
 
-在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，还要监视从 Azure IoT 中心发送到客户端的所有消息。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
-***注意：****请为本部分中执行的所有操作创建屏幕截图。[步骤 4](#Step_4_2) 中需要用到这些屏幕截图。*
+***注意：****请对本部分中执行的所有操作进行屏幕截图。* 在[步骤 4](#Step_4_2) 中需要使用这些屏幕截图。
 
 <a name="Step_3_2_1"></a>
 ### <a name="321-send-device-events-to-iot-hub"></a>3.2.1 向 IoT 中心发送设备事件：
 
-1.  如[步骤 2](#Step_2) 中所述启动 DeviceExplorer，然后导航到“数据”选项卡。 从设备 ID 下拉列表中选择创建的设备名称，然后单击“监视”按钮。
+1.  如[步骤 2](#Step_2) 中所述启动 DeviceExplorer，并导航到“数据”选项卡。从设备 ID 下拉列表中选择创建的设备名称，并单击“监视”按钮。
 
-    ![DeviceExplorer\_Monitor](images/3_3_1_01.png)
+    ![DeviceExplorer\_监视](images/3_3_1_01.png)
 
 2.  现在，DeviceExplorer 正在监视从选定设备发送到 IoT 中心的数据。
 
@@ -196,7 +197,7 @@
     
     **如果使用 AMQP-WebSocket 协议：**
 
-        java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps_ws"    
+        java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps_ws"  
 
     替换上述命令中的以下内容：
     
@@ -204,7 +205,7 @@
     -   `{connection string}`：设备连接字符串
     -   `{number of requests to send}`：要发送到 IoT 中心的消息数
 
-5.  检查确认消息中是否显示“正常”。 如果没有，则可能表示未正确复制设备中心连接信息。
+5.  检查确认消息中是否显示了“OK”。 如果没有，则可能表示未正确复制设备中心连接信息。
 
     **如果使用 AMQP 协议：**  
     ![Terminal\_AMQP\_send\_event](images/terminal_amqp_send_event.PNG)
@@ -271,7 +272,7 @@
     -   `{connection string}`：设备连接字符串
     -   `{number of requests to send}`：要发送到 IoT 中心的消息数
 
-6.  应会在客户端示例的控制台窗口中看到收到的命令。
+6.  应会看到客户端示例控制台窗口中收到的命令。
 
     **如果使用 AMQP 协议：**  
     ![Terminal\_AMQP\_message\_received](images/terminal_amqp_message_received.PNG)
@@ -285,11 +286,48 @@
     **如果使用 AMQP WebSocket 协议：**  
     ![Terminal\_AMQP_WS\_message\_received](images/terminal_amqp_ws_message_received.png)
 
+<a name="#Step3_3"></a>
+### <a name="33-verify-device-configuration"></a>3.3 验证设备配置
+
+-  在设备上以管理员身份打开 PowerShell 命令提示符，然后运行以下命令
+
+-   首先使用以下命令检查 PowerShell 版本。
+
+        $PSversionTable
+
+-  如果你的当前 PowerShell 版本低于 5.0，请从[此处](https://aka.ms/wmf5download)下载 PowerShell 最新版本
+
+    安装后，请验证新安装的版本，它应为版本 5.1 或更高版本。 
+
+-   运行以下命令来获取设备配置信息。
+
+        Get-ComputerInfo -property BiosBIOSVersion, BiosManufacturer, BiosSeralNumber, CsManufacturer, CsModel, CsName, CsNumberOfProcessors, CsProcessors, CsSystemSKUNumber, CsSystemType, OsOperatingSystemSKU | Format-List
+          
+        Get-NetAdapter
+    
+    **如果设备已与以太网连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Ethernet" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+    **如果设备已与 Wi-Fi 连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Wi-fi" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+- 请查看下面的输出屏幕截图
+
+    ![deviceinfo\_screenshot](images/device_configuration.png)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Package) 所述上传该屏幕截图。
+
 <a name="Step_4"></a>
 # <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 
 <a name="Step_4_1"></a>
-## <a name="41-package-build-logs-and-sample-test-results"></a>4.1 打包生成日志和示例测试结果
+## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
 
 从设备打包以下项目：
 
@@ -297,37 +335,37 @@
 
 2.  前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
 
-3.  前面“**从 IoT 中心接收消息**”部分中的所有屏幕截图。
+3.  前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
 
-4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-java.md>)提供的模板创建特定于设备的说明。
+4.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-java.md>)提供的模板创建设备特定的说明。
     
     有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2"></a>
 ## <a name="42-share-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享
 
-1.  转到“合作伙伴仪表板”。[](<https://catalog.azureiotsuite.com/devices>)
-2.  单击设备右上角的“上载”图标。
+1.  转到[合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
+2.  单击设备右上角的“上传”图标。
 
     ![Share\_Results\_upload\_icon](images/4_2_01.png)
 
-3.  此时将打开上载对话框。 单击“上载”按钮浏览文件。
+3.  此时会打开上传对话框。 单击“上传”按钮浏览文件。
 
     ![Share\_Results\_upload\_dialog](images/4_2_02.png)
 
-    可以上载同一个设备的多个文件。
+    可以上传同一设备的多个文件。
 
-4.  上载所有文件后，单击“提交审查”按钮。
+4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：****提交文件供审查后，若要更改/删除文件，请与 iotcert 团队联系。*
+    ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
  
 
 <a name="Step_4_3"></a>
-## <a name="43-next-steps"></a>4.3 后续步骤
+## <a name="43-next-steps"></a>4.3：后续步骤
 
-与我们共享文档后，我们将在 48 到 72 个小时（营业时间）内与你取得联系，到时会告知后续步骤。
+与我们共享文档后，我们将在接下来的 48 到 72 个工作小时内与你取得联系，以提供后续步骤。
 
 <a name="Step_5"></a>
 # <a name="step-5-troubleshooting"></a>步骤 5：故障排除
 
-如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持部门。
+如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持人员。

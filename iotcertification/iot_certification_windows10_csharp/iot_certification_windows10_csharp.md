@@ -12,7 +12,8 @@
     -   [3.1：准备开发环境](#Step_3_1:_Development)
     -   [3.2：生成示例](#Step_3_2:_Build)
     -   [3.3：运行并验证示例](#Step_3_3:_Run)
--   [步骤 4：打包和共享](#Step_4:_Package_Share)
+    -   [3.4 验证设备配置](#Step3_4)
+-   [步骤 4：打包并共享](#Step_4:_Package_Share)
     -   [4.1：打包生成日志和示例测试结果](#Step_4_1:_Package)
     -   [4.2：与工程支持人员共享包](#Step_4_2:_Share)
     -   [4.3：后续步骤](#Step_4_3:_Next)
@@ -27,15 +28,15 @@
 -   配置 Azure IoT 中心 
 -   注册 IoT 设备
 -   在设备上生成和部署 Azure IoT SDK
--   打包和共享日志  
+-   打包并共享日志  
 
 **准备**
 
-在执行以下任何步骤之前，请先仔细阅读每个过程的每个步骤，确保对整个过程有全面的了解。
+在执行以下任一步骤之前，请仔细阅读每个过程的每个步骤，确保全盘了解整个过程。
 
 在开始过程前，应已准备好以下项目：
 
--   一台装有 GitHub 的计算机，并且能够访问 [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub 公共存储库。
+-   准备好一台装有 GitHub 并且可以访问 [azure-iot-sdk-csharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) GitHub 公共存储库的计算机。
 -   安装 Visual Studio 2015 和工具。 可以安装任何版本的 Visual Studio，包括免费的社区版。
 
 <a name="Step_1:_Sign_Up"></a>
@@ -72,17 +73,17 @@
 
 2.  在“配置”选项卡下添加连接信息，并单击“更新”按钮。
 
-3.  使用以下说明创建设备并将其注册到 IoT 中心。
+3.  根据以下说明创建设备并将其注册到 IoT 中心。
 
-    a. 单击“管理”选项卡。    
+    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 单击“管理”选项卡。    
     
-    b. 列表中会显示已注册的设备。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次执行此操作，则不应检索任何信息。
+    b.保留“数据库类型”设置，即设置为“共享”。 注册的设备将显示在列表中。 如果该设备未显示在列表中，请单击“刷新”按钮。 如果这是第一次注册设备，请不要检索任何信息。
        
     c. 单击“创建”按钮创建设备 ID 和密钥。 
     
-    d. 成功创建后，设备会列在 DeviceExplorer 中。 
+    d.单击“下一步”。 成功创建设备后，该设备将列在 DeviceExplorer 中。 
     
-    e. 右键单击该设备，并从上下文菜单中选择“复制所选设备的连接字符串”。
+    e.在“新建 MySQL 数据库”边栏选项卡中，接受法律条款，然后单击“确定”。 右键单击该设备，然后从上下文菜单中选择“复制所选设备的连接字符串”。
     
     f. 在记事本中保存此信息。 后面的步骤需要用到此信息。
 
@@ -97,15 +98,15 @@
 ## <a name="31-prepare-your-development-environment"></a>3.1：准备开发环境
 
 - 从 https://dot.net 安装最新的 .NET Core
-- 安装 .NET Framework 4.7 开发人员包：https://support.microsoft.com/en-us/help/3186612/the-net-framework-4-7-developer-pack-and-language-packs
-- 安装 .NET Framework 4.5.1 开发人员包：https://www.microsoft.com/en-us/download/details.aspx?id=40772
-- 在系统上以管理员身份启用 Powershell 脚本执行（一次性设置）。 有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=135170。
+- 安装 .NET Framework 4.7 开发人员包： https://support.microsoft.com/en-us/help/3186612/the-net-framework-4-7-developer-pack-and-language-packs
+- 安装 .NET Framework 4.5.1 开发人员包： https://www.microsoft.com/en-us/download/details.aspx?id=40772
+- 以管理员身份（一次性设置）：在系统上启用 Powershell 脚本执行。 有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=135170。
     `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
 
 <a name="Step_3_2:_Build"></a>
 ## <a name="32--build-the-samples"></a>3.2：生成示例
 
-1.  打开设备控制台（命令提示符或 PowerShell 窗口），并切换到本地 SDK 的 **azure-iot-sdk-csharp** 目录。
+1.  打开设备控制台（命令提示符或 powershell 窗口），并切换到本地 SDK 的 **azure-iot-samples-csharp-master** 目录。
 
 2.  在设备上以环境变量的形式添加 IoT 中心设备连接字符串：
 
@@ -120,7 +121,7 @@
     
 在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
-***注意：*** 请对本部分中执行的所有操作截图。在[步骤 4](#Step_4_2:_Share) 中需要使用这些屏幕截图。
+***注意：****请对本部分中执行的所有操作进行屏幕截图。* 在[步骤 4](#Step_4_2:_Share) 中需要使用这些屏幕截图。
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
 
@@ -133,20 +134,28 @@
 
 3.  在设备控制台中，使用以下命令运行示例：
 
-    **如果使用 HTTP 协议：**
-
-        cd iothub\device\samples\DeviceClientHttpSample\bin\Debug\netcoreapp2.0
-        dotnet DeviceClientHttpSample.dll
-
-    **如果使用 MQTT 协议：**
-
-        cd iothub\device\samples\DeviceClientMqttSample\bin\Debug\netcoreapp2.0
-        dotnet DeviceClientMqttSample.dll
+        cd iot-hub\Samples\device\MessageSample\bin\Release\netcoreapp2.1
+        dotnet MessageSample.dll
         
-    **如果使用 AMQP 协议：**
+**若要为不同的协议运行：** 
 
-        cd iothub\device\samples\DeviceClientAmqpSample\bin\Debug\netcoreapp2.0
-        dotnet DeviceClientAmqpSample.dll
+-   请在设备上执行以下命令。
+
+        cd iot-hub\Samples\device\MessageSample
+        notepad Program.cs
+
+-   这会启动文本编辑器。 向下滚动到协议信息。
+    
+-   找到以下代码：
+
+        private static TransportType s_transportType = TransportType.Amqp;
+    
+    使用的默认协议为 AMQP。 脚本中紧接在上述代码行的下面会提到其他协议 (HTTP/MQTT) 的代码。
+    根据要使用的协议对该行进行注释/取消注释，然后按 Ctrl + S 保存所做的更改。
+    
+    我们需要生成该应用以便应用这些更改。 为此，请再次按[步骤 3.2](#Step_3_2:_Build) 中的步骤执行操作。
+
+***注意：****如果遇到与“FileUploadSample”部分相关的任何生成问题，请忽略，并且继续执行步骤。*
    
 4. 成功执行后，应会看到设备控制台中收到的事件。
 
@@ -200,8 +209,45 @@
 
     ![DeviceExplorer\_Notification\_Send](images/terminal_message_receive_from_device_amqp.png)
     
+<a name="#Step3_4"></a>
+### <a name="34-verify-device-configuration"></a>3.4 验证设备配置
+
+-  在设备上以管理员身份打开 PowerShell 命令提示符，然后运行以下命令
+
+-   首先使用以下命令检查 PowerShell 版本。
+
+        $PSversionTable
+
+-  如果你的当前 PowerShell 版本低于 5.0，请从[此处](https://aka.ms/wmf5download)下载 PowerShell 最新版本
+
+    安装后，请验证新安装的版本，它应为版本 5.1 或更高版本。 
+
+-   运行以下命令来获取设备配置信息。
+
+        Get-ComputerInfo -property BiosBIOSVersion, BiosManufacturer, BiosSeralNumber, CsManufacturer, CsModel, CsName, CsNumberOfProcessors, CsProcessors, CsSystemSKUNumber, CsSystemType, OsOperatingSystemSKU | Format-List
+          
+        Get-NetAdapter
+    
+    **如果设备已与以太网连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Ethernet" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+    **如果设备已与 Wi-Fi 连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Wi-fi" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+- 请查看下面的输出屏幕截图
+
+    ![deviceinfo\_screenshot](./images/device_configuration.png)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Package) 所述上传该屏幕截图。
+
 <a name="Step_4:_Package_Share"></a>
-# <a name="step-4-package-and-share"></a>步骤 4：打包和共享
+# <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 
 <a name="Step_4_1:_Package"></a>
 ## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
@@ -231,7 +277,7 @@
 
 4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
+    ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
  
 
 <a name="Step_4_3:_Next"></a>

@@ -13,7 +13,8 @@
     -   [3.1 连接设备](#Step_3_1:_Connect)
     -   [3.2 生成示例](#Step_3_2:_Build)
     -   [3.3：运行并验证示例](#Step_3_3:_Run)
--   [步骤 4：打包和共享](#Step_4:_Package_Share)
+    -   [3.4 验证设备配置](#Step3_4)
+-   [步骤 4：打包并共享](#Step_4:_Package_Share)
     -   [4.1：打包生成日志和示例测试结果](#Step_4_1:_Package)
     -   [4.2：与工程支持人员共享包](#Step_4_2:_Share)
     -   [4.3：后续步骤](#Step_4_3:_Next)
@@ -147,7 +148,7 @@
     
 在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
-***注意：*** 请对本部分中执行的所有操作截图。在[步骤 4](#Step_4_2:_Share) 中需要使用这些屏幕截图。
+***注意：****请对本部分中执行的所有操作进行屏幕截图。* 在[步骤 4](#Step_4_2:_Share) 中需要使用这些屏幕截图。
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
 
@@ -176,6 +177,43 @@
     ![DeviceExplorer\_Notification\_Send](images/device_explorer_notification_send.png)
 
 4.  Visual Studio 的“输出”窗口中应会显示收到的消息。
+    
+<a name="#Step3_4"></a>
+### <a name="34-verify-device-configuration"></a>3.4 验证设备配置
+
+-  在设备上以管理员身份打开 PowerShell 命令提示符，然后运行以下命令
+
+-   首先使用以下命令检查 PowerShell 版本。
+
+        $PSversionTable
+
+-  如果你的当前 PowerShell 版本低于 5.0，请从[此处](https://aka.ms/wmf5download)下载 PowerShell 最新版本
+
+    安装后，请验证新安装的版本，它应为版本 5.1 或更高版本。 
+
+-   运行以下命令来获取设备配置信息。
+
+        Get-ComputerInfo -property BiosBIOSVersion, BiosManufacturer, BiosSeralNumber, CsManufacturer, CsModel, CsName, CsNumberOfProcessors, CsProcessors, CsSystemSKUNumber, CsSystemType, OsOperatingSystemSKU | Format-List
+          
+        Get-NetAdapter
+    
+    **如果设备已与以太网连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Ethernet" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+    **如果设备已与 Wi-Fi 连接**
+
+        $uri = 'http://macvendors.co/api/{0}' -f (Get-NetAdapter | Where-Object -Property Name -eq -Value "Wi-fi" | Select-Object -property macaddress | foreach { $_.MacAddress })
+
+        (Invoke-WebRequest -uri $uri).content | ConvertFrom-Json | Select-Object -Expand result
+
+- 请查看下面的输出屏幕截图
+
+    ![deviceinfo\_screenshot](images/device_configuration.png)
+
+-   请保存设备配置屏幕截图，然后按[步骤 4](#Package) 所述上传该屏幕截图。    
     
 <a name="Step_4:_Package_Share"></a>
 # <a name="step-4-package-and-share"></a>步骤 4：打包并共享
@@ -208,7 +246,7 @@
 
 4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
+    ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
  
 
 <a name="Step_4_3:_Next"></a>

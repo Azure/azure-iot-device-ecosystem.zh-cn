@@ -11,7 +11,7 @@
     -   [3.1：IoT Edge 运行时](#Step-3-1-IoTEdgeRunTime)
     -   [3.2：设备管理](#Step-3-2-DeviceManagement)
     -   [3.3：安全性](#Step-3-3-Security)
--   [步骤 4：打包和共享](#Step-4-Package_Share)
+-   [步骤 4：打包并共享](#Step-4-Package_Share)
     -   [4.1：在原始包装中打包生成日志和设备](#Step-4-1-Package-build)
     -   [4.2：与 Microsoft Azure IoT 团队成员共享包](#Step-4-2-Share-Package)
     -   [4.3：后续步骤](#Step-4-3-Next-Step)
@@ -94,15 +94,11 @@
 <a name="Step-3-1-IoTEdgeRunTime"></a>
 ## <a name="31-edge-runtimeenabled-mandatory"></a>3.1：Edge RuntimeEnabled（必需）
 
-级别总数：1
+*级别总数：1*
 
 **说明：** 一个包含 Azure IoT Edge 运行时和依赖项的设备。请从以下途径下载 Azure IoT Edge 运行时：
 
-对于 Windows IoT Core，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-core.md)安装运行时。
-
-对于要用于 Linux 容器的 Windows x64 (AMD/Intel)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-windows-with-linux.md)安装运行时。
-
-对于要用于 Windows 容器的 Windows x64 (AMD/Intel)，请从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-windows-with-windows.md)安装运行时。
+从该[链接](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/iot-edge/how-to-install-iot-edge-windows.md)安装运行时。
 
 **要求详细信息：**
 
@@ -129,8 +125,8 @@
 -   请等待一段时间，让 Microsoft 处理和完成认证过程。 审批后，Microsoft 会寄回 Edge 设备。
 
 <a name="Step-3-2-DeviceManagement"></a>
-## <a name="32-device-management-mandatory"></a>3.2：设备管理（必需）
-级别总数：1
+## <a name="32-device-management-optional"></a>3.2 设备管理（可选）
+*级别总数：1*
 
 **先决条件：** 设备连接。
 
@@ -154,7 +150,7 @@
 
 <a name="Step-3-3-Security"></a>
 ## <a name="33-security-optional"></a>3.3：安全性（可选）
-级别总数：4
+*级别总数：4*
 
  **注意：** Microsoft 正在致力于定义安全要求方面的验证过程，包括审查第三方验证实验室的使用。 
  
@@ -207,7 +203,7 @@
 -   通用准则 EAL 4+ 
     
 <a name="Step-4-Package_Share"></a>
-# <a name="step-4-package-and-share"></a>步骤 4：打包和共享
+# <a name="step-4-package-and-share"></a>步骤 4：打包并共享
 <a name="Step-4-1-Package-build"></a>
 ## <a name="41-package-build-logs-and-device-in-original-box"></a>4.1：在原始包装中打包生成日志和设备 
 打包设备中的以下项目：
@@ -231,7 +227,7 @@
 
 4.  上传所有文件后，单击“提交审查”按钮。
 
-    ***注意：*** 提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。
+    ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
 
 <a name="Step-4-3-Next-Step"></a>
 ## <a name="43-next-steps"></a>4.3：后续步骤
