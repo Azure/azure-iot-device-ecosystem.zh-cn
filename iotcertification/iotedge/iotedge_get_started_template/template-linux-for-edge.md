@@ -5,12 +5,12 @@ device:
   enter your device name here: 
 language:
   enter the language used to you edge device: 
-ms.openlocfilehash: f683bf1198e4e49d4852c2bfd0f84ffa5de7aa78
-ms.sourcegitcommit: a5f004161e77a795c776465344fd6f78f565a0bf
+ms.openlocfilehash: 8caacd02385cde10b4830926d09accb5243dd4a3
+ms.sourcegitcommit: aa21feba9737583dca35278c8cf3fa302a130b31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52891447"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56334242"
 ---
 *强烈建议使此文档保持最新，如果文档包含损坏的 URL 链接、不正确的信息等等，请记住，Microsoft 预留了从 Azure IoT 设备目录中删除设备和文档的权利。*
 
@@ -102,7 +102,7 @@ ms.locfileid: "52891447"
  ![](./images/tempSensor.png)
 
 <a name="Step-3-2-DeviceManagement"></a>
-## <a name="32-device-management-mandatory"></a>3.2：设备管理（必需）
+## <a name="32-device-management-optional"></a>3.2 设备管理（可选）
 
 **先决条件：** 设备连接。
 
