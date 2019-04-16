@@ -25,7 +25,8 @@ IoT Edge 认证计划实行基于功能的认证概念。 每个功能具有自�
 设备需要通过所有强制要求才能认证为 IoT Edge 设备：
 
 -   [强制] Edge 运行时（仅限级别 1）
--   [可选] 设备管理（仅限级别 1）
+-   [强制] 设备管理（仅限级别 1）
+-   [可选] 安全性（4 个级别：级别 1 - 4）
 
 # <a name="certification-criteria-description-of-capabilities-and-levels"></a>认证条件：功能和级别的说明
 
@@ -36,6 +37,15 @@ IoT Edge 认证计划实行基于功能的认证概念。 每个功能具有自�
 -   Azure IoT Edge 运行时：设备应该能够运行 IoT Edge 运行时。
 
 -   设备管理：IoT 中心发出的消息触发的基本设备管理操作（重启、FW/OS 升级）。
+
+-   安全性：Azure IoT Edge 自始至终是安全的。  但是，需要使用安全硬件来实施安全措施，避免 Edge 设备上的操作造成其他威胁。  此项认证旨在贯彻以下理念：努力使安全性超越部署中使用 HSM 保护设备的 Azure IoT Edge 所提供的安全性。 以下功能描述设备缓解功能中存在的风险。 其中既未提供安全保证，也未对安全强度做出表述。 
+
+    ![](https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/iotedge/images/1.PNG)
+
+
+    ![](https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/iotedge/images/2.PNG)
+
+请在 [Securing the intelligent edge](https://azure.microsoft.com/en-us/blog/securing-the-intelligent-edge/)（保护智能边缘）博客文章中了解 Microsoft 通过哪种方式为 Azure IoT Edge 设备提供安全平台。 Microsoft 正在致力于定义安全要求方面的验证过程，包括审查第三方验证实验室的使用。
 
 请单击[此处](https://github.com/Azure/azure-iotedge/blob/master/LICENSE)以查看 IoT Edge 运行时的 MICROSOFT 软件许可条款
 
