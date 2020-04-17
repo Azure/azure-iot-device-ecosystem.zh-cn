@@ -5,7 +5,7 @@
 
 # <a name="table-of-contents"></a>目录
 
--   [介绍](#Introduction)
+-   [简介](#Introduction)
 -   [步骤 1：注册 Azure IoT 中心](#Step_1_Sign_Up)
 -   [步骤 2：注册设备](#Step_2
 -   Register)
@@ -16,19 +16,19 @@
     -   [3.4 运行并验证示例](#Step_3_4_Run)
 -   [步骤 4：打包并共享](#Step_4_Package_Share)
     -   [4.1：打包生成日志和示例测试结果](#Step_4_1_Package)
-    -   [4.2：与工程支持人员共享包](#Step_4_2_Share)
+    -   [4.2 与工程支持人员共享包](#Step_4_2_Share)
     -   [4.3：后续步骤](#Step_4_3_Next)
 -   [步骤 5：故障排除](#Step_5_Troubleshooting)
 
 <a name="Introduction"></a>
-# <a name="introduction"></a>介绍
+# <a name="introduction"></a>简介
 
 **关于本文档**
 
-本文档向 IoT 硬件发行商逐步说明如何使用 Azure IoT SDK 来认证支持 IoT 的硬件。 此过程由多个步骤构成，具体包括：
+本文档向 IoT 硬件发布人员提供有关如何使用 Azure IoT SDK 认证已启用 IoT 的硬件的分步指南。 此过程由多个步骤组成，其中包括：
 -   配置 Azure IoT 中心 
 -   注册 IoT 设备
--   在设备上生成和部署 Azure IoT SDK
+-   在设备上生成并部署 Azure IoT SDK
 -   打包并共享日志  
 
 **准备**
@@ -59,7 +59,7 @@
 <a name="Step_3_Build_and_Validate"></a>
 # <a name="step-3-build-and-validate-the-sample-using-python-client-libraries"></a>步骤 3：使用 Python 客户端库生成并验证示例 
 
-本部分逐步讲解如何在运行 Windows 10 操作系统的设备上生成、部署和验证 IoT 客户端 SDK。 我们将在设备上安装所需的必备组件。 完成后，将生成并部署 IoT 客户端 SDK，然后验证使用 Azure IoT SDK 进行 IoT 认证所需的示例测试。
+本部分逐步讲解如何在运行 Windows 10 操作系统的设备上生成、部署和验证 IoT 客户端 SDK。 我们将在设备上安装必备组件。 完成后，将生成并部署 IoT 客户端 SDK，然后验证使用 Azure IoT SDK 进行 IoT 认证所需的示例测试。
 
 <a name="Step_3_1_Connect"></a>
 ## <a name="31-connect-the-device"></a>3.1 连接设备
@@ -84,7 +84,7 @@
 > 可以通过 [python-2.7](https://www.python.org/downloads/) 安装最新的 x86 或 x64 Python 2.7 客户端。
 
 <a name="Step_3_2_Build"></a>
-## <a name="33--build-the-python-iothubclient-module-on-windows-using-nuget-packages-recommended"></a>3.3 使用 Nuget 包在 Windows 上生成 Python iothub_client 模块（建议）
+## <a name="33--build-the-python-iothub_client-module-on-windows-using-nuget-packages-recommended"></a>3.3 使用 Nuget 包在 Windows 上生成 Python iothub_client 模块（建议）
 
 以下说明介绍如何在 Windows 中生成库：
 
@@ -101,13 +101,13 @@
 <a name="Step_3_3_Run"></a>
 ## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
     
-在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
 ***注意：****请对本部分中执行的所有操作进行屏幕截图。* 在[步骤 4](#Step_4_2_Share) 中需要使用这些屏幕截图。
 
-### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
+### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件
 
-1.  如[步骤 2](#Step_2_Register) 中所述启动 DeviceExplorer，并导航到“数据”选项卡。从设备 ID 下拉列表中选择创建的设备名称，并单击“监视”按钮。
+1.  如[步骤 2](#Step_2_Register) 中所述启动 DeviceExplorer，并导航到“数据”选项卡。  从设备 ID 下拉列表中选择创建的设备名称，并单击“监视”按钮。 
 
     ![DeviceExplorer\_监视](images/3_3_1_01.png)
 
@@ -151,7 +151,7 @@
   
   ![DeviceExplorer\_Notification\_Send](images/terminal_message_send_from_device_amqp.png)
   
-9. 应会看到 DeviceExplorer 的数据选项卡中收到的事件。
+9. DeviceExplorer 的数据选项卡中应会显示收到的事件。
 
     **如果使用 HTTP 协议：**   
 
@@ -165,17 +165,17 @@
     
      ![DeviceExplorer\_Notification\_Send](images/device_message_send_from_device_amqp.png)
 
-### <a name="332-receive-messages-from-iot-hub"></a>3.3.2：从 IoT 中心接收消息
+### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
 
-1.  若要验证是否可将消息从 IoT 中心发送到设备，请转到 DeviceExplorer 中的“发送到设备的消息”选项卡。
+1.  若要验证是否可从 IoT 中心向设备发送消息，请转到 DeviceExplorer 中的“发送到设备的消息”选项卡。 
 
-2.  使用“设备 ID”下拉列表选择创建的设备。
+2.  使用设备 ID 下拉列表选择创建的设备。
 
-3.  在“消息”字段中添加一些文本，并单击“发送”。
+3.  在“消息”字段中添加一些文本，然后单击“发送”。
 
     ![DeviceExplorer\_Notification\_Send](images/device_message_receive_from_device_http.png)
 
-4. 应会看到设备控制台窗口中收到的消息。
+4. 设备控制台窗口中应会显示收到的消息。
     
     **如果使用 HTTP 协议：**
 
@@ -195,35 +195,35 @@
 <a name="Step_4_1_Package"></a>
 ## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
   
-打包设备中的以下项目：
+从设备打包以下项目：
 
-1. 第 3.2 部分所述的生成日志。
+1. 第 3.2 部分中所述的生成日志。
 
-2. 前面“向 IoT 中心发送设备事件”部分中显示的所有屏幕截图。
+2. 前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
 
-3. 前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
+3. 前面“**从 IoT 中心接收消息**”部分中显示的所有屏幕截图。
 
-4. 请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。
+4. 向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。
 
-> 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-python.md>)提供的模板创建设备特定的说明。
+> 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-python.md>)提供的模板创建特定于设备的说明。
     
 > 有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2_Share"></a>
 ## <a name="42-share-package-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享包
 
-1.  转到[合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
-2.  单击设备右上角的“上传”图标。
+1.  转到 [合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
+2.  单击设备右上角的“上载”图标。
 
     ![Share\_Results\_upload\_icon](images/4_2_01.png)
 
-3.  此时会打开上传对话框。 单击“上传”按钮浏览文件。
+3.  此时将打开上载对话框。 单击“上载”按钮浏览文件。 
 
     ![Share\_Results\_upload\_dialog](images/4_2_02.png)
 
-    可以上传同一设备的多个文件。
+    可以上载同一个设备的多个文件。
 
-4.  上传所有文件后，单击“提交审查”按钮。
+4.  上传所有文件后，单击“提交审查”按钮。 
 
     ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
  
@@ -234,7 +234,7 @@
 与我们共享文档后，我们将在接下来的 48 到 72 个工作小时内与你取得联系，以提供后续步骤。
 
 <a name="Step_5_Troubleshooting"></a>
-# <a name="step-5-troubleshooting"></a>步骤 5：故障排除
+# <a name="step-5-troubleshooting"></a>步骤 5：疑难解答
 
 如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持人员。
 

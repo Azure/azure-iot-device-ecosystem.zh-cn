@@ -3,10 +3,10 @@
 ---
 
 
-**注意：*****我们不支持将 Windows 10 IoT 核心版与 NodeJS 配合使用。请联系 <iotcert@microsoft.com> 以进行进一步查询。***
+**注意：** ***我们不支持将 Windows 10 IoT 核心版与 NodeJS 配合使用。请联系 <iotcert@microsoft.com> 以进行进一步查询。***
 # <a name="table-of-contents"></a>目录
 
--   [介绍](#Introduction)
+-   [简介](#Introduction)
 -   [步骤 1：注册 Azure IoT 中心](#Step_1:_Sign_Up)
 -   [步骤 2：注册设备](#Step_2:_Register)
 -   [步骤 3：使用 NodeJS 客户端库生成并验证示例](#Step_3:_Build_and_Validate)
@@ -16,19 +16,19 @@
     -   [3.4 验证设备配置](#Step3_4)
 -   [步骤 4：打包并共享](#Step_4:_Package_Share)
     -   [4.1：打包生成日志和示例测试结果](#Step_4_1:_Package)
-    -   [4.2：与工程支持人员共享包](#Step_4_2:_Share)
+    -   [4.2 与工程支持人员共享包](#Step_4_2:_Share)
     -   [4.3：后续步骤](#Step_4_3:_Next)
 -   [步骤 5：故障排除](#Step_5:_Troubleshooting)
 
 <a name="Introduction"></a>
-# <a name="introduction"></a>介绍
+# <a name="introduction"></a>简介
 
 **关于本文档**
 
-本文档向 IoT 硬件发行商逐步说明如何使用 Azure IoT SDK 来认证支持 IoT 的硬件。 此过程由多个步骤构成，具体包括：
+本文档向 IoT 硬件发布人员提供有关如何使用 Azure IoT SDK 认证已启用 IoT 的硬件的分步指南。 此过程由多个步骤组成，其中包括：
 -   配置 Azure IoT 中心 
 -   注册 IoT 设备
--   在设备上生成和部署 Azure IoT SDK
+-   在设备上生成并部署 Azure IoT SDK
 -   打包并共享日志  
 
 **准备**
@@ -84,11 +84,11 @@
 
 1.  启动 Visual Studio 2015 的新实例。
 
-2. 创建新项目（“文件”|“新建项目...”）。 在“新建项目”对话框中导航到 Node.js，如下所示（在对话框的左窗格中，选择“模板”|“JavaScript”|“Node.js”）。 选择“基本 Node.js Johnny-Five 应用程序(通用 Windows)模板”（如下所示）。 输入项目的名称，例如 **NodeJsUWPSample**。 
+2. 创建新项目（“文件”|“新建项目...”）。  在“新建项目”对话框中导航到 Node.js，如下所示（在对话框的左窗格中，选择“模板”|“JavaScript”|“Node.js”）。 选择“基本 Node.js Johnny-Five 应用程序(通用 Windows)模板”（如下所示）。  输入项目的名称，例如 **NodeJsUWPSample**。 
 
     ![VisualStudio\_project\_Template](images/vs_project_template_for_nodejs_uwp.png)
 
-3. 在解决方案资源管理器中选择 app.js 和 package.json 文件，然后单击右键并选择“删除”。
+3. 在解决方案资源管理器中选择 app.js 和 package.json 文件，然后单击右键并选择“删除”。 
 
       ![VisualStudio\_delete\_oldfiles](images/Delete_old_files.png)
           
@@ -98,7 +98,7 @@
 
     ![FileExplorere\_copy\_files](images/copy_files.png)
           
-6. 返回 Visual Studio，在解决方案资源管理器中右键单击项目，然后单击“在文件资源管理器中打开文件夹”。
+6. 返回 Visual Studio，在解决方案资源管理器中右键单击项目，然后单击“在文件资源管理器中打开文件夹”。 
 
    ![VisualStudio\_project\_Template](images/open_project_in_file_explorer.png)
     
@@ -106,19 +106,19 @@
 
     ![FileExplorer\_paste\Files](images/project_file_explorer.png)
     
-8. 返回 Visual Studio，在解决方案资源管理器的顶部上下文菜单中单击“显示所有文件”。
+8. 返回 Visual Studio，在解决方案资源管理器的顶部上下文菜单中单击“显示所有文件”。 
 
     ![VisualStudio\show\AllFiles](images/show_all_files.PNG)
     
-9. 右键单击“package.json”和“simple_sample_device.js”文件并选择“包括在项目中”选项。
+9. 右键单击“package.json”和“simple_sample_device.js”文件并选择“包括在项目中”选项。   
 
       ![VisualStudio\IncudeIn\Project](images/Include_In_Project.PNG)
         
-10. 右键单击“npm”节点，然后单击“安装缺少的 npm 包”安装解决方案所需的包。
+10. 右键单击“npm”节点，然后单击“安装缺少的 npm 包”安装解决方案所需的包。  
 
     ![VisualStudio\Install\MissingNpmPackages](images/install-missing-npm-packages.PNG)
     
-11. 在解决方案资源管理器中展开“npm”节点，右键单击显示的但未列在该包中的所有包，然后单击“卸载 npm 程序包”。
+11. 在解决方案资源管理器中展开“npm”节点，右键单击显示的但未列在该包中的所有包，然后单击“卸载 npm 程序包”。 
 
     ![VisualStudio\_Properties\_Debug](images/Remove_extra_package.PNG)
 
@@ -128,13 +128,13 @@
 
 13.  将 `[IoT device connection string]` 替换为设备的连接字符串，然后**保存**更改。 如[步骤 2](#Step_2:_Register) 中所述，可从 DeviceExplorer 获取连接字符串。
 
-14. 右键单击“simple_sample_device.js”文件，然后从上下文菜单中选择“设为 Node.JS 启动文件”。
+14. 右键单击“simple_sample_device.js”文件，然后从上下文菜单中选择“设为 Node.JS 启动文件”。 
 
 15.  选择适当的体系结构（x86 或 ARM，具体取决于设备），将调试方法设置为“远程计算机”：
 
      ![VisualStudio\_Select\_Architecture](images/vs_select_arch.png)
     
-16.  若要在设备上部署二进制文件，请在“解决方案资源管理器”中右键单击 NodeJsUWPSample 项目，选择“属性”，然后导航到“常规”选项卡：
+16.  若要在设备上部署二进制文件，请在“解决方案资源管理器”中右键单击 NodeJsUWPSample 项目，选择“属性”，然后导航到“常规”选项卡：   
 
      ![VisualStudio\_Properties\_Debug](images/vs_properties_debug.png)
 
@@ -146,20 +146,20 @@
 <a name="Step_3_3:_Run"></a>
 ## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
     
-在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，并验证 IoT 中心是否已成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
 ***注意：****请对本部分中执行的所有操作进行屏幕截图。* 在[步骤 4](#Step_4_2:_Share) 中需要使用这些屏幕截图。
 
-### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
+### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件
 
-1.  如[步骤 2](#Step_2:_Register) 中所述启动 DeviceExplorer，并导航到“数据”选项卡。从设备 ID 下拉列表中选择创建的设备名称，并单击“监视”按钮。
+1.  如[步骤 2](#Step_2:_Register) 中所述启动 DeviceExplorer，并导航到“数据”选项卡。  从设备 ID 下拉列表中选择创建的设备名称，并单击“监视”按钮。 
 
     ![DeviceExplorer\_监视](images/device_explorer_monitor.png)
 
 2.  现在，DeviceExplorer 正在监视从选定设备发送到 IoT 中心的数据。
      
 
-3.  在 Visual Studio 的“解决方案资源管理器”中右键单击“NodeJsUWPSample”项目，然后单击“调试”&minus;&gt;“启动新实例”生成并运行示例。 
+3.  在 Visual Studio 的“解决方案资源管理器”中右键单击“NodeJsUWPSample”项目，然后单击“调试”&minus;&gt;“启动新实例”生成并运行示例。    
 
        
 4. DeviceExplorer 的数据选项卡中应会显示收到的事件。
@@ -168,11 +168,11 @@
 
 ### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
 
-1.  若要验证是否可将消息从 IoT 中心发送到设备，请转到 DeviceExplorer 中的“发送到设备的消息”选项卡。
+1.  若要验证是否可从 IoT 中心向设备发送消息，请转到 DeviceExplorer 中的“发送到设备的消息”选项卡。 
 
-2.  使用“设备 ID”下拉列表选择创建的设备。
+2.  使用设备 ID 下拉列表选择创建的设备。
 
-3.  在“消息”字段中添加一些文本，并单击“发送”。
+3.  在“消息”字段中添加一些文本，然后单击“发送”。
 
     ![DeviceExplorer\_Notification\_Send](images/device_explorer_notification_send.png)
 
@@ -221,30 +221,30 @@
 <a name="Step_4_1:_Package"></a>
 ## <a name="41-package-build-logs-and-sample-test-results"></a>4.1：打包生成日志和示例测试结果
   
-打包设备中的以下项目：
+从设备打包以下项目：
 
-1.  第 3.2 部分所述的生成日志。
-2.  前面“向 IoT 中心发送设备事件”部分中显示的所有屏幕截图。
-3.  前面“从 IoT 中心接收消息”部分中显示的所有屏幕截图。
-4.  请向我们发送明确的说明，描述如何使用你的硬件运行此示例（明确强调客户要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-iotcore-nodejs.md>)提供的模板创建设备特定的说明。
+1.  第 3.2 部分中所述的生成日志。
+2.  前面“**向 IoT 中心发送设备事件**”部分中显示的所有屏幕截图。
+3.  前面“**从 IoT 中心接收消息**”部分中显示的所有屏幕截图。
+4.  向我们发送明确的说明，告知如何在硬件上运行此示例（具体强调客户所要执行的新步骤）。 请使用[此处](<https://github.com/Azure/azure-iot-device-ecosystem/blob/master/iotcertification/templates/template-windows-iotcore-nodejs.md>)提供的模板创建特定于设备的说明。
     
     有关说明形式的指导，请参考[此处](<https://github.com/Azure/azure-iot-device-ecosystem/tree/master/get_started>) GitHub 存储库中发布的示例。
 
 <a name="Step_4_2:_Share"></a>
 ## <a name="42-share-package-with-the-azure-iot-certification-team"></a>4.2 与 Azure IoT 认证团队共享包
 
-1.  转到[合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
-2.  单击设备右上角的“上传”图标。
+1.  转到 [合作伙伴仪表板](<https://catalog.azureiotsuite.com/devices>)。
+2.  单击设备右上角的“上载”图标。
 
     ![Share\_Results\_upload\_icon](images/4_2_01.png)
 
-3.  此时会打开上传对话框。 单击“上传”按钮浏览文件。
+3.  此时将打开上载对话框。 单击“上载”按钮浏览文件。 
 
     ![Share\_Results\_upload\_dialog](images/4_2_02.png)
 
-    可以上传同一设备的多个文件。
+    可以上载同一个设备的多个文件。
 
-4.  上传所有文件后，单击“提交审查”按钮。
+4.  上传所有文件后，单击“提交审查”按钮。 
 
     ***注意：****提交文件供审查后，若要更改/删除文件，请联系 iotcert 团队。*
  
@@ -255,6 +255,6 @@
 与我们共享文档后，我们将在接下来的 48 到 72 个工作小时内与你取得联系，以提供后续步骤。
 
 <a name="Step_5:_Troubleshooting"></a>
-# <a name="step-5-troubleshooting"></a>步骤 5：故障排除
+# <a name="step-5-troubleshooting"></a>步骤 5：疑难解答
 
 如需故障排除的帮助，请通过 <iotcert@microsoft.com> 联系工程支持人员。
