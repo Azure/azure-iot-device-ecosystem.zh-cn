@@ -5,116 +5,117 @@ device:
   enter your device name here: 
 language: csharp
 ms.openlocfilehash: 23fe5475da9cd3eb012a1243f23ed7c1f6a699bd
-ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.locfileid: "19786091"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62439612"
 ---
-<a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a><span data-ttu-id="bea9c-101">在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C# 示例</span><span class="sxs-lookup"><span data-stu-id="bea9c-101">Run a simple Csharp sample on {enter your device name here} device running {enter the OS name running on device}</span></span>
+<a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a><span data-ttu-id="7a751-101">在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 Csharp 示例</span><span class="sxs-lookup"><span data-stu-id="7a751-101">Run a simple Csharp sample on {enter your device name here} device running {enter the OS name running on device}</span></span>
 ===
 ---
 
-# <a name="table-of-contents"></a><span data-ttu-id="bea9c-102">目录</span><span class="sxs-lookup"><span data-stu-id="bea9c-102">Table of Contents</span></span>
+# <a name="table-of-contents"></a><span data-ttu-id="7a751-102">目录</span><span class="sxs-lookup"><span data-stu-id="7a751-102">Table of Contents</span></span>
 
--   [<span data-ttu-id="bea9c-103">介绍</span><span class="sxs-lookup"><span data-stu-id="bea9c-103">Introduction</span></span>](#Introduction)
--   [<span data-ttu-id="bea9c-104">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="bea9c-104">Step 1: Prerequisites</span></span>](#Prerequisites)
--   [<span data-ttu-id="bea9c-105">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="bea9c-105">Step 2: Prepare your Device</span></span>](#PrepareDevice)
--   [<span data-ttu-id="bea9c-106">步骤 3：生成并运行示例</span><span class="sxs-lookup"><span data-stu-id="bea9c-106">Step 3: Build and Run the Sample</span></span>](#Build)
--   [<span data-ttu-id="bea9c-107">后续步骤</span><span class="sxs-lookup"><span data-stu-id="bea9c-107">Next Steps</span></span>](#NextSteps)
+-   [<span data-ttu-id="7a751-103">介绍</span><span class="sxs-lookup"><span data-stu-id="7a751-103">Introduction</span></span>](#Introduction)
+-   [<span data-ttu-id="7a751-104">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="7a751-104">Step 1: Prerequisites</span></span>](#Prerequisites)
+-   [<span data-ttu-id="7a751-105">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="7a751-105">Step 2: Prepare your Device</span></span>](#PrepareDevice)
+-   [<span data-ttu-id="7a751-106">步骤 3：生成并运行示例</span><span class="sxs-lookup"><span data-stu-id="7a751-106">Step 3: Build and Run the Sample</span></span>](#Build)
+-   [<span data-ttu-id="7a751-107">后续步骤</span><span class="sxs-lookup"><span data-stu-id="7a751-107">Next Steps</span></span>](#NextSteps)
 
-# <a name="instructions-for-using-this-template"></a><span data-ttu-id="bea9c-108">此模板的用法说明</span><span class="sxs-lookup"><span data-stu-id="bea9c-108">Instructions for using this template</span></span>
+# <a name="instructions-for-using-this-template"></a><span data-ttu-id="7a751-108">有关使用此模板的说明</span><span class="sxs-lookup"><span data-stu-id="7a751-108">Instructions for using this template</span></span>
 
--   <span data-ttu-id="bea9c-109">将 {placeholders} 中的文本替换为正确的值。</span><span class="sxs-lookup"><span data-stu-id="bea9c-109">Replace the text in {placeholders} with correct values.</span></span>
--   <span data-ttu-id="bea9c-110">阅读说明后，请删除 {{enclosed}} 行中包含的内容。</span><span class="sxs-lookup"><span data-stu-id="bea9c-110">Delete the lines {{enclosed}} after following the instructions enclosed between them.</span></span>
--   <span data-ttu-id="bea9c-111">建议尽可能地使用外部链接。</span><span class="sxs-lookup"><span data-stu-id="bea9c-111">It is advisable to use external links, wherever possible.</span></span>
--   <span data-ttu-id="bea9c-112">请从最终文档中删除本部分。</span><span class="sxs-lookup"><span data-stu-id="bea9c-112">Remove this section from final document.</span></span>
+-   <span data-ttu-id="7a751-109">将 {placeholders} 中的文本替换为正确的值。</span><span class="sxs-lookup"><span data-stu-id="7a751-109">Replace the text in {placeholders} with correct values.</span></span>
+-   <span data-ttu-id="7a751-110">遵照 {{enclosed}} 行之间的说明后，删除这些行。</span><span class="sxs-lookup"><span data-stu-id="7a751-110">Delete the lines {{enclosed}} after following the instructions enclosed between them.</span></span>
+-   <span data-ttu-id="7a751-111">建议尽量使用外部链接。</span><span class="sxs-lookup"><span data-stu-id="7a751-111">It is advisable to use external links, wherever possible.</span></span>
+-   <span data-ttu-id="7a751-112">请从最终文档中删除本部分。</span><span class="sxs-lookup"><span data-stu-id="7a751-112">Remove this section from final document.</span></span>
 
 <a name="Introduction"></a>
-# <a name="introduction"></a><span data-ttu-id="bea9c-113">介绍</span><span class="sxs-lookup"><span data-stu-id="bea9c-113">Introduction</span></span>
+# <a name="introduction"></a><span data-ttu-id="7a751-113">介绍</span><span class="sxs-lookup"><span data-stu-id="7a751-113">Introduction</span></span>
 
-<span data-ttu-id="bea9c-114">**关于本文档**</span><span class="sxs-lookup"><span data-stu-id="bea9c-114">**About this document**</span></span>
+<span data-ttu-id="7a751-114">**关于本文档**</span><span class="sxs-lookup"><span data-stu-id="7a751-114">**About this document**</span></span>
 
-<span data-ttu-id="bea9c-115">本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。</span><span class="sxs-lookup"><span data-stu-id="bea9c-115">This document describes how to connect {enter your device name here} device running {enter the OS name running on device} with Azure IoT SDK.</span></span> <span data-ttu-id="bea9c-116">此过程由多个步骤组成，其中包括：</span><span class="sxs-lookup"><span data-stu-id="bea9c-116">This multi-step process includes:</span></span>
--   <span data-ttu-id="bea9c-117">配置 Azure IoT 中心</span><span class="sxs-lookup"><span data-stu-id="bea9c-117">Configuring Azure IoT Hub</span></span>
--   <span data-ttu-id="bea9c-118">注册 IoT 设备</span><span class="sxs-lookup"><span data-stu-id="bea9c-118">Registering your IoT device</span></span>
--   <span data-ttu-id="bea9c-119">在设备上生成并部署 Azure IoT SDK</span><span class="sxs-lookup"><span data-stu-id="bea9c-119">Build and deploy Azure IoT SDK on device</span></span>
+<span data-ttu-id="7a751-115">本文档介绍如何使用 Azure IoT SDK 连接运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备。</span><span class="sxs-lookup"><span data-stu-id="7a751-115">This document describes how to connect {enter your device name here} device running {enter the OS name running on device} with Azure IoT SDK.</span></span> <span data-ttu-id="7a751-116">此过程由多个步骤构成，具体包括：</span><span class="sxs-lookup"><span data-stu-id="7a751-116">This multi-step process includes:</span></span>
+-   <span data-ttu-id="7a751-117">配置 Azure IoT 中心</span><span class="sxs-lookup"><span data-stu-id="7a751-117">Configuring Azure IoT Hub</span></span>
+-   <span data-ttu-id="7a751-118">注册 IoT 设备</span><span class="sxs-lookup"><span data-stu-id="7a751-118">Registering your IoT device</span></span>
+-   <span data-ttu-id="7a751-119">在设备上生成和部署 Azure IoT SDK</span><span class="sxs-lookup"><span data-stu-id="7a751-119">Build and deploy Azure IoT SDK on device</span></span>
 
 <a name="Prerequisites"></a>
-# <a name="step-1-prerequisites"></a><span data-ttu-id="bea9c-120">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="bea9c-120">Step 1: Prerequisites</span></span>
+# <a name="step-1-prerequisites"></a><span data-ttu-id="7a751-120">步骤 1：先决条件</span><span class="sxs-lookup"><span data-stu-id="7a751-120">Step 1: Prerequisites</span></span>
 
-<span data-ttu-id="bea9c-121">在开始过程前，应已准备好以下项目：</span><span class="sxs-lookup"><span data-stu-id="bea9c-121">You should have the following items ready before beginning the process:</span></span>
+<span data-ttu-id="7a751-121">在开始过程前，应已准备好以下项目：</span><span class="sxs-lookup"><span data-stu-id="7a751-121">You should have the following items ready before beginning the process:</span></span>
 
--   <span data-ttu-id="bea9c-122">准备好一台装有 Git 客户端并且可以访问 [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub 公共存储库的计算机。</span><span class="sxs-lookup"><span data-stu-id="bea9c-122">Computer with Git client installed and access to the [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub public repository.</span></span>
--   <span data-ttu-id="bea9c-123">[设置 IoT 中心][lnk-setup-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="bea9c-123">[Setup your IoT hub][lnk-setup-iot-hub]</span></span>
--   <span data-ttu-id="bea9c-124">[预配设备并获取其凭据][lnk-manage-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="bea9c-124">[Provision your device and get its credentials][lnk-manage-iot-hub]</span></span>
--   <span data-ttu-id="bea9c-125">{在此处输入设备名称} 设备。</span><span class="sxs-lookup"><span data-stu-id="bea9c-125">{enter your device name here} device.</span></span>
+-   <span data-ttu-id="7a751-122">准备好一台装有 Git 客户端并且可以访问 [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub 公共存储库的计算机。</span><span class="sxs-lookup"><span data-stu-id="7a751-122">Computer with Git client installed and access to the [azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) GitHub public repository.</span></span>
+-   <span data-ttu-id="7a751-123">[设置 IoT 中心][lnk-setup-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="7a751-123">[Setup your IoT hub][lnk-setup-iot-hub]</span></span>
+-   <span data-ttu-id="7a751-124">[预配设备并获取其凭据][lnk-manage-iot-hub]</span><span class="sxs-lookup"><span data-stu-id="7a751-124">[Provision your device and get its credentials][lnk-manage-iot-hub]</span></span>
+-   <span data-ttu-id="7a751-125">{在此处输入设备名称} 设备。</span><span class="sxs-lookup"><span data-stu-id="7a751-125">{enter your device name here} device.</span></span>
 
-#### <a name="install-visual-studio-2015-and-tools"></a><span data-ttu-id="bea9c-126">安装 Visual Studio 2015 和工具</span><span class="sxs-lookup"><span data-stu-id="bea9c-126">Install Visual Studio 2015 and Tools</span></span>
+#### <a name="install-visual-studio-2015-and-tools"></a><span data-ttu-id="7a751-126">安装 Visual Studio 2015 和工具</span><span class="sxs-lookup"><span data-stu-id="7a751-126">Install Visual Studio 2015 and Tools</span></span>
 
--   <span data-ttu-id="bea9c-127">若要创建 Windows .NET Micro Framework 解决方案，需安装 [Visual Studio 2015](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx)。</span><span class="sxs-lookup"><span data-stu-id="bea9c-127">To create Windows .NET Micro Framework solutions, you will need to install [Visual Studio 2015](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx).</span></span> <span data-ttu-id="bea9c-128">可以安装任意版本的 Visual Studio，包括免费的 Community 版。</span><span class="sxs-lookup"><span data-stu-id="bea9c-128">You can install any edition of Visual Studio, including the free Community edition.</span></span>
+-   <span data-ttu-id="7a751-127">若要创建 Windows .NET Micro Framework 解决方案，需安装 [Visual Studio 2015](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx)。</span><span class="sxs-lookup"><span data-stu-id="7a751-127">To create Windows .NET Micro Framework solutions, you will need to install [Visual Studio 2015](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx).</span></span> <span data-ttu-id="7a751-128">可以安装任何版本的 Visual Studio，包括免费的社区版。</span><span class="sxs-lookup"><span data-stu-id="7a751-128">You can install any edition of Visual Studio, including the free Community edition.</span></span>
 
-    <span data-ttu-id="bea9c-129">安装 Visual Studio 后，请转到菜单栏中的“工具”选项，然后单击“扩展和更新”。</span><span class="sxs-lookup"><span data-stu-id="bea9c-129">After installing Visual Studio, goto Tools option in the menu bar and click on *Extensions and Updates*.</span></span> <span data-ttu-id="bea9c-130">搜索“netmf”，安装 .NET Micro Framework SDK。</span><span class="sxs-lookup"><span data-stu-id="bea9c-130">Search for 'netmf' and install .NET Micro Framework SDK.</span></span>
+    <span data-ttu-id="7a751-129">安装 Visual Studio 后，请转到菜单栏中的“工具”选项，然后单击“扩展和更新”。 </span><span class="sxs-lookup"><span data-stu-id="7a751-129">After installing Visual Studio, goto Tools option in the menu bar and click on *Extensions and Updates*.</span></span> <span data-ttu-id="7a751-130">搜索“netmf”，安装 .NET Micro Framework SDK。</span><span class="sxs-lookup"><span data-stu-id="7a751-130">Search for 'netmf' and install .NET Micro Framework SDK.</span></span>
 
--   <span data-ttu-id="bea9c-131">{{请指定是否需要其他任何软件或硬件。}}</span><span class="sxs-lookup"><span data-stu-id="bea9c-131">{{Please specify if any other software(s) or hardware(s) are required.}}</span></span>
+-   <span data-ttu-id="7a751-131">{{请指定是否需要其他任何软件或硬件。}}</span><span class="sxs-lookup"><span data-stu-id="7a751-131">{{Please specify if any other software(s) or hardware(s) are required.}}</span></span>
 
 <a name="PrepareDevice"></a>
-# <a name="step-2-prepare-your-device"></a><span data-ttu-id="bea9c-132">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="bea9c-132">Step 2: Prepare your Device</span></span>
+# <a name="step-2-prepare-your-device"></a><span data-ttu-id="7a751-132">步骤 2：准备设备</span><span class="sxs-lookup"><span data-stu-id="7a751-132">Step 2: Prepare your Device</span></span>
 
--   <span data-ttu-id="bea9c-133">{{记下安装、配置和连接设备时需要遵循的说明。</span><span class="sxs-lookup"><span data-stu-id="bea9c-133">{{Write down the instructions required to setup, configure and connect your device.</span></span> <span data-ttu-id="bea9c-134">请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}</span><span class="sxs-lookup"><span data-stu-id="bea9c-134">Please use external links when possible pointing to your own page with device preparation steps.}}</span></span>
+-   <span data-ttu-id="7a751-133">{{写下安装、配置和连接设备所要遵照的说明。</span><span class="sxs-lookup"><span data-stu-id="7a751-133">{{Write down the instructions required to setup, configure and connect your device.</span></span> <span data-ttu-id="7a751-134">请尽量使用指向自己页面的外部链接，该页面提供了设备准备步骤。}}</span><span class="sxs-lookup"><span data-stu-id="7a751-134">Please use external links when possible pointing to your own page with device preparation steps.}}</span></span>
 
 <a name="Build"></a>
-# <a name="step-3-build-and-run-the-sample"></a><span data-ttu-id="bea9c-135">步骤 3：生成并运行示例</span><span class="sxs-lookup"><span data-stu-id="bea9c-135">Step 3: Build and Run the Sample</span></span>
+# <a name="step-3-build-and-run-the-sample"></a><span data-ttu-id="7a751-135">步骤 3：生成并运行示例</span><span class="sxs-lookup"><span data-stu-id="7a751-135">Step 3: Build and Run the Sample</span></span>
 
 <a name="Step_3_1_Connect"></a>
-## <a name="31-connect-the-device"></a><span data-ttu-id="bea9c-136">3.1 连接设备</span><span class="sxs-lookup"><span data-stu-id="bea9c-136">3.1 Connect the Device</span></span>
+## <a name="31-connect-the-device"></a><span data-ttu-id="7a751-136">3.1 连接设备</span><span class="sxs-lookup"><span data-stu-id="7a751-136">3.1 Connect the Device</span></span>
 
--   <span data-ttu-id="bea9c-137">使用以太网电缆将开发板连接到网络。</span><span class="sxs-lookup"><span data-stu-id="bea9c-137">Connect the board to your network using an Ethernet cable.</span></span> <span data-ttu-id="bea9c-138">由于示例依赖于 Internet 访问，因此必须执行此步骤。</span><span class="sxs-lookup"><span data-stu-id="bea9c-138">This step is required, as the sample depends on internet access.</span></span>
+-   <span data-ttu-id="7a751-137">使用以太网电缆将开发板连接到网络。</span><span class="sxs-lookup"><span data-stu-id="7a751-137">Connect the board to your network using an Ethernet cable.</span></span> <span data-ttu-id="7a751-138">由于示例依赖于 Internet 访问，因此必须执行此步骤。</span><span class="sxs-lookup"><span data-stu-id="7a751-138">This step is required, as the sample depends on internet access.</span></span>
 
--   <span data-ttu-id="bea9c-139">使用 micro-USB 电缆将设备插入计算机。</span><span class="sxs-lookup"><span data-stu-id="bea9c-139">Plug the device into your computer using a micro-USB cable.</span></span>
+-   <span data-ttu-id="7a751-139">使用 micro-USB 电缆将设备插入计算机。</span><span class="sxs-lookup"><span data-stu-id="7a751-139">Plug the device into your computer using a micro-USB cable.</span></span>
 
 <a name="Step_3_2_Build"></a>
-## <a name="32--build-the-samples"></a><span data-ttu-id="bea9c-140">3.2 生成示例</span><span class="sxs-lookup"><span data-stu-id="bea9c-140">3.2  Build the Samples</span></span>
+## <a name="32--build-the-samples"></a><span data-ttu-id="7a751-140">3.2：生成示例</span><span class="sxs-lookup"><span data-stu-id="7a751-140">3.2  Build the Samples</span></span>
 
--   <span data-ttu-id="bea9c-141">启动 Visual Studio 2015 的新实例。</span><span class="sxs-lookup"><span data-stu-id="bea9c-141">Start a new instance of Visual Studio 2015.</span></span> <span data-ttu-id="bea9c-142">打开存储库本地副本中的 **iothub_csharp_netmf_client.sln** 解决方案 (/azure-iot-sdk-csharp/device)。</span><span class="sxs-lookup"><span data-stu-id="bea9c-142">Open the **iothub_csharp_netmf_client.sln** solution (/azure-iot-sdk-csharp/device) from your local copy of the repository.</span></span>
+-   <span data-ttu-id="7a751-141">启动 Visual Studio 2015 的新实例。</span><span class="sxs-lookup"><span data-stu-id="7a751-141">Start a new instance of Visual Studio 2015.</span></span> <span data-ttu-id="7a751-142">打开存储库本地副本中的 **iothub_csharp_netmf_client.sln** 解决方案 (/azure-iot-sdk-csharp/device)。</span><span class="sxs-lookup"><span data-stu-id="7a751-142">Open the **iothub_csharp_netmf_client.sln** solution (/azure-iot-sdk-csharp/device) from your local copy of the repository.</span></span>
 
--   <span data-ttu-id="bea9c-143">在 Visual Studio 的“解决方案资源管理器”中，导航到 **NetMFDeviceClientHttpSample_<dotnet microframework version>** 项目。</span><span class="sxs-lookup"><span data-stu-id="bea9c-143">In Visual Studio, from **Solution Explorer**, navigate to the **NetMFDeviceClientHttpSample_<dotnet microframework version>** project.</span></span>
+-   <span data-ttu-id="7a751-143">在 Visual Studio 的“解决方案资源管理器”中，导航到 **NetMFDeviceClientHttpSample_** **项目。<dotnet microframework version>**</span><span class="sxs-lookup"><span data-stu-id="7a751-143">In Visual Studio, from **Solution Explorer**, navigate to the **NetMFDeviceClientHttpSample_<dotnet microframework version>** project.</span></span>
 
--   <span data-ttu-id="bea9c-144">在 **Program.cs** 文件中找到以下代码：</span><span class="sxs-lookup"><span data-stu-id="bea9c-144">Locate the following code in the **Program.cs** file:</span></span>
+-   <span data-ttu-id="7a751-144">在 **Program.cs** 文件中找到以下代码：</span><span class="sxs-lookup"><span data-stu-id="7a751-144">Locate the following code in the **Program.cs** file:</span></span>
 
         public const string DeviceConnectionString = "<replace>";
 
--   <span data-ttu-id="bea9c-145">将上述占位符替换为在[步骤 1](#Prerequisites) 中获取的设备连接字符串，然后保存更改。</span><span class="sxs-lookup"><span data-stu-id="bea9c-145">Replace the above placeholder with device connection string you obtained in [Step 1](#Prerequisites) and save the changes.</span></span>
+-   <span data-ttu-id="7a751-145">将上述占位符替换为在[步骤 1](#Prerequisites) 中获取的设备连接字符串，然后保存更改。</span><span class="sxs-lookup"><span data-stu-id="7a751-145">Replace the above placeholder with device connection string you obtained in [Step 1](#Prerequisites) and save the changes.</span></span>
     
--   <span data-ttu-id="bea9c-146">若要在设备上生成并部署二进制文件，请在“解决方案资源管理器”中右键单击项目，选择“属性”，然后导航到“.NET Micro Framework”选项卡。</span><span class="sxs-lookup"><span data-stu-id="bea9c-146">To build and deploy the binaries on your device, right-click on the project in the **Solution Explorer**, select **Properties** and navigate to the **.NET Micro Framework** tab.</span></span>
+-   <span data-ttu-id="7a751-146">若要在设备上生成并部署二进制文件，请在“解决方案资源管理器”中右键单击项目，选择“属性”，然后导航到“.NET Micro Framework”选项卡。   </span><span class="sxs-lookup"><span data-stu-id="7a751-146">To build and deploy the binaries on your device, right-click on the project in the **Solution Explorer**, select **Properties** and navigate to the **.NET Micro Framework** tab.</span></span>
     
-    <span data-ttu-id="bea9c-147">选择“传输”，然后选择连接的**设备**。</span><span class="sxs-lookup"><span data-stu-id="bea9c-147">Select the **Transport** and **Device** which you have connected.</span></span>
+    <span data-ttu-id="7a751-147">选择“传输”，然后选择连接的**设备**。 </span><span class="sxs-lookup"><span data-stu-id="7a751-147">Select the **Transport** and **Device** which you have connected.</span></span>
 
--   <span data-ttu-id="bea9c-148">生成解决方案。</span><span class="sxs-lookup"><span data-stu-id="bea9c-148">Build the solution.</span></span>
+-   <span data-ttu-id="7a751-148">生成解决方案。</span><span class="sxs-lookup"><span data-stu-id="7a751-148">Build the solution.</span></span>
 
 <a name="Step_3_3_Run"></a>
-## <a name="33-run-and-validate-the-samples"></a><span data-ttu-id="bea9c-149">3.3 运行并验证示例</span><span class="sxs-lookup"><span data-stu-id="bea9c-149">3.3 Run and Validate the Samples</span></span>
+## <a name="33-run-and-validate-the-samples"></a><span data-ttu-id="7a751-149">3.3：运行并验证示例</span><span class="sxs-lookup"><span data-stu-id="7a751-149">3.3 Run and Validate the Samples</span></span>
 
-### <a name="331-send-device-events-to-iot-hub"></a><span data-ttu-id="bea9c-150">3.3.1 向 IoT 中心发送设备事件</span><span class="sxs-lookup"><span data-stu-id="bea9c-150">3.3.1 Send Device Events to IoT Hub</span></span>
+### <a name="331-send-device-events-to-iot-hub"></a><span data-ttu-id="7a751-150">3.3.1：向 IoT 中心发送设备事件</span><span class="sxs-lookup"><span data-stu-id="7a751-150">3.3.1 Send Device Events to IoT Hub</span></span>
 
--   <span data-ttu-id="bea9c-151">在 Visual Studio 的“解决方案资源管理器”中右键单击示例项目，然后单击“调试”&minus;&gt;“启动新实例”生成并运行示例。</span><span class="sxs-lookup"><span data-stu-id="bea9c-151">In Visual Studio, from **Solution Explorer**, right-click the sample project, click **Debug &minus;&gt; Start new instance** to build and run the sample.</span></span> 
+-   <span data-ttu-id="7a751-151">在 Visual Studio 的“解决方案资源管理器”中右键单击示例项目，然后单击“调试”  “启动新实例”生成并运行示例。 **&minus;&gt;**</span><span class="sxs-lookup"><span data-stu-id="7a751-151">In Visual Studio, from **Solution Explorer**, right-click the sample project, click **Debug &minus;&gt; Start new instance** to build and run the sample.</span></span> 
 
--   <span data-ttu-id="bea9c-152">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。</span><span class="sxs-lookup"><span data-stu-id="bea9c-152">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to observe the messages IoT Hub receives from the application.</span></span>
+-   <span data-ttu-id="7a751-152">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。</span><span class="sxs-lookup"><span data-stu-id="7a751-152">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to observe the messages IoT Hub receives from the application.</span></span>
 
-### <a name="332-receive-messages-from-iot-hub"></a><span data-ttu-id="bea9c-153">3.3.2 从 IoT 中心接收消息</span><span class="sxs-lookup"><span data-stu-id="bea9c-153">3.3.2 Receive messages from IoT Hub</span></span>
+### <a name="332-receive-messages-from-iot-hub"></a><span data-ttu-id="7a751-153">3.3.2：从 IoT 中心接收消息</span><span class="sxs-lookup"><span data-stu-id="7a751-153">3.3.2 Receive messages from IoT Hub</span></span>
 
--   <span data-ttu-id="bea9c-154">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。</span><span class="sxs-lookup"><span data-stu-id="bea9c-154">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to send cloud-to-device messages to the application.</span></span>
+-   <span data-ttu-id="7a751-154">请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。</span><span class="sxs-lookup"><span data-stu-id="7a751-154">See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to send cloud-to-device messages to the application.</span></span>
 
 <a name="NextSteps"></a>
-# <a name="next-steps"></a><span data-ttu-id="bea9c-155">后续步骤</span><span class="sxs-lookup"><span data-stu-id="bea9c-155">Next Steps</span></span>
+# <a name="next-steps"></a><span data-ttu-id="7a751-155">后续步骤</span><span class="sxs-lookup"><span data-stu-id="7a751-155">Next Steps</span></span>
 
-<span data-ttu-id="bea9c-156">现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。</span><span class="sxs-lookup"><span data-stu-id="bea9c-156">You have now learned how to run a sample application that collects sensor data and sends it to your IoT hub.</span></span> <span data-ttu-id="bea9c-157">若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：</span><span class="sxs-lookup"><span data-stu-id="bea9c-157">To explore how to store, analyze and visualize the data from this application in Azure using a variety of different services, please click on the following lessons:</span></span>
+<span data-ttu-id="7a751-156">现在，你已学会了如何运行一个可以收集传感器数据并将其发送到 IoT 中心的示例应用程序。</span><span class="sxs-lookup"><span data-stu-id="7a751-156">You have now learned how to run a sample application that collects sensor data and sends it to your IoT hub.</span></span> <span data-ttu-id="7a751-157">若要了解如何使用各种服务在 Azure 中存储、分析和可视化来自此应用程序的数据，请单击以下课程：</span><span class="sxs-lookup"><span data-stu-id="7a751-157">To explore how to store, analyze and visualize the data from this application in Azure using a variety of different services, please click on the following lessons:</span></span>
 
--   <span data-ttu-id="bea9c-158">[使用 iothub-explorer 管理云设备消息传送]</span><span class="sxs-lookup"><span data-stu-id="bea9c-158">[Manage cloud device messaging with iothub-explorer]</span></span>
--   <span data-ttu-id="bea9c-159">[将 IoT 中心消息保存到 Azure 数据存储]</span><span class="sxs-lookup"><span data-stu-id="bea9c-159">[Save IoT Hub messages to Azure data storage]</span></span>
--   <span data-ttu-id="bea9c-160">[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="bea9c-160">[Use Power BI to visualize real-time sensor data from Azure IoT Hub]</span></span>
--   <span data-ttu-id="bea9c-161">[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="bea9c-161">[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]</span></span>
--   <span data-ttu-id="bea9c-162">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]</span><span class="sxs-lookup"><span data-stu-id="bea9c-162">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]</span></span>
--   <span data-ttu-id="bea9c-163">[使用逻辑应用执行远程监视和发送通知]</span><span class="sxs-lookup"><span data-stu-id="bea9c-163">[Remote monitoring and notifications with Logic Apps]</span></span>   
+-   <span data-ttu-id="7a751-158">[使用 iothub-explorer 管理云设备消息传送]</span><span class="sxs-lookup"><span data-stu-id="7a751-158">[Manage cloud device messaging with iothub-explorer]</span></span>
+-   <span data-ttu-id="7a751-159">[将 IoT 中心消息保存到 Azure 数据存储]</span><span class="sxs-lookup"><span data-stu-id="7a751-159">[Save IoT Hub messages to Azure data storage]</span></span>
+-   <span data-ttu-id="7a751-160">[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="7a751-160">[Use Power BI to visualize real-time sensor data from Azure IoT Hub]</span></span>
+-   <span data-ttu-id="7a751-161">[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]</span><span class="sxs-lookup"><span data-stu-id="7a751-161">[Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]</span></span>
+-   <span data-ttu-id="7a751-162">[在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]</span><span class="sxs-lookup"><span data-stu-id="7a751-162">[Weather forecast using the sensor data from your IoT hub in Azure Machine Learning]</span></span>
+-   <span data-ttu-id="7a751-163">[使用逻辑应用执行远程监视和发送通知]</span><span class="sxs-lookup"><span data-stu-id="7a751-163">[Remote monitoring and notifications with Logic Apps]</span></span>   
 
 [使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
 [Manage cloud device messaging with iothub-explorer]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
