@@ -1,4 +1,4 @@
-# <a name="introduction"></a>介绍
+# <a name="introduction"></a>简介
 
 **关于本文档**
 
@@ -20,11 +20,11 @@ Raspberry Pi3 等 IoT 设备可以继续运行 IoT Edge 运行时。 Azure IoT �
 
 IoT Edge 认证计划实行基于功能的认证概念。 每个功能具有自身的级别，提供设备客户寻求的 IoT Edge 设备粒度级，并允许 Azure IoT 认证计划在将来得到发展。
 
-每个功能包含自身的级别，“级别 1”是最低级别。 
+每个功能包含自身的级别，“级别 1”是最低级别。  
 
 设备需要通过所有强制要求才能认证为 IoT Edge 设备：
 
--   [强制] Edge 运行时（仅限级别 1）
+-   [强制] Microsoft Edge 运行时（仅限级别 1）
 -   [可选] 设备管理（仅限级别 1）
 
 # <a name="certification-criteria-description-of-capabilities-and-levels"></a>认证条件：功能和级别的说明

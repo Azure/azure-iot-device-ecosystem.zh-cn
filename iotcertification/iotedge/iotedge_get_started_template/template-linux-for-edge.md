@@ -6,21 +6,21 @@ device:
 language:
   enter the language used to you edge device: 
 ms.openlocfilehash: 8caacd02385cde10b4830926d09accb5243dd4a3
-ms.sourcegitcommit: aa21feba9737583dca35278c8cf3fa302a130b31
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56334242"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62456417"
 ---
 *强烈建议使此文档保持最新，如果文档包含损坏的 URL 链接、不正确的信息等等，请记住，Microsoft 预留了从 Azure IoT 设备目录中删除设备和文档的权利。*
 
-<a name="run-a-simple-enter-the-language-used-to-you-edge-device-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-edge-device-specify-distribution-or-windows-sku-information-ex-ubuntu-sever-1604-windows-10-iot-core-only-tier-1-oshttpsdocsmicrosoftcomen-usazureiot-edgesupport-is-allowed"></a>在运行 {输入 Edge 设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 {输入用于 Edge 设备的语言} 示例。 指定发行版或 Windows SKU 信息。 例如：Ubuntu Sever 16.04、Windows 10 IoT 核心版。 仅允许[第 1 层 OS](https://docs.microsoft.com/en-us/azure/iot-edge/support)。
+<a name="run-a-simple-enter-the-language-used-to-you-edge-device-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-edge-device-specify-distribution-or-windows-sku-information-ex-ubuntu-sever-1604-windows-10-iot-core-only-tier-1-os-is-allowed"></a>在运行 {输入 Edge 设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 {输入用于 Edge 设备的语言} 示例。 指定发行版或 Windows SKU 信息。 例如：Ubuntu Sever 16.04、Windows 10 IoT 核心版。 仅允许[第 1 层 OS](https://docs.microsoft.com/en-us/azure/iot-edge/support)。
 ===
 ---
 
 # <a name="table-of-contents"></a>目录
 
--   [介绍](#Introduction)
+-   [简介](#Introduction)
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：在设备上对 Azure IoT Edge 进行手动测试](#Manual)
@@ -30,8 +30,8 @@ ms.locfileid: "56334242"
 # <a name="instructions-for-using-this-template"></a>有关使用此模板的说明
 
 -   将 {placeholders} 中的文本替换为正确的值。
--   遵照 {{enclosed}} 行之间的说明后，删除这些行。
--   建议尽量使用外部链接。
+-   阅读说明后，请删除 {{enclosed}} 行中包含的内容。
+-   建议尽可能地使用外部链接。
 -   请从最终文档中删除本部分。
 
 <a name="Introduction"></a>
@@ -81,7 +81,7 @@ ms.locfileid: "56334242"
 -   Moby 容器管理系统
 -   版本 `hsmlib` 
 
-启用 Edge 运行时：
+启用 Edge 运行时： 
 
 **检查 iotedge 守护程序命令：** 
 
@@ -170,7 +170,7 @@ IoT 设备客户端将得到消息并将状态报告给设备孪生。
 与我们共享文档后，我们将在接下来的 48 到 72 个工作小时内与你取得联系，以提供后续步骤。
 
 <a name="Step-5-Troubleshooting"></a>
-# <a name="step-5-troubleshooting"></a>步骤 5：故障排除
+# <a name="step-5-troubleshooting"></a>步骤 5：疑难解答
 
 如需故障排除的帮助，请通过 **<mailto:iotcert@microsoft.com>** 联系工程支持部门。
   
