@@ -5,11 +5,11 @@ device:
   enter your device name here: 
 language: csharp
 ms.openlocfilehash: e045a56e6a77226fa0f03353874acdf3d5e7f11e
-ms.sourcegitcommit: dab4a191b1927a60143b2b0449b533d716b309e1
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31437972"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62439615"
 ---
 <a name="run-a-simple-csharp-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 Csharp 示例
 ===
@@ -98,15 +98,15 @@ ms.locfileid: "31437972"
 
 -   [使用 iothub-explorer 管理云设备消息传送]
 -   [将 IoT 中心消息保存到 Azure 数据存储]
--   [使用 Power BI 可视化 Azure IoT 中心的实时传感器数据]
--   [使用 Azure Web 应用可视化 Azure IoT 中心的实时传感器数据]
+-   [使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]
+-   [使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]
 -   [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]
 -   [使用逻辑应用执行远程监视和发送通知]   
 
 [使用 iothub-explorer 管理云设备消息传送]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
 [将 IoT 中心消息保存到 Azure 数据存储]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
-[使用 Power BI 可视化 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
-[使用 Azure Web 应用可视化 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+[使用 Power BI 可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
+[使用 Azure Web 应用可视化来自 Azure IoT 中心的实时传感器数据]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
 [在 Azure 机器学习中使用 IoT 中心的传感器数据进行天气预报]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
 [使用逻辑应用执行远程监视和发送通知]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
 [setup-devbox-windows]: https://github.com/Azure/azure-iot-sdk-csharp/blob/master/doc/devbox_setup.md

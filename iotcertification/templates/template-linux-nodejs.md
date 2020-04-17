@@ -5,10 +5,11 @@ device:
   enter your device name here: 
 language: javascript
 ms.openlocfilehash: e23fb7e36e4d59bb9a1c4623ea03c009efc295b6
-ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.locfileid: "19786089"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62456406"
 ---
 <a name="run-a-simple-javascript-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JavaScript 示例
 ===
@@ -22,11 +23,11 @@ ms.locfileid: "19786089"
 -   [步骤 3：生成并运行示例](#Build)
 -   [后续步骤](#NextSteps)
 
-# <a name="instructions-for-using-this-template"></a>此模板的用法说明
+# <a name="instructions-for-using-this-template"></a>有关使用此模板的说明
 
 -   将 {placeholders} 中的文本替换为正确的值。
--   阅读说明后，请删除 {{enclosed}} 行中包含的内容。
--   建议尽可能地使用外部链接。
+-   遵照 {{enclosed}} 行之间的说明后，删除这些行。
+-   建议尽量使用外部链接。
 -   请从最终文档中删除本部分。
 
 <a name="Introduction"></a>
@@ -34,10 +35,10 @@ ms.locfileid: "19786089"
 
 **关于本文档**
 
-本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。 此过程由多个步骤组成，其中包括：
+本文档介绍如何使用 Azure IoT SDK 连接运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备。 此过程由多个步骤构成，具体包括：
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 
 <a name="Prerequisites"></a>
 # <a name="step-1-prerequisites"></a>步骤 1：先决条件
@@ -54,13 +55,13 @@ ms.locfileid: "19786089"
 <a name="PrepareDevice"></a>
 # <a name="step-2-prepare-your-device"></a>步骤 2：准备设备
 
--   {{记下安装、配置和连接设备时需要遵循的说明。 请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}
+-   {{写下安装、配置和连接设备所要遵照的说明。 请尽量使用指向自己页面的外部链接，该页面提供了设备准备步骤。}}
 
 <a name="Build"></a>
 # <a name="step-3-build-and-run-the-sample"></a>步骤 3：生成并运行示例
 
 <a name="Load"></a>
-## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1 在设备上加载 Azure IoT 代码和必备组件
+## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1：在设备上加载 Azure IoT 代码和必备组件
 
 -   打开 PuTTY 会话并连接到设备。
 
@@ -84,7 +85,7 @@ ms.locfileid: "19786089"
 
         Use equivalent commands on the target OS
 
--   在设备上的命令行中发出以下命令，安装必备组件包。 根据设备上运行的 OS 选择命令。{{***保留根据 OS 设置的命令并删除剩余内容。***}}
+-   通过设备上的命令行发出以下命令，安装必备的包。 根据设备上运行的 OS 选择命令。{{***保留根据 OS 设置的命令并删除剩余内容。***}}
 
     {{**Debian 或 Ubuntu**}}
 
@@ -121,7 +122,7 @@ ms.locfileid: "19786089"
 -   验证 ~/azure-iot-sdk-node 目录中现在是否有源代码的副本。
 
 <a name="BuildSamples"></a>
-## <a name="32-build-the-samples"></a>3.2 生成示例
+## <a name="32-build-the-samples"></a>3.2：生成示例
 
 -   若要验证源代码，请在设备上运行以下命令。
 
@@ -151,7 +152,7 @@ ms.locfileid: "19786089"
     
     **对于 MQTT 协议：**
 
-        npm install azure-iot-device-mqtt    
+        npm install azure-iot-device-mqtt   
 
 -   若要更新示例，请在设备上运行以下命令。
 
@@ -175,7 +176,7 @@ ms.locfileid: "19786089"
 
 -   将上述占位符替换为设备连接字符串。 可根据[步骤 1](#Prerequisites) 中所述，从 DeviceExplorer 获取这个已复制到记事本的连接字符串。
 
--   按 Ctrl+O 保存更改，当 nano 提示是否保存到同一文件时，按 ENTER 即可。
+-   按 Ctrl+O 保存更改，当 nano 提示是否保存为同一文件时，请按 ENTER。
 
 -   按 Ctrl+X 退出 nano。
 
@@ -184,7 +185,7 @@ ms.locfileid: "19786089"
         npm link azure-iot-device
 
 <a name="Run"></a>
-## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
+## <a name="33-run-and-validate-the-samples"></a>3.3：运行并验证示例
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件
 
@@ -194,7 +195,7 @@ ms.locfileid: "19786089"
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
-### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
+### <a name="332-receive-messages-from-iot-hub"></a>3.3.2：从 IoT 中心接收消息
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
 
@@ -202,7 +203,7 @@ ms.locfileid: "19786089"
 <a name="NextSteps"></a>
 # <a name="next-steps"></a>后续步骤
 
-现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+现在，你已学会了如何运行一个可以收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要了解如何使用各种服务在 Azure 中存储、分析和可视化来自此应用程序的数据，请单击以下课程：
 
 -   [使用 iothub-explorer 管理云设备消息传送]
 -   [将 IoT 中心消息保存到 Azure 数据存储]

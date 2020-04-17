@@ -5,10 +5,11 @@ device:
   enter your device name here: 
 language: java
 ms.openlocfilehash: 8cdb9d7dc6b61d00729ee6d29af258875df246ed
-ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.locfileid: "19786096"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62439609"
 ---
 <a name="run-a-simple-java-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JAVA 示例
 ===
@@ -22,11 +23,11 @@ ms.locfileid: "19786096"
 -   [步骤 3：生成并运行示例](#Build)
 -   [后续步骤](#NextSteps)
 
-# <a name="instructions-for-using-this-template"></a>此模板的用法说明
+# <a name="instructions-for-using-this-template"></a>有关使用此模板的说明
 
 -   将 {placeholders} 中的文本替换为正确的值。
--   阅读说明后，请删除 {{enclosed}} 行中包含的内容。
--   建议尽可能地使用外部链接。
+-   遵照 {{enclosed}} 行之间的说明后，删除这些行。
+-   建议尽量使用外部链接。
 -   请从最终文档中删除本部分。
 
 <a name="Introduction"/>
@@ -34,10 +35,10 @@ ms.locfileid: "19786096"
 
 **关于本文档**
 
-本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。 此过程由多个步骤组成，其中包括：
+本文档介绍如何使用 Azure IoT SDK 连接运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备。 此过程由多个步骤构成，具体包括：
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 
 <a name="Prerequisites"></a>
 # <a name="step-1-prerequisites"></a>步骤 1：先决条件
@@ -52,7 +53,7 @@ ms.locfileid: "19786096"
 
 <a name="PrepareDevice"></a>
 # <a name="step-2-prepare-your-device"></a>步骤 2：准备设备
--   {{记下安装、配置和连接设备时需要遵循的说明。 请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}
+-   {{写下安装、配置和连接设备所要遵照的说明。 请尽量使用指向自己页面的外部链接，该页面提供了设备准备步骤。}}
 
 <a name="Build"></a>
 # <a name="step-3-build-sdk-and-run-the-sample"></a>步骤 3：生成 SDK 并运行示例
@@ -67,7 +68,7 @@ ms.locfileid: "19786096"
 <a name="Step_3_1_1"/>
 ### <a name="311--install-java-jdk-18-and-set-up-environment-variables"></a>3.1.1 安装 Java JDK 1.8 并设置环境变量
         
-1.  有关下载和安装说明，请访问：<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+1.  有关下载项和安装说明，请访问此处：<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
        
 2.  请确保 `PATH` 环境变量包含 jdk1.8.x\bin 目录的完整路径。 （示例：c:\Program Files\Java\jdk1.8.0_65）
         
@@ -79,7 +80,7 @@ ms.locfileid: "19786096"
 ### <a name="312--install-maven-and-set-up-environment-variables"></a>3.1.2 安装 Maven 并设置环境变量
 建议使用 Maven 3 安装用于 Java 的 Azure IoT 设备 SDK。
 
-1.  有关 Maven 3 的下载和安装说明，请访问：<https://maven.apache.org/download.cgi>
+1.  有关 Maven 3 的下载项和安装说明，请访问此处：<https://maven.apache.org/download.cgi>
 
 2.  请确保 PATH 环境变量包含 apache-maven-3.x.x\bin 目录的完整路径。 （示例：F:\Setups\apache-maven-3.3.3\bin）。 Apache maven 3.x.x 目录是 Maven 3 的安装位置。
 
@@ -88,7 +89,7 @@ ms.locfileid: "19786096"
 <a name="Step_3_1_3"/>
 ### <a name="313--install-git"></a>3.1.3 安装 GIT
 
--   有关下载和安装说明，请访问：<http://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
+-   有关下载项和安装说明，请访问此处：<http://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
 
 
 <a name="Step_3_1_4"/>
@@ -119,18 +120,18 @@ ms.locfileid: "19786096"
 
         cd /azure-iot-sdk-java/device/samples/send-event/target
 
--   发出以下命令运行该示例。
+-   发出以下命令运行示例。
 {{保留根据协议设置的命令并删除剩余内容。}}
 
-    {{**如果使用 AMQPS 协议：**}}
+    {{**如果使用 AMQPS 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    {{**如果使用 HTTPS 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "https"
 
-    {{**如果使用 MQTT 协议：**}}
+    {{**如果使用 MQTT 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "mqtt"
         
@@ -149,17 +150,17 @@ ms.locfileid: "19786096"
 
         cd /azure-iot-sdk-java/device/samples/handle-messages/target
      
--   发出以下命令运行该示例。
+-   发出以下命令运行示例。
 
-    {{**如果使用 AMQPS 协议：**}}
+    {{**如果使用 AMQPS 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    {{**如果使用 HTTPS 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "https"
         
-     {{**如果使用 MQTT 协议：**}}
+     {{**如果使用 MQTT 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "mqtt"
 
@@ -174,7 +175,7 @@ ms.locfileid: "19786096"
 <a name="NextSteps"></a>
 # <a name="next-steps"></a>后续步骤
 
-现在，你已了解如何运行用于收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要探究如何使用各种不同的服务在 Azure 中存储、分析以及可视化来自此应用程序的数据，请单击以下课程：
+现在，你已学会了如何运行一个可以收集传感器数据并将其发送到 IoT 中心的示例应用程序。 若要了解如何使用各种服务在 Azure 中存储、分析和可视化来自此应用程序的数据，请单击以下课程：
 
 -   [使用 iothub-explorer 管理云设备消息传送]
 -   [将 IoT 中心消息保存到 Azure 数据存储]
