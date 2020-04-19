@@ -5,10 +5,11 @@ device:
   enter your device name here: 
 language: java
 ms.openlocfilehash: 86978cd10db22b4a576cfcea7f91392f211d0c86
-ms.sourcegitcommit: 4b98ebc1c3cad79b3f19f21d36add53daa71e0b5
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.locfileid: "19786093"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62453320"
 ---
 <a name="run-a-simple-java-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 JAVA 示例
 ===
@@ -16,7 +17,7 @@ ms.locfileid: "19786093"
 
 # <a name="table-of-contents"></a>目录
 
--   [介绍](#Introduction)
+-   [简介](#Introduction)
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
@@ -37,7 +38,7 @@ ms.locfileid: "19786093"
 本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。 此过程由多个步骤组成，其中包括：
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 
 <a name="Prerequisites"></a>
 # <a name="step-1-prerequisites"></a>步骤 1：先决条件
@@ -52,7 +53,7 @@ ms.locfileid: "19786093"
 
 <a name="PrepareDevice"></a>
 # <a name="step-2-prepare-your-device"></a>步骤 2：准备设备
--   {{记下安装、配置和连接设备时需要遵循的说明。 请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}
+-   {{写下安装、配置和连接设备所要遵照的说明。 请尽量使用指向自己页面的外部链接，该页面提供了设备准备步骤。}}
 
 <a name="Build"></a>
 # <a name="step-3-build-sdk-and-run-the-sample"></a>步骤 3：生成 SDK 并运行示例
@@ -74,7 +75,7 @@ ms.locfileid: "19786093"
         sudo apt-get update        
         sudo apt-get install openjdk-8-jdk      
    
-    ***注意：****如果 openjdk-8-jdk 包不可用，请使用以下步骤在 sources.list 中添加源，然后再次重新运行上述命令。*
+    ***注意：*** 如果 openjdk-8-jdk 包不可用，请使用以下步骤在 sources.list 中添加源，然后再次重新运行上述命令。 
     
     -   编辑 /etc/apt/sources.list
     
@@ -90,7 +91,7 @@ ms.locfileid: "19786093"
     {{**Fedora**}}
    
         sudo dnf check-update -y
-        sudo dnf install java-1.8.0-openjdk-devel
+        sudo dnf install java-1.8.0-openjdk-devel
         
     {{**其他任何 Linux OS**}}
 
@@ -108,19 +109,19 @@ ms.locfileid: "19786093"
 
         export PATH=[PathToJava]/bin:$PATH       
 
-    ***注意：****此处的 **[PathToJava]** 是 `which java` 命令的输出。例如，如果 `which java` 输出为 /usr/bin/java，则导出命令为* **export PATH=/usr/bin/java/bin:$PATH**
+    ***注意：****此处的 [PathToJava]  是 `which java` 命令的输出。例如，如果 `which java` 输出为 /usr/bin/java，则导出命令为* **export PATH=/usr/bin/java/bin:$PATH**
 
 5.  确保 JAVA_HOME 环境变量包含 JDK 的完整路径。 使用以下命令获取 JDK 路径。
 
         update-alternatives --config java
 
-6.  记下 JDK 位置。 `update-alternatives` 的输出类似于 **/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java**。 在此情况下，JDK 目录为 **/usr/lib/jvm/java-8-openjdk-amd64/**。
+6.  记下 JDK 位置。 `update-alternatives` 的输出类似于 **/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java**。 在此情况下，JDK 目录为 **/usr/lib/jvm/java-8-openjdk-amd64/** 。
 
 7.  运行以下命令设置 **JAVA_HOME** 环境变量。
 
         export JAVA_HOME=[PathToJDK]
 
-    ***注意***：*此处的 [PathToJDK] 是 JDK 目录。例如，如果 jdk 目录为 /usr/lib/jvm/java-8-openjdk-amd64/，则导出命令为* **export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/**
+    ***注意***：此处的 [PathToJDK] 是 JDK 目录。*例如，如果 jdk 目录为 /usr/lib/jvm/java-8-openjdk-amd64/，则导出命令为* **export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/**
 
 <a name="Step_3_1_2"/>
 ### <a name="312--install-maven-and-set-up-environment-variables"></a>3.1.2 安装 Maven 并设置环境变量
@@ -151,7 +152,7 @@ ms.locfileid: "19786093"
 
         export PATH=[PathToMvn]/bin:$PATH
 
-    ***注意***：*此处的 [PathToMvn] 是 `which mvn` 的输出。例如，如果 `which mvn` 输出为 /usr/bin/mvn，则导出命令为* **export PATH=/usr/bin/mvn/bin:$PATH**
+    ***注意***：此处的 [PathToMvn] 是 `which mvn` 的输出。*例如，如果 `which mvn` 输出为 /usr/bin/mvn，则导出命令为* **export PATH=/usr/bin/mvn/bin:$PATH**
    
 5.  可以运行 `mvn --version` 来验证是否已正确设置用于运行 Maven 3 的环境变量。
 
@@ -203,23 +204,23 @@ ms.locfileid: "19786093"
 -   发出以下命令运行该示例。
 {{保留根据协议设置的命令并删除剩余内容。}}
 
-    {{**如果使用 AMQPS 协议：**}}
+    {{**如果使用 AMQPS 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    {{**如果使用 HTTPS 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "https"
 
-    {{**如果使用 MQTT 协议：**}}
+    {{**如果使用 MQTT 协议：** }}
 
         java -jar ./send-event-{version}-with-deps.jar "{connection string}" "{number of requests to send}" "mqtt"
           
     替换上述命令中的以下内容：
     
-    -   `{version}`：生成的二进制文件的版本
-    -   `{connection string}`：设备连接字符串
-    -   `{number of requests to send}`：要发送到 IoT 中心的消息数
+    -   `{version}`设置用户帐户 ：生成的二进制文件的版本
+    -   `{connection string}`设置用户帐户 ：设备连接字符串
+    -   `{number of requests to send}`设置用户帐户 ：要发送到 IoT 中心的消息数
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
@@ -232,23 +233,23 @@ ms.locfileid: "19786093"
      
 -   发出以下命令运行该示例。
 
-    {{**如果使用 AMQPS 协议：**}}
+    {{**如果使用 AMQPS 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "amqps"
     
-    {{**如果使用 HTTPS 协议：**}}
+    {{**如果使用 HTTPS 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "https"
 
-    {{**如果使用 MQTT 协议：**}}
+    {{**如果使用 MQTT 协议：** }}
    
         java -jar ./handle-messages-{version}-with-deps.jar "{connection string}" "mqtt"
         
     替换上述命令中的以下内容：
     
-    -   `{version}`：生成的二进制文件的版本
-    -   `{connection string}`：设备连接字符串
-    -   `{number of requests to send}`：要发送到 IoT 中心的消息数
+    -   `{version}`设置用户帐户 ：生成的二进制文件的版本
+    -   `{connection string}`设置用户帐户 ：设备连接字符串
+    -   `{number of requests to send}`设置用户帐户 ：要发送到 IoT 中心的消息数
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何将云到设备的消息发送到应用程序。
 
