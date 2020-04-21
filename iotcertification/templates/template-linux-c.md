@@ -5,11 +5,11 @@ device:
   enter your device name here: 
 language: c
 ms.openlocfilehash: ca3899acfb442ecf82a50517884a1ccf9d67e481
-ms.sourcegitcommit: f08ccd5fd86c6ccb5d66495a76144a2f4e2e11ef
+ms.sourcegitcommit: 46cea633cf6b8105790bb3c1d5b1a81c44035391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "29770478"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "62456405"
 ---
 <a name="run-a-simple-c-sample-on-enter-your-device-name-here-device-running-enter-the-os-name-running-on-device"></a>在运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备上运行简单的 C 示例
 ===
@@ -17,7 +17,7 @@ ms.locfileid: "29770478"
 
 # <a name="table-of-contents"></a>目录
 
--   [介绍](#Introduction)
+-   [简介](#Introduction)
 -   [步骤 1：先决条件](#Prerequisites)
 -   [步骤 2：准备设备](#PrepareDevice)
 -   [步骤 3：生成并运行示例](#Build)
@@ -39,7 +39,7 @@ ms.locfileid: "29770478"
 本文档介绍如何将运行 {输入设备上运行的 OS 名称} 的 {在此处输入设备名称} 设备连接到 Azure IoT SDK。 此过程由多个步骤组成，其中包括：
 -   配置 Azure IoT 中心
 -   注册 IoT 设备
--   在设备上生成并部署 Azure IoT SDK
+-   在设备上生成和部署 Azure IoT SDK
 
 <a name="Prerequisites"></a>
 # <a name="step-1-prerequisites"></a>步骤 1：先决条件
@@ -54,12 +54,12 @@ ms.locfileid: "29770478"
 
 <a name="PrepareDevice"></a>
 # <a name="step-2-prepare-your-device"></a>步骤 2：准备设备
--   {{记下安装、配置和连接设备时需要遵循的说明。 请尽量使用指向自己的、包含设备准备步骤的页面的外部链接。}}
+-   {{写下安装、配置和连接设备所要遵照的说明。 请尽量使用指向自己页面的外部链接，该页面提供了设备准备步骤。}}
 
 <a name="Build"></a>
 # <a name="step-3-build-and-run-the-sample"></a>步骤 3：生成并运行示例
 
-## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1 在设备上加载 Azure IoT 代码和必备组件
+## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1：在设备上加载 Azure IoT 代码和必备组件
 
 -   打开 PuTTY 会话并连接到设备。
 
@@ -81,17 +81,17 @@ ms.locfileid: "29770478"
 
         Use equivalent commands on the target OS
 
-    ***注意：****此安装过程需要 cmake 2.8.12 或更高版本。* 
+    ***注意：*** 此安装过程需要 cmake 2.8.12 版或更高版本。  
     
-    *可以使用以下命令确认环境中当前安装的版本：*
+    可使用以下命令来验证环境中当前安装的版本： 
 
         cmake --version
 
-    *此库还需要 gcc 4.9 或更高版本。可以使用以下命令确认环境中当前安装的版本：*
+    *此库还需要 gcc 4.9 或更高版本。* 可使用以下命令来验证环境中当前安装的版本：
     
         gcc --version 
 
-    有关如何升级 Ubuntu 14.04 上的 gcc 版本的信息，请参阅 <http://askubuntu.com/questions/466651/how-do-i-use-the-latest-gcc-4-9-on-ubuntu-14-04>。
+    有关如何升级 Ubuntu 14.04 上的 gcc 版本的信息，请参阅 <http://askubuntu.com/questions/466651/how-do-i-use-the-latest-gcc-4-9-on-ubuntu-14-04>。 
     
 -   在 PuTTY 中发出以下命令，将 SDK 下载到开发板：
 
@@ -100,7 +100,7 @@ ms.locfileid: "29770478"
 -   验证 ~/azure-iot-sdk-c 目录中现在是否生成了源代码的副本。
 
 <a name="Step-3-2-Build"></a>
-## <a name="32-build-the-samples"></a>3.2 生成示例
+## <a name="32-build-the-samples"></a>3.2：生成示例
 
 有两个示例：一个用于向 IoT 中心发送消息，另一个用于从 IoT 中心接收消息。 这两个示例支持不同的协议。 在生成示例之前，可以使用所选的协议对示例示例进行修改。 默认情况下，将会针对 AMQP 协议生成示例。  在生成之前，遵照以下说明编辑示例： 
     
@@ -133,7 +133,7 @@ ms.locfileid: "29770478"
     
 5. 取消注释要测试的协议，并注释其他协议。 若要测试多个协议，请对每个协议重复上述步骤。 
 
-6. 按 Ctrl+O 保存更改，当 nano 提示是否保存到同一文件时，按 ENTER 即可。
+6. 按 Ctrl+O 保存更改，当 nano 提示是否保存为同一文件时，请按 ENTER。
 
 7. 按 Ctrl+X 退出 nano。
 
@@ -151,26 +151,26 @@ ms.locfileid: "29770478"
 
         sudo ./azure-iot-sdk-c/build_all/linux/build.sh | tee LogFile.txt
     
-    ***注意：****应将上述命令中的 LogFile.txt 替换为要将生成输出写入到的文件名。*
+    ***注意：*** 应将上述命令中的 LogFile.txt 替换为要将生成输出写入到的文件名。 
     
-    *build.sh 在“~/azure-iot-sdk-c/”下创建名为“cmake”的文件夹。“cmake”中保存了整个软件的所有编译结果。*
+    build.sh 在“~/azure-iot-sdk-c/”下创建名为“cmake”的文件夹。 *“cmake”中保存了整个软件的所有编译结果。*
 
 
 <a name="Step-3-3-Run"></a>
 ## <a name="33-run-and-validate-the-samples"></a>3.3 运行并验证示例
 
-在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，还要监视从 Azure IoT 中心发送到客户端的所有消息。
+在本部分，我们将运行 Azure IoT 客户端 SDK 示例来验证设备与 Azure IoT 中心之间的通信。 我们要向 Azure IoT 中心服务发送消息，然后验证 IoT 中心是否成功接收数据。 此外，我们还会监视从 Azure IoT 中心发送到客户端的任何消息。
 
-### <a name="331-send-device-events-to-iot-hub"></a>3.3.1 向 IoT 中心发送设备事件：
+### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IOT 中心发送设备事件：
 
--   发出以下命令运行该示例。    
+-   发出以下命令运行示例。    
 
         azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample
 
 
-### <a name="332-receive-messages-from-iot-hub"></a>3.3.2 从 IoT 中心接收消息
+### <a name="332-receive-messages-from-iot-hub"></a>3.3.2：从 IoT 中心接收消息
 
--   发出以下命令运行该示例。
+-   发出以下命令运行示例。
 
         azure-iot-sdk-c/cmake/iotsdk_linux/iothub_client/samples/iothub_ll_c2d_sample/iothub_ll_c2d_sample
         
