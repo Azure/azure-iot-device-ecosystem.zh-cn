@@ -69,7 +69,7 @@ ms.locfileid: "62439603"
 <a name="Load"></a>
 ## <a name="31-load-the-azure-iot-bits-and-prerequisites-on-device"></a>3.1：在设备上加载 Azure IoT 代码和必备组件
 
--   创建环境变量 `IOTHUB_CONNECTION_STRING`，并将其值设置为在**步骤 1** 中获取的 [IoT 中心连接字符串](#Prerequisites)。
+-   创建环境变量 `IOTHUB_CONNECTION_STRING`，并将其值设置为在[步骤 1](#Prerequisites) 中获取的 **IoT 中心连接字符串**。
 
 -   打开 Node.js 命令提示符。
         

@@ -78,7 +78,7 @@ ms.locfileid: "62439612"
 
 -   启动 Visual Studio 2015 的新实例。 打开存储库本地副本中的 **iothub_csharp_netmf_client.sln** 解决方案 (/azure-iot-sdk-csharp/device)。
 
--   在 Visual Studio 的“解决方案资源管理器”中，导航到 **NetMFDeviceClientHttpSample_** **项目。<dotnet microframework version>**
+-   在 Visual Studio 的“解决方案资源管理器”中，导航到 **NetMFDeviceClientHttpSample_<dotnet microframework version>** 项目。
 
 -   在 **Program.cs** 文件中找到以下代码：
 
@@ -88,7 +88,7 @@ ms.locfileid: "62439612"
     
 -   若要在设备上生成并部署二进制文件，请在“解决方案资源管理器”中右键单击项目，选择“属性”，然后导航到“.NET Micro Framework”选项卡。   
     
-    选择“传输”，然后选择连接的**设备**。 
+    选择“传输”，然后选择连接的**设备**。
 
 -   生成解决方案。
 
@@ -97,7 +97,7 @@ ms.locfileid: "62439612"
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
 
--   在 Visual Studio 的“解决方案资源管理器”中右键单击示例项目，然后单击“调试”  “启动新实例”生成并运行示例。 **&minus;&gt;** 
+-   在 Visual Studio 的“解决方案资源管理器”中右键单击示例项目，然后单击“调试”&minus;&gt;“启动新实例”生成并运行示例。 
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 

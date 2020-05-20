@@ -78,7 +78,7 @@ ms.locfileid: "62439608"
 
 -   启动 Visual Studio 2015 的新实例。 打开存储库本地副本中的 **iothub_csharp_client.sln** 解决方案 (/azure-iot-sdk-csharp)。
 
--   在 Visual Studio 的“解决方案资源管理器”中，导航到 **UWPSample(Universal Windows)** 项目。 
+-   在 Visual Studio 的“解决方案资源管理器”中，导航到 **UWPSample(Universal Windows)** 项目。
 
 -   在 **ConnectionStrings.cs** 文件中找到以下代码：
 
@@ -99,7 +99,7 @@ ms.locfileid: "62439608"
 
 ### <a name="331-send-device-events-to-iot-hub"></a>3.3.1：向 IoT 中心发送设备事件
 
--   在 Visual Studio 的“解决方案资源管理器”中右键单击“UWPSample(Universal Windows)”项目，然后单击“调试”  “启动新实例”生成并运行示例。  **&minus;&gt;** 
+-   在 Visual Studio 的“解决方案资源管理器”中右键单击“UWPSample(Universal Windows)”项目，然后单击“调试”&minus;&gt;“启动新实例”生成并运行示例。 
 
 -   请参阅[管理 IoT 中心][lnk-manage-iot-hub]，了解如何监视 IoT 中心从应用程序接收的消息。
 
