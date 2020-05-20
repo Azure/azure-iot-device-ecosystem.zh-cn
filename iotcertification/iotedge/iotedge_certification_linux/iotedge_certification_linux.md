@@ -44,7 +44,7 @@
 <a name="Step-1-Configure"></a>
 # <a name="step-1-sign-up-to-azure-iot-hub"></a>步骤 1：注册 Azure IoT 中心
 
-遵照[此处](https://account.windowsazure.com/signup?offer=ms-azr-0044p)所述的说明[注册](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux) Azure IoT 中心服务。 在注册过程中，将会收到连接字符串。
+遵照[此处](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux)所述的说明[注册](https://account.windowsazure.com/signup?offer=ms-azr-0044p) Azure IoT 中心服务。 在注册过程中，将会收到连接字符串。
 
 -   **IoT 中心连接字符串**：下面显示了 IoT 中心连接字符串的示例：
 
